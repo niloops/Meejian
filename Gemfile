@@ -16,6 +16,7 @@ gem 'omniauth'
 gem 'omniauth-weibo'
 gem 'omniauth-douban'
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 group :assets do
   gem 'sass-rails'
