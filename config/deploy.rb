@@ -1,6 +1,6 @@
 set :rvm_ruby_string, 'default'
 set :rvm_type, :system
-
+require "rvm/capistrano"
 require 'bundler/capistrano'
 
 set :scm, :git
