@@ -6,6 +6,7 @@
 
 # Ignore bundler config
 /.bundle
+/vendor/bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -20,9 +21,6 @@
 .project
 /TAGS
 
-# Docs
-doc/
-
 # Everything else
 /bundler_stubs/
 *.rbc
@@ -30,8 +28,6 @@ doc/
 .sass-cache
 capybara-*.html
 .rspec
-/.bundle
-/vendor/bundle
 /public/system/*
 /coverage/
 /spec/tmp/*
