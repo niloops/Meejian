@@ -11,7 +11,7 @@ body {
 
 header {
   border-top: 5px black solid;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 header > span{
@@ -30,7 +30,12 @@ header > span{
   text-shadow: #000 2px 2px 2px;
 }
 
-#tagline h1{
+#tagline hgroup {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#tagline hgroup h1{
   font-size: 30px;
   font-family: "Microsoft Yahei", "Hiragino Sans GB", Arial, sans-serif;
   letter-spacing:2px;
@@ -39,11 +44,12 @@ header > span{
   font-weight: normal;
 }
 
-#tagline p{
-  font-size:12px;
-  padding-top:10px;
-  padding-bottom:15px;
-  margin-left:300px;
+#tagline hgroup h2{
+  font-size: 12px;
+  padding: 10px 0 15px 0;
+  margin: 0 6em 0 0;
+  font-weight: normal;
+  text-align: right;
 }
 
 .content {
