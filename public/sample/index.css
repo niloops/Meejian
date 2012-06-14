@@ -19,9 +19,13 @@ header > span{
 }
 
 .plink{
-  text-decoration:none;
-  color:#F26522;
-  font-weight:bold;
+  text-decoration: none;
+  color: #F26522;
+  font-weight: bold;
+}
+
+a.plink:visited {
+  color: #F26522;
 }
 
 #tagline {
