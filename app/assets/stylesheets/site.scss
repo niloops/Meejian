@@ -1,0 +1,173 @@
+@import "application";
+
+$page-width: 800px;
+
+#site > header {
+  border-top: 5px black solid;
+  text-align: center;
+
+  img {padding: 30px 0}
+
+  #tagline {
+    background: url("sitebg.png");
+    color: white;
+    text-shadow: #000 2px 2px 2px;
+
+    hgroup {
+      width: $page-width;
+      margin: 0 auto;
+
+      h1 {
+        font-size: 30px;
+        font-family: "Microsoft Yahei", "Hiragino Sans GB", Arial, sans-serif;
+        letter-spacing:2px;
+        padding: 30px 0 0 0;
+        margin: 0;
+        font-weight: normal;
+      }
+
+      h2 {
+        font-size: 12px;
+        padding: 10px 0 15px 0;
+        margin: 0 6em 0 0;
+        font-weight: normal;
+        text-align: right;
+      }
+    }
+  }
+}
+
+#site > section {
+  width: $page-width;
+  margin: 0 auto;
+
+  article {
+    text-align: left;
+    padding: 50px 0;
+    border-bottom: 1px solid #ddd;
+
+    header {
+      border-right: 1px dashed #999;
+
+      > img {
+        float: right;
+        margin-right:20px;
+        width: 80px;
+        height: 80px;
+        @include border-radius(8px);
+      }
+
+      .profile {
+        span:first-child {
+          font-size:14px;
+        }
+
+        span+span {
+          margin-left:10px;
+          color:#999;
+          font-weight:bold;
+        }
+      }
+
+      p {
+        margin-top: 16px;
+        font-size: 13px;
+        width: 660px;
+        line-height: 22px;
+      }
+    }
+
+    ul {
+      margin:40px 0 0 0;
+      padding:0;
+      @include clearfix;
+
+      li {
+        position: relative;
+        float: left;
+        margin:0 8px;
+
+        .image {
+          width: 250px;
+          height: 250px;
+          margin-bottom: 10px;
+          display: table-cell;
+          vertical-align: middle;
+
+          img {
+            width: 250px;
+            max-height: 250px;
+            vertical-align: middle;
+          }
+        }
+
+        .name {
+          text-align: left;
+          padding: 10px 0 10px 20px;
+          background: #333;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+        }
+
+        .price {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 5px 10px;
+          background: #333;
+          background: rgba(0, 0, 0, 0.8);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+#site > footer {
+  text-align: center;
+  margin:30px 0 120px;
+  > * {margin: 5px;}
+}
+
+#site > aside#signup {
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  line-height: 100px;
+  text-align: center;
+  font-size: 14px;
+  background: url("asidebg.png");
+  border-top: 1px solid #ccc;
+  font-weight: bold;
+
+  label {
+    margin-right: 3em;
+    font-weight: bold;
+    color: #666;
+  }
+
+  input[type="text"] {
+    border: 1px solid #ccc;
+    color: #999;
+    font-size: 13px;
+    line-height: 25px;
+    padding: 10px;
+    width: 250px;
+  }
+
+  input[type="submit"] {
+    margin-left: 2em;
+    line-height: 25px;
+    padding: 10px;
+    font-size: 13px;
+    @include blue-button-style;
+  }
+
+  #success {
+    color: #666;
+    span {
+      color: #f26522;
+    }
+  }
+}

@@ -1,7 +1,6 @@
 Meejian::Application.routes.draw do
   root to: 'site#index'
 
-  get '/site', to: 'site#index'
   post '/signup', to: 'site#signup'
   get '/inviteds', to: 'site#inviteds'
 

@@ -1,3 +1,37 @@
-= form_tag signup_path do
-  %textarea{placeholder: "请在这里留下email", name: "info"}
-  = submit_tag "发布"  
+%header
+  = image_tag "logo.png"
+  #tagline
+    %hgroup
+      %h1 觅见，达人与尖儿货
+      %h2 让爱好者们分享生活中精品的社交导购服务
+
+%section
+  = render partial: "stubs/shiva"
+  = render partial: "stubs/lilu"
+  = render partial: "stubs/qianxing"
+  = render partial: "stubs/yang"
+  = render partial: "stubs/liguanming"
+  = render partial: "stubs/yuanye"
+  = render partial: "stubs/xiaoxue"
+  
+%footer
+  #contact
+    = link_to "新浪微博", "http://weibo.com/coocooba"
+    | 邮件:
+    = link_to "lilu.life@gmail.com", "mailto:lilu.life@gmail.com"
+    | QQ: 1731876 | 
+    = link_to "参与意见反馈", "http://meejian.wufoo.com/forms/eee/"
+  #copyright
+    Meejian.com ©2012
+  #icp  
+    京ICP备12016027号
+
+%aside#signup
+  = form_tag signup_path, remote: true, 'data-type' => 'html' do
+    = label_tag 'info', '觅见现在施工中，近期即将开放，请留下您的联系方式以便加入'
+    = text_field_tag 'info', nil, required: true, placeholder: "邮件,微博/豆瓣/QQ帐号,或电话号码"
+    = submit_tag "加入觅见"
+
+- content_for :script do
+  :javascript
+    $(Meejian.signup);

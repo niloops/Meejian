@@ -4,7 +4,7 @@ class SiteController < ApplicationController
 
   def signup
     InvitedInfo.create(info: params[:info])
-    render nothing: true, status: 200
+    render "success", layout: false
   end
 
   def inviteds
