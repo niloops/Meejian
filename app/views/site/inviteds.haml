@@ -1,0 +1,5 @@
+%header
+  %h1 注册用户列表
+%ul
+  - @users.each do |user|
+    %li= user.info

@@ -1,4 +1,10 @@
 Meejian::Application.routes.draw do
+  root to: 'site#index'
+
+  get '/site', to: 'site#index'
+  post '/signup', to: 'site#signup'
+  get '/inviteds', to: 'site#inviteds'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
