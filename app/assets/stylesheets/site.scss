@@ -127,6 +127,7 @@ $page-width: 800px;
   text-align: center;
   margin:30px 0 120px;
   > * {margin: 5px;}
+
 }
 
 #site > aside#signup {
@@ -168,6 +169,12 @@ $page-width: 800px;
     color: #666;
     span {
       color: #f26522;
+    }
+
+    #ckepop {
+      display: inline-block;
+      vertical-align: -2px;
+      width: 80px;
     }
   }
 }
