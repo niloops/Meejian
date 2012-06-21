@@ -2,34 +2,32 @@
   %header
     = image_tag "stubs/wuming.jpg"
     .profile
-      %span= link_to "空谷幽兰", "#", class: "ulink"
-      %span 跑步爱好者
+      %span= link_to "Silence", "#", class: "ulink"
+      %span 禅者的初心
     %p
-      跑步必不可少的装备：
-      1，为了避免伤膝盖，穿能负担的起的减震最好的跑鞋，我的是
-      = link_to "Asics Kayano 17", "#", class: "plink"
-      ；2，选择轻便又容易排汗的防风外套，我穿
-      = link_to "Asics路跑防风运动外套", "#", class: "plink"
-      ；3，最后还需要一个精确测量跑步速度和距离的装备，最好的是iphone上的
-      = link_to "iRunner", "#", class: "plink"
-      , 强大，好用
+      在这个炎热的夏天，开着最酷的
+      = link_to "Dyson中空风扇", "#", class: "plink"
+      吹着风，让小巧迷人音量却无比充沛的
+      = link_to "Jambox蓝牙音箱", "#", class: "plink"
+      放着电子音乐，打开仿佛不属于这个世界的
+      = link_to "LightLight漂浮台灯", "#", class: "plink"
+      ，科技，把身边的一切，都变得很魔幻。
   %ul
     %li
-      .image= image_tag "stubs/kayano.jpg"
+      .image= link_to image_tag("stubs/dyson.jpg"), "http://www.dyson.com/fans/", class: "outlink"      
       .name
-        Asics Gel-Kayano 17
+        Dyson 中空风扇
       .price
-        ￥940
+        ￥2100      
     %li
-      .image= image_tag "stubs/waitao.jpg"
+      .image= link_to image_tag("stubs/jambox.jpg"), "http://store.apple.com/cn/product/H3163CH/A/jambox-by-jawbone-wireless-speaker", class: "outlink"      
       .name
-        Asics 路跑防风外套
+        Jawbone Jambox 蓝牙音箱
       .price
-        ￥580
+        ￥1848      
     %li
-      .image= image_tag "stubs/irunner.jpg"
+      .image= link_to image_tag("stubs/light.jpg"), "http://www.floating-lamps.com/", class: "outlink"      
       .name
-        iRunner
+        Light Light 磁悬浮台灯
       .price
-        ￥18
-
+        ￥8800

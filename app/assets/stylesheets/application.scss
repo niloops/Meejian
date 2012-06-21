@@ -32,6 +32,7 @@ ul, li {list-style: none}
 
 a {
   text-decoration: none;
+  &:focus {outline: none;}
 }
 
 input:invalid {

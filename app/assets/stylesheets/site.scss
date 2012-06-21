@@ -63,7 +63,7 @@ $page-width: 800px;
       border-right: 1px dashed #999;
 
       > img {
-        float: right;
+        float: left;
         margin-right:20px;
         width: 80px;
         height: 80px;
@@ -83,9 +83,9 @@ $page-width: 800px;
       }
 
       p {
-        margin-top: 16px;
+        margin-top: 10px;
+        margin-right: 4em;
         font-size: 13px;
-        width: 660px;
         line-height: 22px;
       }
     }
@@ -106,9 +106,10 @@ $page-width: 800px;
           margin-bottom: 10px;
           display: table-cell;
           vertical-align: middle;
+          text-align: center;
 
           img {
-            width: 250px;
+            max-width: 250px;
             max-height: 250px;
             vertical-align: middle;
           }
@@ -125,7 +126,7 @@ $page-width: 800px;
         .price {
           position: absolute;
           top: 0;
-          left: 0;
+          right: 0;
           padding: 5px 10px;
           background: #333;
           background: rgba(0, 0, 0, 0.8);

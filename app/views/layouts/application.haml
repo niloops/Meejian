@@ -14,5 +14,5 @@
 %body{id: params[:controller]}
   = yield
   = yield :script
-  = javascript_include_tag "ga" 
+  = javascript_include_tag "ga" if Rails.env.production?
 </html>
