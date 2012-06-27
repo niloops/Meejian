@@ -1,0 +1,16 @@
+/* the humans responsible & colophon */
+/* humanstxt.org */
+
+/* TEAM */
+  Founder: lilu
+  Site: 
+  Weibo: coocooba
+  Location: Beijing, China
+
+/* THANKS */
+  Names (& URL):
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: Modernizr, jQuery, Rails
+  Software: Rails

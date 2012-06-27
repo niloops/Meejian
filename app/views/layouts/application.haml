@@ -3,10 +3,11 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN"> <!--<![endif]-->
 %head
   %meta(charset="utf-8")
+  %meta(http-equiv="X-UA-Compatible" content="IE=edge")
+  %title= "觅见" + page_title(yield(:title))
   %meta(name="author" content="lilu.life@gmail.com")
   %meta(name="description" content="觅见-让爱好者们分享生活中精品的社交导购服务")
   %meta(name="viewport" content="width=device-width,initial-scale=1")
-  %title= "觅见" + page_title(yield(:title))
   = favicon_link_tag '/favicon.png', type: 'image/png'
   = stylesheet_link_tag "application"
   = javascript_include_tag "application"
@@ -14,5 +15,12 @@
 %body{id: params[:controller]}
   = yield
   = yield :script
-  = javascript_include_tag "ga" if Rails.env.production?
+  :javascript
+    var _gaq = [['_setAccount', 'UA-32662683-1'], ['_trackPageview']];
+    (function(d, t) {
+      var g = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+      g.src = '//www.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g, s);
+    }(document, 'script'));
 </html>

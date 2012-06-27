@@ -62,9 +62,6 @@ module Meejian
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    # Precompile individual
-    config.assets.precompile += ['ga.js']
-
     # Auto load my custom libs
     config.autoload_paths << "#{Rails.root}/lib"
   end
