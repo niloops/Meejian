@@ -1,4 +1,4 @@
-@import "application";
+@import "base";
 
 $page-width: 800px;
 
@@ -159,6 +159,7 @@ $page-width: 800px;
   font-weight: bold;
 
   label {
+    display: inline;
     margin-right: 3em;
     font-weight: bold;
     color: #666;

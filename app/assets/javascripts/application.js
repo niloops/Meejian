@@ -13,7 +13,8 @@
 //= require modernizr_respond
 //= require jquery
 //= require jquery_ujs
-//= require jquery.placeholder 
+//= require jquery.placeholder
+//= require bootstrap 
 //= require base
 //= require_tree .
 

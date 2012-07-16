@@ -1,0 +1,64 @@
+@import "bootstrap";
+@import "compass/css3";
+
+/* For image replacement, borrowed from h5bp */
+@mixin ir { 
+  display: block; 
+  border: 0; 
+  text-indent: -999em; 
+  overflow: hidden; 
+  background-color: transparent; 
+  background-repeat: no-repeat; 
+  text-align: left; 
+  direction: ltr; 
+  *line-height: 0; 
+
+  br { display: none; }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: #09f;
+  font-weight: bold;
+
+  &:focus {outline: none;}
+  &:visited {color: #09f;}
+
+  &.plink {
+    color: #f26522;
+    font-weight: bold;
+  }
+}
+
+
+body {
+  font-family: "Hiragino Sans GB", Arial, sans-serif;
+  font-size: 12px;
+}
+
+@mixin button-style {
+   border: 1px solid #ccc;
+   color: white;
+   background: #ddd;
+   @include background(linear-gradient(#fff, #ddd));
+   @include border-radius(3px);
+
+   &:hover {
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.25), 0 0 3px #FFFFFF inset);
+   }
+
+   &:active {
+      @include box-shadow(0 1px 2px #AAAAAA inset);
+   }
+}
+
+@mixin blue-button-style {
+   @include button-style;
+   background: #09f;
+   @include background(linear-gradient(#6cf, #09f));
+   border: 1px solid #09f;
+   color: #fff;
+}
