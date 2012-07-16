@@ -23,6 +23,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass-rails'
+  gem 'bootstrap-sass'
 end
 
 group :test do
