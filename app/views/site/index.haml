@@ -1,22 +1,24 @@
 %header
-  %hgroup
-    = image_tag "logo.png"
-    %h1 觅见，更美好的生活
+  %h1 
+    Meejian
+    %small 觅见，更美好的生活
+    -# = image_tag "logo.png"
+    -# %h1 觅见，更美好的生活
   %nav
     %ul
-      %li 通过达人发现有趣的产品
-      %li 创建和分享自己的产品列表
-      %li 进行物超所值的交易
+      %li.discover 通过达人发现有趣的产品
+      %li.collect 创建和分享自己的产品列表
+      %li.deal 进行物超所值的交易
 
 %section
-  = render partial: "stubs/yuanye"
   = render partial: "stubs/liguanming"
-  = render partial: "stubs/silence"  
   = render partial: "stubs/xiaoxue"
   = render partial: "stubs/qianxing"  
   = render partial: "stubs/lilu"
-  = render partial: "stubs/yang"
+  = render partial: "stubs/silence"  
   = render partial: "stubs/shiva"
+  = render partial: "stubs/yuanye"
+  = render partial: "stubs/yang"
   
 %footer
   #contact
@@ -26,17 +28,16 @@
     | QQ: 1731876 
     |
     = link_to "参与意见反馈", "http://meejian.wufoo.com/forms/eee/"
-
   #copyright
     Meejian.com ©2012
   #icp  
     京ICP备12016027号
 
 %aside#signup
-  = form_tag signup_path, remote: true, 'data-type' => 'html' do
+  = form_tag signup_path, remote: true, 'data-type' => 'html', class: "form-inline" do
     = label_tag 'info', '觅见现在施工中，近期即将开放，请留下您的联系方式以便加入'
     = text_field_tag 'info', nil, required: true, placeholder: "邮件,微博/豆瓣/QQ帐号,或电话号码"
-    = submit_tag "加入觅见"
+    = submit_tag "加入觅见", class: "btn btn-primary"
 
 - content_for :script do
   :javascript

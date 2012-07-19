@@ -1,195 +1,160 @@
 @import "base";
+@import "compass/typography/lists";
 
-$page-width: 800px;
+@include font-face("Lizard",
+                   font-files("fonts/lizard-webfont.woff", woff,
+                              "fonts/lizard-webfont.ttf", truetype,
+                              "fonts/lizard-webfont.svg", svg),
+                   "fonts/lizard-webfont.eot");
 
-#site > header {
-  border-top: 5px black solid;
-  text-align: center;
+#site {
+  $contentWidth: 800px;
+  min-width: $contentWidth;
 
-  hgroup {
-    padding: 30px 0;
-    
+  > header {
     h1 {
-      display: inline;
-      margin: 0;
-      font-size: 12px;
-      vertical-align: -12px;
-      color: #999;
-      margin-left: 1em;
-    }
-  }
+      padding: .8em 0 .7em;
+      border-top: 5px black solid;
+      font-family: "Lizard";
+      font-weight: normal;
+      font-size: 3.8em;
+      letter-spacing: .05em;
+      color: black;
+      text-align: center;
 
-  nav {
-    $story-height: 60px;
-    height: $story-height;
-    padding: 10px 0;
-    margin: 0 auto;
-    background: url("storybg.png");
-
-    ul {
-      width: $page-width;
-      margin: 0 auto;
-      @include clearfix;
-
-      li {
-        width: 25%;
-        height: $story-height;
-        float: left;
-        line-height: $story-height;
-        font-size: 14px;
-        text-align: left;
-        padding-left: 8%;
+      small {
+        font-size: $baseFontSize;
+        font-family: $baseFontFamily;
         font-weight: bold;
-        text-shadow: white 2px 2px 2px;
-      }
+        letter-spacing: 0; } }
 
-      li:first-child {background: url("story-discover.png") no-repeat;}
-      li+li {background: url("story-collect.png") no-repeat;}
-      li+li+li {background: url("story-deal.png") no-repeat;}
-    }
-  }
-}
+    nav {
+      $story-height: 60px;
+      height: $story-height;
+      padding: 10px 0;
+      margin: 0 auto;
+      background: url("storybg.png");
 
-#site > section {
-  width: $page-width;
-  margin: 0 auto;
+      ul {
+        @include inline-block-list;
+        width: $contentWidth;
+        margin: 0 auto;
 
-  article {
-    text-align: left;
-    padding: 50px 0;
-    border-bottom: 1px solid #ddd;
+        li {
+          width: 25%;
+          line-height: $story-height;
+          padding-left: 8%;
+          font-size: 14px;
+          font-weight: bold;
+          @include text-shadow(2px 2px 2px white);
+          @each $story in discover, collect, deal {
+            &.#{$story} { background: url("story-#{$story}.png") no-repeat; } } } } } }
 
-    header {
-      border-right: 1px dashed #999;
+  > section {
+    width: $contentWidth;
+    margin: 0 auto;
 
-      > img {
-        float: left;
-        margin-right:20px;
-        width: 80px;
-        height: 80px;
-        @include border-radius(8px);
-      }
+    article {
+      text-align: left;
+      padding: 50px 0;
+      border-bottom: 1px solid #ddd;
 
-      .profile {
-        span:first-child {
-          font-size:14px;
-        }
+      header {
+        border-right: 1px dashed #999;
+        margin-bottom: 40px;
 
-        span+span {
-          margin-left:10px;
-          color:#999;
-          font-weight:bold;
-        }
-      }
+        > img {
+          float: left;
+          margin-right:20px;
+          width: 80px;
+          height: 80px;
+          @include border-radius(8px); }
 
-      p {
-        margin-top: 10px;
-        margin-right: 4em;
-      }
-    }
+        .profile {
+          span+span {
+            margin-left:10px;
+            color:#999;
+            font-weight:bold; } }
 
-    ul {
-      margin:40px 0 0 0;
-      padding:0;
-      @include clearfix;
+        p {
+          margin-top: 10px;
+          margin-right: 4em; } }
 
-      li {
-        position: relative;
-        float: left;
-        margin:0 8px;
+      ul {
+        @include inline-block-list;
 
-        .image {
-          width: 250px;
-          height: 250px;
-          margin-bottom: 10px;
-          display: table-cell;
-          vertical-align: middle;
-          text-align: center;
+        li {
+          $imageSize: 250px;
+          position: relative;
+          margin:0 5px;
+          font-size: 12px;
+          line-height: 1.25em;
 
-          img {
-            max-width: 250px;
-            max-height: 250px;
+          .image {
+            width: $imageSize;
+            line-height: $imageSize;
+            margin-bottom: 10px;
             vertical-align: middle;
-          }
-        }
+            text-align: center;
 
-        .name {
-          text-align: left;
-          padding: 10px 0 10px 20px;
-          background: #333;
-          background: rgba(0, 0, 0, 0.8);
-          color: white;
-        }
+            img {
+              max-width: $imageSize;
+              max-height: $imageSize; } }
 
-        .price {
-          position: absolute;
-          top: 0;
-          right: 0;
-          padding: 5px 10px;
-          background: #333;
-          background: rgba(0, 0, 0, 0.8);
-          color: white;
-        }
-      }
-    }
-  }
-}
+          .name {
+            text-align: left;
+            padding: 10px 0 10px 20px;
+            background: #333;
+            @include background(rgba(0, 0, 0, 0.8));
+            color: white; }
 
-#site > footer {
-  text-align: center;
-  margin:30px 0 120px;
-  > * {margin: 5px;}
+          .price {
+            position: absolute;
+            top: 0;
+            right: 0;
+            @extend .name;
+            padding: 5px 10px; } } } } }
 
-}
+  > footer {
+    text-align: center;
+    margin:30px 0 120px;
+    > * {margin: 5px;} }
 
-#site > aside#signup {
-  position: fixed;
-  bottom: 0;
-  height: 100px;
-  width: 100%;
-  line-height: 100px;
-  text-align: center;
-  font-size: 14px;
-  background: #eceef4;
-  opacity: 0.8;
-  &:hover {opacity: 1;}
-  border-top: 1px solid #ccc;
-  font-weight: bold;
-
-  label {
-    display: inline;
-    margin-right: 3em;
+  > aside#signup {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 14px;
     font-weight: bold;
-    color: #666;
-  }
+    background: #eceef4;
+    @include opacity(0.8);
+    &:hover { @include opacity(1); }
 
-  input[type="text"] {
-    border: 1px solid #ccc;
-    color: #999;
-    font-size: 13px;
-    line-height: 25px;
-    padding: 10px;
-    width: 250px;
-  }
+    label {
+      margin-right: 2em;
+      color: #666;
+      font-size: 14px;
+      font-weight: bold; }
 
-  input[type="submit"] {
-    margin-left: 2em;
-    line-height: 25px;
-    padding: 10px;
-    font-size: 13px;
-    @include blue-button-style;
-  }
+    input[type="text"] {
+      color: #999;
+      padding: .5em;
+      width: 250px; }
 
-  #success {
-    color: #666;
-    span {
-      color: #f26522;
-    }
+    input[type="submit"] {
+      margin-left: 2em;
+      padding: .6em .8em; }
 
-    #ckepop {
-      display: inline-block;
-      vertical-align: -2px;
-      width: 80px;
-    }
-  }
+    #success {
+      color: #666;
+      span { color: #f26522; }
+
+      #ckepop {
+        display: inline-block;
+        vertical-align: -2px;
+        width: 80px; } } }
 }
