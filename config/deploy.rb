@@ -5,7 +5,7 @@ require 'bundler/capistrano'
 
 set :scm, :git
 set :application, "Meejian"
-set :repository,  "git@github.com:Lilu/Meejian.git"
+set :repository,  "git@github.com:lilu/Meejian.git"
 set :user, "deployer"
 set :ssh_options, {forward_agent: true}
 set :deploy_via, :remote_cache
