@@ -121,33 +121,35 @@
     > * {margin: 5px;} }
 
   > aside#signup {
+    $signupColor: #eceef4;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 100px;
-    line-height: 100px;
+    padding: 30px 0;
     border-top: 1px solid #ccc;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    background: #eceef4;
-    @include opacity(0.8);
-    &:hover { @include opacity(1); }
+    background: $signupColor;
+    @include background(rgba($signupColor, 0.8));
+    &:hover { background: $signupColor; }
 
-    label {
-      margin-right: 2em;
-      color: #666;
-      font-size: 14px;
-      font-weight: bold; }
+    form {
+      margin: 0;
+      label {
+        margin-right: 2em;
+        color: #666;
+        font-size: 14px;
+        font-weight: bold; }
 
-    input[type="text"] {
-      color: #999;
-      padding: .5em;
-      width: 250px; }
+      input[type="text"] {
+        color: #999;
+        padding: .5em;
+        width: 250px; }
 
-    input[type="submit"] {
-      margin-left: 2em;
-      padding: .6em .8em; }
+      input[type="submit"] {
+        margin-left: 2em;
+        padding: .6em .8em; } }
 
     #success {
       color: #666;
