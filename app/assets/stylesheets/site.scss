@@ -138,6 +138,8 @@
 
     form {
       margin: 0;
+      @extend .form-inline;
+
       label {
         margin-right: 2em;
         color: #666;
@@ -150,6 +152,8 @@
         width: 250px; }
 
       input[type="submit"] {
+        @extend .btn;
+        @extend .btn-primary;
         margin-left: 2em;
         padding: .6em .8em; } }
 
