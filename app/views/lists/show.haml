@@ -1,0 +1,22 @@
+%header
+  #prelude
+    %h1
+      尼泊尔Mustang地区之旅
+    %p    
+      远离灯红酒绿的浮躁与喧嚣，走进神秘莫测的喜马拉雅，寻找心灵的宁静。一路相伴的唯有脚上的登山靴，背上的Osprey背包，和峻美无比的安纳普尔纳峰。
+  #author
+    = image_tag "stubs/lilu.jpg", class: "avatar"
+    .profile
+      %span= link_to "Shiva", "#", class: "ulink"
+      %span 一个热爱户外徒步的跋涉者
+  #actions
+    = button_tag "Shiva的其他列表", type: "button", id: "other-lists"
+%section
+  - 3.times do |i|
+    %article= render partial: "stubs/lowa"
+    %article= render partial: "stubs/osprey"
+    %article= render partial: "stubs/anna"
+
+- content_for :script do
+  :javascript
+    $(Meejian.lists.show);

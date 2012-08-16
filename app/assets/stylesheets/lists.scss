@@ -1,0 +1,71 @@
+img.avatar {
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin-right: 2em;
+  @include border-radius(8px);
+}
+
+.profile {
+  span:first-child {
+    display: block;
+  }
+
+  span+span {
+    color:#999;
+    font-weight:bold; 
+  } 
+}
+
+#lists {
+  $columnWidth: 300px;
+  $gutterWidth: 30px;
+
+  > * {float: left;}
+
+  > header {
+    width: $columnWidth;
+    padding: 0 $gutterWidth;
+    > * {margin: $gutterWidth 0;}
+    
+    #prelude {
+      background: #5CC1E9;
+      color: white;
+      padding: $gutterWidth;
+    }
+
+    #author {
+      @include clearfix;
+    }
+
+    #actions {
+      #other-lists {
+        @extend .btn;
+        @extend .btn-info;
+      }
+    }
+  }
+
+  > section {
+    > * {float: left;}
+
+    > article {
+      width: $columnWidth;
+      padding: 0 $gutterWidth;
+      margin: $gutterWidth 0;
+
+      img {max-width: $columnWidth;}
+
+      .share {
+        > a {
+        }
+      }
+    }
+
+    > .divider {
+      width: 0;
+      border-right: 1px solid #ccc;
+    }
+  }
+
+}

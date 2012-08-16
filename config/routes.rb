@@ -3,8 +3,7 @@ Meejian::Application.routes.draw do
 
   post '/signup', to: 'site#signup'
   get '/inviteds', to: 'site#inviteds'
-
-  match 'demo/:action', controller: 'demo'
+  get '/list', to: 'lists#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
