@@ -1,19 +1,66 @@
 $linkColor: #09f;
-$baseFontFamily: "Hiragino Sans GB", Arial, sans-serif;
+$baseFontFamily: "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
 $baseFontSize: 13px;
 $baseLineHeight: 22px;
 
 @import "bootstrap";
 @import "compass/css3";
 
+@mixin triangle($direction, $color, $size, $width, $offset: 0) {
+  position: relative;
+  &:after {
+    content: ' ';
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: {
+      style: solid;
+      color: transparent;
+      width: $size;
+      #{$direction}-width: 0;
+    }
+    
+    @if $direction == top {
+      border-bottom-color: $color;
+      border-left-style: inset; 
+      border-right-style: inset; 
+      bottom: 100%;
+      left: $offset;
+    }
+    @else if $direction == bottom {
+      border-top-color: $color;
+      border-left-style: inset; 
+      border-right-style: inset; 
+      top: 100%;
+      left: $offset;
+    }
+    @else if $direction == left {
+      border-right-color: $color;
+      border-top-style: inset; 
+      border-bottom-style: inset; 
+      right: 100%;
+      top: $offset;
+    }
+    @else if $direction == right {
+      border-left-color: $color;
+      border-top-style: inset; 
+      border-bottom-style: inset; 
+      left: 100%;
+      top: $offset;
+    }
+  }
+}
+
 ul, ol {
-  list-style: none; }
+  list-style: none; 
+  margin: 0;
+}
 
 a {
   font-weight: bold;
 
   &:focus {outline: none;}
-  &:visited {color: #09f;}
+  &:visited {color: $linkColor;}
 
   &.plink {
     color: #f26522;

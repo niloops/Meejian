@@ -1,9 +1,21 @@
 %header
-  = link_to image_tag("stubs/osprey.jpg")
-  %h1 Osprey Variant 52 登山包
-%section
+  .product_thumb
+    = link_to image_tag("stubs/osprey.jpg")
+  %h1.product_title 
+    Osprey Variant 52 登山包登山包登山包
   .price
-    ￥1530
-  %p 
+    %span.sign ￥
+    %span.amount 1530  
+%section
+  %p.product_desc
     以贴合的背负，绚丽的颜色搭配及高性价比备受追捧，长途跋涉、地形复杂不知道体验如何？
 %footer
+  .buy
+    %i.icon-shopping-cart
+    = link_to "去淘宝购买", "http://www.sanfo.com/hwyp/product/17286.html"
+  .collect
+    %i.icon-heart
+    = link_to "收集", "#"
+  .share  
+    %i.icon-share
+    = link_to "分享", "#"

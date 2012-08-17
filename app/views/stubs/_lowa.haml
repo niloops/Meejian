@@ -1,13 +1,21 @@
 %header
-  = link_to image_tag("stubs/lowa.jpg")
-  %h1 Lowa 登山靴
+  .product_thumb
+    = link_to image_tag("stubs/lowa.jpg")
+  %h1.product_title 
+    Lowa 登山靴
+  .price
+    %span.sign ￥
+    %span.amount 1938  
 %section
-  %p 
+  %p.product_desc
     你还在为下雨没有防水的鞋烦恼吗？现在我就为你推荐一双既防水有透气的一款德国ＬＯＷＡ登山鞋，它采用戈尔特斯新型防水面料，二层牛皮／聚酯纤维的拼接，最主要的是上脚较轻而且特别的舒适。
 %footer
-  .price
-    ￥1938  
-  .buy  
-    = link_to "购买", "http://www.sanfo.com/hwyp/product/17286.html"
+  .buy
+    %i.icon-shopping-cart
+    = link_to "去三夫户外购买", "http://www.sanfo.com/hwyp/product/17286.html"
+  .collect
+    %i.icon-heart
+    = link_to "收集", "#"
   .share  
-    = link_to "分享", "#", class: "btn"
+    %i.icon-share
+    = link_to "分享", "#"
