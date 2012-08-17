@@ -2,12 +2,10 @@
   %h1 
     Meejian
     %small 觅见，更美好的生活
-    -# = image_tag "logo.png"
-    -# %h1 觅见，更美好的生活
   %nav
     %ul
-      %li.discover 通过达人发现有趣的产品
-      %li.collect 创建和分享自己的产品列表
+      %li.discover 通过有趣的人发现有趣的东西
+      %li.collect 展现和分享自己的生活方式
       %li.deal 进行物超所值的交易
 
 %section
@@ -34,10 +32,10 @@
     京ICP备12016027号
 
 %aside#signup
-  = form_tag signup_path, remote: true, 'data-type' => 'html', class: "form-inline" do
+  = form_tag signup_path, remote: true, 'data-type' => 'html' do
     = label_tag 'info', '觅见现在施工中，近期即将开放，请留下您的联系方式以便加入'
     = text_field_tag 'info', nil, required: true, placeholder: "邮件,微博/豆瓣/QQ帐号,或电话号码"
-    = submit_tag "加入觅见", class: "btn btn-primary"
+    = submit_tag "加入觅见"
 
 - content_for :script do
   :javascript

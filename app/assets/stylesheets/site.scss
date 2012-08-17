@@ -41,8 +41,9 @@
         margin: 0 auto;
 
         li {
-          width: 25%;
+          width: 23%;
           line-height: $story-height;
+          margin-left: 1%;
           padding-left: 8%;
           font-size: 14px;
           font-weight: bold;
@@ -121,33 +122,40 @@
     > * {margin: 5px;} }
 
   > aside#signup {
+    $signupColor: #eceef4;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 100px;
-    line-height: 100px;
+    padding: 30px 0;
+    line-height: 40px;
     border-top: 1px solid #ccc;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    background: #eceef4;
-    @include opacity(0.8);
-    &:hover { @include opacity(1); }
+    background: $signupColor;
+    @include background(rgba($signupColor, 0.8));
+    &:hover { background: $signupColor; }
 
-    label {
-      margin-right: 2em;
-      color: #666;
-      font-size: 14px;
-      font-weight: bold; }
+    form {
+      margin: 0;
+      @extend .form-inline;
 
-    input[type="text"] {
-      color: #999;
-      padding: .5em;
-      width: 250px; }
+      label {
+        margin-right: 2em;
+        color: #666;
+        font-size: 14px;
+        font-weight: bold; }
 
-    input[type="submit"] {
-      margin-left: 2em;
-      padding: .6em .8em; }
+      input[type="text"] {
+        color: #999;
+        padding: .5em;
+        width: 250px; }
+
+      input[type="submit"] {
+        @extend .btn;
+        @extend .btn-primary;
+        margin-left: 2em;
+        padding: .6em .8em; } }
 
     #success {
       color: #666;
