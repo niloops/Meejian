@@ -42,7 +42,3 @@ Meejian.lists.show = ->
     $('#lists-link').removeClass('active')
     $(this).fadeOut(600)
 
-  
-  #show all lists from beginning
-  #$('#lists-link').trigger('click')
-
