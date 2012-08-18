@@ -1,22 +1,30 @@
 $borderStyle: 1px solid #eee;
 $avatarSize: 80px;
+$productSize: 300px;
+
+.btn {
+  text-shadow: none;
+  font-weight: bold;
+  border: none;
+}
 
 a {
   color: $blue;
   font-weight: normal;
 
   &:focus {outline: none;}
-  &:visited {color: $blue;}
   &:hover {color: $blue;}
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 1.4em;
-  letter-spacing: 2px;
 }
 
-.list_title {
+.form-horizontal {
+}
+
+.list-title {
   font-size: 14px;
   margin-top: 10px;
   a {
@@ -26,20 +34,29 @@ h1 {
   small {font-size: 12px;}
 }
 
-.product_thumb {
+.product-thumb {
   img {
-    max-width: 200px;
-    //max-height: 150px;
+    width: $productSize;
+    max-height: 150px;
   }
 }
 
-.product_title {
-  font-weight: normal;
+.product-title {
   color: #666;
 }
 
-.product_desc {
+.product-desc {
   color: #888;
+}
+
+.product-create {
+  @extend .btn;
+  @extend .btn-primary;
+  @include buttonBackground($blue, darken($blue, 5%));
+}
+
+.list-edit-remove {
+  padding-top: .5em;
 }
 
 .price {
@@ -62,23 +79,21 @@ h1 {
 }
 
 .profile {
-  .profile_name {
+  .profile-name {
     display: block;
-    font-size: 18px;
-    letter-spacing: 2px;
+    font-size: 16px;
     color: #777;
     margin-bottom: .3em;
   }
 
-  .profile_desc {
+  .profile-desc {
     color:#999;
   }
 }
 
 #lists {
-  $columnWidth: 300px;
+  $columnWidth: $productSize;
   $gutterWidth: 30px;
-  $asideWidth: 200px;
 
   > * {float: left;}
 
@@ -99,6 +114,7 @@ h1 {
 
       h1 {
         padding-bottom: 10px;
+        font-size: 24px;
         small {
           color: white;
           font-size: 12px;
@@ -108,6 +124,10 @@ h1 {
 
     #author {
       @include clearfix;
+      #author-actions {
+        margin-bottom: $gutterWidth;
+        .list-edit-remove {float: right;}
+      }
     }
 
     #actions {
@@ -123,6 +143,7 @@ h1 {
           background: $unactiveBackground;
           color: #777;
           padding: 10px;
+          margin: 10px 0;
           width: $unactiveWidth;
           em {
             color: $blue;
@@ -172,7 +193,7 @@ h1 {
         border-bottom: $borderStyle;
         padding-bottom: 10px;
 
-        .product_thumb {
+        .product-thumb {
           img {
             max-width: $columnWidth;
             max-height: none;
@@ -210,8 +231,7 @@ h1 {
 
   > aside {
     padding: $gutterWidth;
-    width: $asideWidth;
-    background: lighten($blue, 50%);
+    width: $columnWidth;
     position: relative;
     @include transition(margin-left .6s ease 0s);
 

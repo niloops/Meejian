@@ -1,0 +1,20 @@
+%form
+  .control-group
+    = label_tag "title", "名称"
+    = text_field_tag 'title', "", required: true, placeholder: "请输入产品/服务名称", class: "input-large"
+  .control-group  
+    = label_tag "photo", "请上传产品图片"
+    = file_field_tag 'photo', accept: "image/png, image/jpeg, image/gif", class: "input-file"
+  .control-group
+    = label_tag "price", "价格"
+    .input-prepend
+      %span.add-on $
+      = text_field_tag 'price', "", required: true, placeholder: "", class: "input-small"
+  .control-group
+    = label_tag "link", "购买链接"
+    = text_field_tag 'link', "", placeholder: "http://", class: "input-xlarge"  
+  .control-group
+    = label_tag "desc", "评论"
+    = text_area_tag 'desc', "", class: "input-xlarge", rows: 5
+  = button_tag "发布", type: "submit", class: "btn btn-primary"
+  = button_tag "取消", type: "cancel", class: "btn"

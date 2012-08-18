@@ -1,0 +1,9 @@
+%ul
+  - 7.times do |i|
+    %li
+      - unless editor?
+        .product-thumb
+          = link_to image_tag("stubs/lowa.jpg")
+      .list-title
+        %a{href:"#"}
+          Cookie的三餐都吃最健康的<small>(9)</small>
