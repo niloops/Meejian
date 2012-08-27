@@ -5,6 +5,12 @@ Meejian::Application.routes.draw do
   get '/inviteds', to: 'site#inviteds'
   get '/list', to: 'lists#show'
 
+  match '/auth/:provider/callback' => 'sessions#create'
+  match '/auth/:provider/cancel' => 'sessions#cancel'
+  match '/auth/failure' => 'sessions#failure'
+  match '/signout' => 'sessions#destroy', as: :signout
+  match '/signin' => 'sessions#new', as: :signin
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
