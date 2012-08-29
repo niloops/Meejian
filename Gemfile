@@ -31,3 +31,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'mongoid-rspec'
 end
+
+group :development do
+  gem 'pry'
+end
