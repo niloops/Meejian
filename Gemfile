@@ -29,11 +29,15 @@ group :development, :test do
   gem 'capybara'
   gem 'fabrication'
   gem 'faker'
-  #gem 'spork'
-  #gem 'guard-spork'
+  gem 'spork'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
   gem 'database_cleaner'
-  #gem 'rb-inotify'
-  #gem 'libnotify'
+  gem 'rb-fsevent'
+  gem 'growl'
+  gem 'rb-inotify'
+  gem 'libnotify'
 end
 
 group :development do

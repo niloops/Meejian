@@ -55,5 +55,8 @@ module Meejian
       g.view_specs false
       g.helper_specs false
     end
+
+    #Add linux|darwin group to bundler
+    Bundler.require RUBY_PLATFORM.match(/(linux|darwin)/)[0].to_sym
   end
 end
