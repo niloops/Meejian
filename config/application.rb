@@ -54,6 +54,9 @@ module Meejian
       g.assets false
       g.view_specs false
       g.helper_specs false
+
+      g.test_framework      :rspec, fixture: true
+      g.fixture_replacement :fabrication
     end
 
     #Add linux|darwin group to bundler
