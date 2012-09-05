@@ -10,6 +10,7 @@ Meejian::Application.routes.draw do
   match '/auth/:provider/cancel' => 'sessions#cancel'
   match '/auth/failure' => 'sessions#failure'
   match '/signin' => 'users#new', as: :signin
+  match '/home' => 'users#show', as: :home
 
   resources :users, only: [:show, :update]
 
