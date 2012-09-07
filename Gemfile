@@ -22,6 +22,7 @@ group :assets do
   gem 'uglifier'
   gem 'compass-rails'
   gem 'bootstrap-sass'
+  gem 'handlebars_assets'
 end
 
 group :development, :test do

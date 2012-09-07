@@ -17,6 +17,7 @@
 #= require bootstrap 
 #= require underscore
 #= require backbone
+#= require handlebars.runtime
 #= require meejian
 #= require_tree ../templates
 #= require_tree ./models
