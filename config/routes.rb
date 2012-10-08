@@ -14,6 +14,8 @@ Meejian::Application.routes.draw do
 
   resources :users, only: [:show, :update]
 
+  resources :topics
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,6 @@
+'zh-CN':
+  simple_form:
+    labels:
+      topic:
+        title: '标题'
+        desc: '描述'
