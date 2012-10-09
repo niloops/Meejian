@@ -5,6 +5,7 @@ class Topic
 
   field :title, type: String
   field :desc, type: String
+  field :questions, type: Array, default: []
 
   slug :title
 

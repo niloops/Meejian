@@ -24,8 +24,7 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update_attributes(params[:topic])
-      flash[:success] = "话题#{@topic.title}修改成功"
-      redirect_to topics_path
+      redirect_to topic_path(@topic)
     else
       render 'new'
     end

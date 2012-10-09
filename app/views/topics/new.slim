@@ -1,5 +1,7 @@
-h1 新建话题
 = simple_form_for @topic do |f|
   = f.input :title
   = f.input :desc, as: :text, input_html: {rows: 10}
+  = f.input :questions do
+    - @topic.questions.each_index do |i|
+      = text_area_tag 'topic[questions][]', @topic.questions[i], id: "question-#{i}"
   = f.button :submit

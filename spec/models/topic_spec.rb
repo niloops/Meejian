@@ -8,4 +8,5 @@ describe Topic do
   subject {@topic}
 
   it {should be_valid}
+  it {should have(3).questions}
 end

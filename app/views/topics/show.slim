@@ -1,2 +1,6 @@
 h1= @topic.title
 p= @topic.desc
+ul
+  - @topic.questions.each do |question|
+    li= question
+  
