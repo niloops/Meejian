@@ -9,6 +9,8 @@ class Authentication
   field :current, type: Boolean, default: false
   embedded_in :user
 
+  attr_accessible
+
   validates :provider, presence: true
   validates :uid, presence: true
   validates :name, presence: true

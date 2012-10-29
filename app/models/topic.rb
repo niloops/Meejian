@@ -7,6 +7,8 @@ class Topic
   field :desc, type: String
   field :questions, type: Array, default: []
 
+  attr_accessible :title, :desc, :questions
+
   slug :title
 
   validates :title, presence: true, uniqueness: true

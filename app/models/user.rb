@@ -4,6 +4,8 @@ class User
   field :token, type: String
   field :email, type: String
 
+  attr_accessible :email
+
   embeds_many :authentications
   index({"authentications.provider" => 1, "authentications.uid" => 1})
 
