@@ -1,19 +1,21 @@
 doctype html
 html
   head
-    meta(charset="utf-8")
-    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
     title 觅见#{page_title(yield(:title))}
-    meta(name="author" content="lilu.life@gmail.com")
-    meta(name="description" content="觅见-让爱好者们分享生活中精品的社交导购服务")
-    meta(name="viewport" content="width=device-width,initial-scale=1")
-    meta(property="wb:webmaster" content="dff95ce0492c84c9")
+    meta name="author" content="lilu.life@gmail.com"
+    meta name="description" content="觅见-#{slogan}"
+    meta name="viewport" content="width=device-width,initial-scale=1"
     = favicon_link_tag '/favicon.png', type: 'image/png'
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  body(id=params[:controller])
-    = yield
+  body
+    = render 'layouts/header'
+    .container
+      = yield
+    = render 'layouts/footer'
     = yield :script
     javascript:
       var _gaq = [['_setAccount', 'UA-32662683-1'], ['_trackPageview']];

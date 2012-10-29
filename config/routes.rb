@@ -1,10 +1,11 @@
 Meejian::Application.routes.draw do
-  root to: 'site#index'
+  get "home/index"
 
-  post '/signup', to: 'site#signup'
+  devise_for :users
+
+  root to: 'home#index'
+
   get '/inviteds', to: 'site#inviteds'
-
-  resources :users, only: [:show, :update]
 
   resources :topics
 

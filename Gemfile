@@ -4,7 +4,7 @@ gem 'rails'
 gem 'rails-i18n'
 gem 'mongoid', '~> 3.0.0'
 gem 'mongoid_slug'
-gem 'slim'
+gem 'slim-rails'
 gem 'jquery-rails'
 gem 'backbone-on-rails'
 gem 'jbuilder'
@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'rails_autolink'
 gem 'client_side_validations'
 gem 'carrierwave'
+gem 'devise'
 gem 'capistrano'
 gem 'rvm-capistrano'
 
@@ -40,8 +41,4 @@ group :development, :test do
   gem 'growl'
   gem 'rb-inotify'
   gem 'libnotify'
-end
-
-group :development do
-  gem 'pry'
 end

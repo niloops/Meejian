@@ -11,7 +11,5 @@
  *= require_self
 */
 
-@import "site";
-@import "lists";
-@import "users";
-
+@import "base";
+@import "user";
