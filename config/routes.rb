@@ -4,14 +4,6 @@ Meejian::Application.routes.draw do
   post '/signup', to: 'site#signup'
   get '/inviteds', to: 'site#inviteds'
 
-  get '/list', to: 'lists#show'
-
-  match '/auth/:provider/callback' => 'sessions#create'
-  match '/auth/:provider/cancel' => 'sessions#cancel'
-  match '/auth/failure' => 'sessions#failure'
-  match '/signin' => 'users#new', as: :signin
-  match '/home' => 'users#show', as: :home
-
   resources :users, only: [:show, :update]
 
   resources :topics

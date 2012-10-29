@@ -53,7 +53,6 @@ module Meejian
     config.generators do |g|
       g.assets false
       g.view_specs false
-      g.helper_specs false
 
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :fabrication
