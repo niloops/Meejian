@@ -37,8 +37,14 @@ group :development, :test do
   gem 'guard-jasmine'
   gem 'guard-livereload'
   gem 'database_cleaner'
-  gem 'rb-fsevent'
-  gem 'growl'
+end
+
+group :linux do
   gem 'rb-inotify'
   gem 'libnotify'
+end
+
+group :darwin do
+  gem 'rb-fsevent'
+  gem 'growl'
 end
