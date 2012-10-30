@@ -24,6 +24,7 @@ group :assets do
   gem 'compass-rails'
   gem 'bootstrap-sass'
   gem 'handlebars_assets'
+  gem 'font-awesome-sass-rails'
 end
 
 group :development, :test do

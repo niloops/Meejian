@@ -1,0 +1,16 @@
+@import "base";
+
+#login_header {
+  text-align: center;
+}
+
+#login_form {
+  float: right;
+  background: $headerBackgroundColor;
+  margin: 2em 0;
+  padding: 2em;
+
+  input[type="text"], input[type="password"] {
+    @extend .input-medium;
+  }
+}

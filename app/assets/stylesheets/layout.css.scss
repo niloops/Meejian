@@ -1,0 +1,40 @@
+@import "base";
+
+#page_header {
+  #content_header {
+    background: $headerBackgroundColor;
+    padding: 2em 0;
+  }
+}
+
+#page_footer {
+  @include clearfix();
+  background: $headerBackgroundColor;
+  margin-top: 2em;
+  padding: 2em 0;
+
+  nav {
+    float: left;
+    color: darken($headerBackgroundColor, 25%);
+  }
+  hgroup.slogan {
+    float: right;
+  }
+}
+
+hgroup.slogan {
+  h1 {
+    display: inline-block;
+  }
+
+  h2 {
+    $fontColor: $taglineColor;
+    display: inline-block;
+    color: $fontColor;
+    margin-left: 1em;
+    line-height: 1em;
+    border-left: 1px solid $fontColor;
+    padding-left: 1em;
+  }
+}
+

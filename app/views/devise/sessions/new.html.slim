@@ -1,0 +1,23 @@
+- content_for :header do
+  hgroup#login_header.slogan
+    h1= brand 
+    h2= slogan
+
+section#login_form
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
+    legend 登入#{brand}
+    = f.input :email, label:false, wrapper: :append do
+      span.add-on
+        i.icon-envelope
+      = f.input_field :email, placeholder: "请输入您的邮箱地址", autofocus: true
+    = f.input :password, label:false, wrapper: :append do
+      span.add-on
+        i.icon-key
+      = f.input_field :password, placeholder: "请输入您的密码"
+    - if devise_mapping.rememberable?
+      = f.input :remember_me, as: :boolean, label: false, inline_label: true
+    = alert
+    = f.button :submit, "登陆", class: "btn-primary"
+
+  / TODO: 功能基本完成后再开放注册 
+  /= render "devise/shared/links" 

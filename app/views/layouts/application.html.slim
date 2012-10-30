@@ -14,7 +14,8 @@ html
   body
     = render 'layouts/header'
     .container
-      = yield
+      section#content
+        = yield
     = render 'layouts/footer'
     = yield :script
     javascript:

@@ -5,3 +5,10 @@
         title: '标题'
         desc: '描述'
         questions: '问题'
+      user:
+        email: '邮箱'
+        password: '密码'
+        remember_me: '记住我'
+    placeholders:
+      user:
+        email: '请输入您的邮箱地址'

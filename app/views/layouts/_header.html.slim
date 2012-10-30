@@ -1,2 +1,6 @@
 header#page_header
-  
+  - if user_signed_in?
+    nav 
+      = current_user.email
+      = link_to "登出", destroy_user_session_path, method: :delete
+  section#content_header= yield :header

@@ -1,0 +1,50 @@
+// Customize default variables 
+$baseFontFamily: "Hiragino Sans GB", "Microsoft YaHei", Helvetica, sans-serif;
+$baseFontSize: 13px;
+$baseLineHeight: 22px;
+$linkColor: #019CCE;
+$headingsColor: $linkColor;
+$headingsFontWeight: normal;
+$btnPrimaryBackground: lighten($linkColor, 10%);
+
+// Project specified variables
+$headerBackgroundColor: #f7f7f7;
+$taglineColor: darken($headerBackgroundColor, 30%);
+$baseFontColor: #333;
+$baseLightColor: lighten($baseFontColor, 30%);
+
+@import "bootstrap";
+@import "font-awesome";
+@import "compass/css3";
+
+ul, ol {
+  list-style: none; 
+  margin: 0; 
+}
+
+a {
+  font-weight: bold;
+  &:focus {outline: none;}
+}
+
+input {
+  &:focus {outline: none !important;} 
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+form {
+  legend {
+    color: $headingsColor;
+  }
+
+  label {
+    color: $baseLightColor;
+  }
+}
