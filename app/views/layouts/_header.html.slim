@@ -1,6 +1,12 @@
 header#page_header
   - if user_signed_in?
-    nav 
-      = current_user.email
-      = link_to "登出", destroy_user_session_path, method: :delete
-  section#content_header= yield :header
+    .navbar.navbar-static-top.navbar-inverse
+      .navbar-inner
+        .container
+          = link_to brand, root_path, class: "brand"
+          = render 'layouts/search_form'
+          = render 'layouts/main_nav'
+      
+  - if content_for? :header
+    section#content_header= yield :header
+

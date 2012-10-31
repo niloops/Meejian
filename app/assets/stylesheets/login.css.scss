@@ -10,7 +10,15 @@
   margin: 2em 0;
   padding: 2em;
 
+  .control-group {
+    margin: 1.5em 0;
+  }
+
   input[type="text"], input[type="password"] {
     @extend .input-medium;
+  }
+
+  input[type="submit"] {
+    margin-right: 3em;
   }
 }

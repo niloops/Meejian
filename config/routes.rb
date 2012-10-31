@@ -1,5 +1,4 @@
 Meejian::Application.routes.draw do
-  get "home/index"
 
   devise_for :users, skip: [:sessions]
   as :user do
@@ -8,11 +7,13 @@ Meejian::Application.routes.draw do
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
+  resources :users, only: [:show, :edit, :update]
+
   root to: 'home#index'
 
-  get '/inviteds', to: 'site#inviteds'
-
   resources :topics
+
+  get '/inviteds', to: 'site#inviteds'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

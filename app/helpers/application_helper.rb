@@ -18,4 +18,9 @@ module ApplicationHelper
              'data-dismiss' => alert) + flash[alert]
     end if flash[alert]
   end
+
+  def nav_tab(tab, options = {})
+    options[:class] = 'active' if content_for(:nav_tab) == tab
+    content_tag(:li, options) {yield}
+  end
 end

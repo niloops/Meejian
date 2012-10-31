@@ -17,7 +17,9 @@ section#login_form
     - if devise_mapping.rememberable?
       = f.input :remember_me, as: :boolean, label: false, inline_label: true
     = alert
-    = f.button :submit, "登陆", class: "btn-primary"
-
-  / TODO: 功能基本完成后再开放注册 
-  /= render "devise/shared/links" 
+    = f.button :submit, "登陆", class: "btn btn-primary"
+    / TODO: 功能基本完成后再开放注册 
+    = link_to "注册", new_registration_path(resource_name), class: 'btn btn-link'
+    
+    
+  

@@ -1,0 +1,12 @@
+h2 编辑个人信息
+
+= simple_form_for(@user) do |f| 
+  = f.error_notification 
+  = f.input :name
+  = f.input :job
+  = f.input :interests
+  = f.input :location
+  = f.input :description, as: :text, input_html: {rows: 5}
+  = f.button :submit, "提交修改" 
+
+= link_to "返回", :back

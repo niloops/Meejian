@@ -8,7 +8,17 @@
       user:
         email: '邮箱'
         password: '密码'
+        password_confirmation: '密码确认'
+        current_password: '当前密码'
+        name: '姓名'
         remember_me: '记住我'
+        job: '职业'
+        interests: '兴趣'
+        location: '地点'
+        description: '自我描述'
     placeholders:
       user:
         email: '请输入您的邮箱地址'
+        name: '请输入您的姓名'
+        password: '请输入您的密码'
+        password_confirmation: '请再次输入您的密码确认'
