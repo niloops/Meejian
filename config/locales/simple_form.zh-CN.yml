@@ -12,6 +12,7 @@
         current_password: '当前密码'
         name: '姓名'
         remember_me: '记住我'
+        avatar: '头像'
         job: '职业'
         interests: '兴趣'
         location: '地点'

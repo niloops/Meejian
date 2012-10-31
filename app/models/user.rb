@@ -13,7 +13,7 @@ class User
   validates_presence_of :encrypted_password
   validates :name, presence: true, length: {minimum: 2, maximum: 10}
 
-  attr_protected :email, :encrypted_password
+  attr_protected :encrypted_password
 
   ## Rememberable
   field :remember_created_at, type: Time
@@ -30,4 +30,6 @@ class User
   field :interests, type: String, default: ""
   field :location, type: String, default: ""
   field :description, type: String, default: ""
+
+  mount_uploader :avatar, AvatarUploader
 end
