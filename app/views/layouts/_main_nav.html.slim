@@ -12,6 +12,8 @@ nav#main_nav
         = current_user.name
         i.icon-caret-down
       ul.dropdown-menu
+        li= link_to '我的个人页', user_path(current_user)
         li= link_to '编辑个人信息', edit_user_path(current_user)
         li= link_to '修改帐号密码', edit_user_registration_path
+        li= link_to '+添加产品', new_product_path
         li= link_to '登出', destroy_user_session_path, method: :delete

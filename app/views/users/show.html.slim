@@ -1,4 +1,7 @@
-h1= @user.name
+- content_for :header do
+  h1= @user.name
+
+#user_info
 = user_avatar_tag @user, :big
 ul
   li= @user.email

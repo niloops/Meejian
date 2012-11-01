@@ -8,5 +8,6 @@ header#page_header
           = render 'layouts/main_nav'
       
   - if content_for? :header
-    section#content_header= yield :header
+    section#content_header
+      .container= yield :header
 

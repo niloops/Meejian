@@ -1,0 +1,5 @@
+h1= @product.title
+= product_photo_tag @product, :huge
+p= @product.price
+p= @product.shop
+= link_to '编辑', edit_product_path(@product)

@@ -1,6 +1,4 @@
-# encoding: utf-8
-
-class AvatarUploader < CarrierWave::Uploader::Base
+class PhotosUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -13,18 +11,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
   storage :upyun
   # storage :fog
 
-  self.upyun_bucket = "meejian-user-avatar"
-  self.upyun_bucket_domain = "meejian-user-avatar.b0.upaiyun.com"
+  self.upyun_bucket = "meejian-photos"
+  self.upyun_bucket_domain = "meejian-photos.b0.upaiyun.com"
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "#{model.class.to_s.underscore}"
+    "#{model.class.to_s.underscore.pluralize}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "http://#{upyun_bucket_domain}/default.png#{version_name}"
+    "http://#{upyun_bucket_domain}/#{store_dir}/default.png#{version_name}"
   end
 
   # Override url method to implement with "Image Space"

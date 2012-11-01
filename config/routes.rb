@@ -9,6 +9,8 @@ Meejian::Application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
 
+  resources :products
+
   root to: 'home#index'
 
   resources :topics

@@ -31,5 +31,8 @@ class User
   field :location, type: String, default: ""
   field :description, type: String, default: ""
 
-  mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, PhotosUploader
+
+  ## Relations
+  has_many :creations, class_name: "Product", inverse_of: :creator
 end

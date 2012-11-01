@@ -2,6 +2,8 @@ zh-CN:
   mongoid:
     models:
       user: '用户'
+      topic: '主题'
+      product: '产品'
   errors:
     messages:
       extension_white_list_error: '上传文件名称格式不正确'
