@@ -23,4 +23,8 @@ module ApplicationHelper
     options[:class] = 'active' if content_for(:nav_tab) == tab
     content_tag(:li, options) {yield}
   end
+
+  def user_avatar_tag(user, version = nil, options = {})
+    image_tag user.avatar_url(version), options
+  end
 end

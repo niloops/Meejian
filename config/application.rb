@@ -60,8 +60,5 @@ module Meejian
 
     #Add linux|darwin group to bundler
     Bundler.require RUBY_PLATFORM.match(/(linux|darwin)/)[0].to_sym
-
-    #carrierwave filename sanitize
-    CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
   end
 end

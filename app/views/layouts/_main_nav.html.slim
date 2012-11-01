@@ -7,8 +7,10 @@ nav#main_nav
     = nav_tab 'topics_new' do
       = link_to '最新访谈', topics_path
     = nav_tab 'current_user', class: 'dropdown' do
-      = link_to current_user.name, '#', class: 'dropdown-toggle', 
-      'data-toggle' => 'dropdown'
+      = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do
+        = user_avatar_tag current_user, :small, class: 'avatar_tiny'
+        = current_user.name
+        i.icon-caret-down
       ul.dropdown-menu
         li= link_to '编辑个人信息', edit_user_path(current_user)
         li= link_to '修改帐号密码', edit_user_registration_path

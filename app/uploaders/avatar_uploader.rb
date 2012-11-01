@@ -24,10 +24,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    image_path([mounted_as, version_name, "default.png"].compact.join('_'))
+    "http://#{upyun_bucket_domain}/default.png#{version_name}"
   end
 
   # Override url method to implement with "Image Space"
+  def url(version_name = nil)
+    @url ||= super({})
+    [@url, version_name].compact.join('!')
+  end
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
@@ -50,9 +54,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    # current_path 是 Carrierwave 上传过程临时创建的一个文件，有时间标记，所以它将是唯一的
-    @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
-    "#{@name}.#{file.extension.downcase}"
+    if super.present?
+      @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
+      "#{@name}.#{file.extension.downcase}"
+    end
   end
-
 end

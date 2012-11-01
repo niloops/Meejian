@@ -1,6 +1,15 @@
 @import "base";
 
+.avatar_tiny {
+  width: 25px;
+  height: 25px;
+}
+
 #page_header {
+  #main_nav {
+    img { margin: 0 2em;}
+  }
+
   #content_header {
     background: $headerBackgroundColor;
     padding: 2em 0;
@@ -37,4 +46,3 @@ hgroup.slogan {
     padding-left: 1em;
   }
 }
-

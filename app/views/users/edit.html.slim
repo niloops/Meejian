@@ -3,7 +3,7 @@ h2 编辑个人信息
 = simple_form_for(@user, html: { multipart: :true }) do |f| 
   = f.error_notification 
   = f.input :name
-  = image_tag(@user.avatar_url, width: 80, height: 80) 
+  = user_avatar_tag @user, :medium
   = f.input :avatar, as: :file
   = f.input :remote_avatar_url, label: "或者填入url"
   = f.input :avatar_cache, as: :hidden
