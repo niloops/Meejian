@@ -1,11 +1,22 @@
 - content_for :header do
   h1= @user.name
 
-#user_info
-= user_avatar_tag @user, :big
-ul
-  li= @user.email
-  li= @user.job
-  li= @user.interests
-  li= @user.location
-  li= @user.description
+header#user_details
+  = user_avatar_tag @user, :big
+  dl.dl-horizontal
+    dt 职业: 
+    dd= @user.job
+    dt 来自: 
+    dd= @user.location
+    dt 爱好:
+    dd= @user.interests
+  blockquote
+    p= @user.description
+    
+section#user_collects
+  h2 #{@collects.count}个收藏
+  ul
+    - @collects.take(5).each do |product|
+      li= product_photo_tag product, :medium
+    
+  

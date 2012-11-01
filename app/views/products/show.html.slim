@@ -1,5 +1,13 @@
-h1= @product.title
-= product_photo_tag @product, :huge
-p= @product.price
-p= @product.shop
-= link_to '编辑', edit_product_path(@product)
+- content_for :header do
+  hgroup#product_header
+    h1= @product.title
+    small.price #{@product.price}元
+  #product_controls
+    = link_to @product.shop, class: 'btn btn-success' do
+      i.icon-shopping-cart
+      |  购买
+    
+article
+  section= product_photo_tag @product, :huge
+  footer
+    = link_to '编辑', edit_product_path(@product)

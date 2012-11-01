@@ -1,0 +1,23 @@
+@import 'base';
+
+#user_details {
+  margin: 2em 0;
+
+  dl {
+    display: inline-block;
+    width: 30%;
+    dt {width: 100px;}
+  }
+
+  blockquote {
+    float: right;
+    width: 40%;
+  }
+}
+
+#user_collects {
+  li {
+    float: left;
+    a {margin-right: 10px;}
+  }
+}
