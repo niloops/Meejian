@@ -1,0 +1,10 @@
+- content_for :header do
+  hgroup#topic_header
+    h1= @topic.title
+    h2= @topic.subtitle
+    p=  @topic.description
+    
+ul
+  - @topic.questions.each do |question|
+    li= question
+  

@@ -1,0 +1,12 @@
+- content_for :header do
+  h1 创建主题
+
+= simple_form_for @topic do |f|
+  = f.input :title
+  = f.input :subtitle
+  = f.input :description, as: :text, input_html: {rows: 10}
+  = f.input :interactive, as: :boolean, inline_label: "用户可以参与"
+  / = f.input :questions do
+  /   - @topic.questions.each_index do |i|
+  /     = text_area_tag 'topic[questions][]', @topic.questions[i], id: "question-#{i}"
+  = f.button :submit

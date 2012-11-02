@@ -20,8 +20,10 @@
         photo: '图片'
       topic:
         title: '标题'
-        desc: '描述'
-        questions: '问题'
+        subtitle: '副标题'
+        description: '描述'
+        interactive: '用户互动'
+        questions: '问题列表'
     placeholders:
       user:
         email: '请输入您的邮箱地址'

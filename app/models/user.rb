@@ -35,4 +35,5 @@ class User
 
   ## Relations
   has_many :creations, class_name: "Product", inverse_of: :creator
+  has_many :editable_topics, class_name: "Topic", inverse_of: :editor
 end

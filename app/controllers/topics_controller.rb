@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class TopicsController < ApplicationController
-  layout "admin"
+  before_filter :authenticate_user!
 
   def new
     @topic = Topic.new
@@ -8,12 +8,17 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params[:topic])
+    @topic.editor = current_user
     if @topic.save
       flash[:success] = "话题#{@topic.title}创建成功"
-      redirect_to topics_path
+      redirect_to topic_path(@topic)
     else
       render 'new'
     end
+  end
+
+  def show
+    @topic = Topic.find(params[:id])
   end
 
   def edit
@@ -39,9 +44,5 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.desc(:created_at)
-  end
-
-  def show
-    @topic = Topic.find(params[:id])
   end
 end

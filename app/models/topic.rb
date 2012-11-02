@@ -3,14 +3,16 @@ class Topic
   include Mongoid::Timestamps
   include Mongoid::Slug
 
-  field :title, type: String
-  field :desc, type: String
+  field :title, type: String, default: ""
+  field :subtitle, type: String, default: ""
+  field :description, type: String, default: ""
   field :questions, type: Array, default: []
-
-  attr_accessible :title, :desc, :questions
+  field :interactive, type: Boolean, default: true
 
   slug :title
 
   validates :title, presence: true, uniqueness: true
-  validates :desc, presence: true
+  validates :subtitle, presence: true
+
+  belongs_to :editor, class_name: "User", inverse_of: :editable_topic
 end

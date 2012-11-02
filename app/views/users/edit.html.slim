@@ -1,4 +1,5 @@
-h2 编辑个人信息
+- content_for :header do
+  h1 编辑个人信息
 
 = simple_form_for(@user, html: { multipart: :true }) do |f| 
   = f.error_notification 

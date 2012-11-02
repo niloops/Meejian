@@ -1,5 +1,6 @@
 Fabricator(:topic) do
   title "Title"
-  desc "Description"
+  subtitle "Subtitle"
+  description "Description"
   questions(count: 3) {|attrs, i| "question-#{i}"}
 end
