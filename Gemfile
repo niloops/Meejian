@@ -40,6 +40,7 @@ group :development, :test do
   gem 'guard-jasmine'
   gem 'guard-livereload'
   gem 'database_cleaner'
+  gem 'thin'
 end
 
 group :linux do

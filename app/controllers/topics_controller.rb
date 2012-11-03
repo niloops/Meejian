@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
+    @questions = [""]
   end
 
   def create
@@ -23,6 +24,7 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    @questions = @topic.questions
     render 'new'
   end
 

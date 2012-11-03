@@ -6,7 +6,23 @@
   = f.input :subtitle
   = f.input :description, as: :text, input_html: {rows: 10}
   = f.input :interactive, as: :boolean, inline_label: "用户可以参与"
-  / = f.input :questions do
-  /   - @topic.questions.each_index do |i|
-  /     = text_area_tag 'topic[questions][]', @topic.questions[i], id: "question-#{i}"
-  = f.button :submit
+  fieldset
+    legend 问题列表
+    .control-group
+      .controls= button_tag "+问题", type: 'button', id: 'add_question', class: 'btn'
+    - @questions.each_with_index do |q, i|
+      .control-group.question_input
+        .controls= text_field_tag('topic[questions][]', q, id: "question_#{i}", class: "input-xlarge")
+  = f.button :submit, class: 'btn-primary'
+
+- content_for :script do
+  coffee:
+    $ ->
+      $('#add_question').click ->
+        question_last = $('.question_input:last')
+        question_last.clone()
+          .find('input').attr('id', ->
+            id_arr = $(this).attr('id').split('_')
+            _.first(id_arr) + '_' + (parseInt(_.last(id_arr)) + 1)
+          ).end()
+          .insertAfter(question_last)
