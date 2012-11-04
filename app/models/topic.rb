@@ -15,4 +15,6 @@ class Topic
   validates :subtitle, presence: true
 
   belongs_to :editor, class_name: "User", inverse_of: :editable_topic
+
+  before_validation { questions.reject! {|i| i.blank?} }
 end

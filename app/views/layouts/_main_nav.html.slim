@@ -3,9 +3,7 @@ nav#main_nav
     = nav_tab 'home' do
       = link_to '主页', root_path
     = nav_tab 'topics_all' do
-      = link_to '所有主题', topics_path
-    = nav_tab 'topics_new' do
-      = link_to '最新访谈', topics_path
+      = link_to '主题浏览', topics_path
     = nav_tab 'current_user', class: 'dropdown' do
       = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do
         = user_avatar_tag current_user, :small, class: 'avatar_tiny'
@@ -16,4 +14,5 @@ nav#main_nav
         li= link_to '编辑个人信息', edit_user_path(current_user)
         li= link_to '修改帐号密码', edit_user_registration_path
         li= link_to '+添加产品', new_product_path
+        li= link_to '+创建主题', new_topic_path
         li= link_to '登出', destroy_user_session_path, method: :delete

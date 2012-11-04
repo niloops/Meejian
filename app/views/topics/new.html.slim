@@ -21,8 +21,8 @@
       $('#add_question').click ->
         question_last = $('.question_input:last')
         question_last.clone()
-          .find('input').attr('id', ->
+          .find('input').val('').attr('id', ->
             id_arr = $(this).attr('id').split('_')
-            _.first(id_arr) + '_' + (parseInt(_.last(id_arr)) + 1)
+            id_arr[0] + '_' + (parseInt(id_arr[1]) + 1)
           ).end()
           .insertAfter(question_last)

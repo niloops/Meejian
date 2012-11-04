@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update_attributes(params[:product])
+      flash[:success] = "产品#{@product.title}修改成功"
       redirect_to product_path(@product)
     else
       render 'new'

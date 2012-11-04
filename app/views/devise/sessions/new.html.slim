@@ -3,6 +3,8 @@
     h1= brand 
     h2= slogan
 
+- provide :custom_notification?, true
+
 section#login_form
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
     legend 登入#{brand}
@@ -16,7 +18,7 @@ section#login_form
       = f.input_field :password, placeholder: "请输入您的密码"
     - if devise_mapping.rememberable?
       = f.input :remember_me, as: :boolean, label: false, inline_label: true
-    = alert
+    = notification
     = f.button :submit, "登陆", class: "btn btn-primary"
     / TODO: 功能基本完成后再开放注册 
     = link_to "注册", new_registration_path(resource_name), class: 'btn btn-link'

@@ -12,14 +12,10 @@ class TopicsController < ApplicationController
     @topic.editor = current_user
     if @topic.save
       flash[:success] = "话题#{@topic.title}创建成功"
-      redirect_to topic_path(@topic)
+      redirect_to @topic
     else
       render 'new'
     end
-  end
-
-  def show
-    @topic = Topic.find(params[:id])
   end
 
   def edit
@@ -31,10 +27,15 @@ class TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update_attributes(params[:topic])
-      redirect_to topic_path(@topic)
+      flash[:success] = "话题#{@topic.title}修改成功"
+      redirect_to @topic
     else
       render 'new'
     end
+  end
+
+  def show
+    @topic = Topic.find(params[:id])
   end
 
   def destroy
