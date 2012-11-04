@@ -1,0 +1,13 @@
+header#user_details
+  = user_avatar_tag user, :big
+  dl.dl-horizontal
+    dt 名字:
+    dd= user.name
+    dt 职业: 
+    dd= user.job
+    dt 来自: 
+    dd= user.location
+    dt 爱好:
+    dd= user.interests
+  blockquote
+    p= user.description

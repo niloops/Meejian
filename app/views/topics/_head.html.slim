@@ -1,0 +1,10 @@
+hgroup#topic_header
+  h1= @topic.title
+  - if details
+    .controls 
+      = link_to "参与", new_topic_interview_path(@topic), class: "btn btn-primary"
+      = link_to "编辑", edit_topic_path(@topic), class: "btn btn-warning"
+      = link_to "删除", @topic, class: "btn btn-danger", method: :delete, confirm: "真的要删除吗?"
+  h2= @topic.subtitle
+  - if details
+    p=  @topic.description 

@@ -13,7 +13,9 @@ Meejian::Application.routes.draw do
 
   root to: 'home#index'
 
-  resources :topics
+  resources :topics do
+    resources :interviews, except: [:index]
+  end
 
   get '/inviteds', to: 'site#inviteds'
 

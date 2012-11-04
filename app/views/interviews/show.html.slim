@@ -1,0 +1,17 @@
+- content_for :header do
+  = render partial: "topics/head", locals: { details: false }
+
+= render partial: "users/head", locals: {user: @author}
+
+- if current_user == @author
+  .controls 
+    = link_to "编辑", edit_topic_interview_path(@topic, @interview)
+    | |
+    = link_to "删除", topic_interview_path(@topic, @interview), method: :delete, confirm: "您真的要删除吗?"
+
+ul#topic_answers
+  - @interview.valid_answers.each do |a|
+    li
+      h3= a.question
+      p= a.answer
+    

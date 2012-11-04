@@ -1,0 +1,2 @@
+Fabricator(:interview) do
+end

@@ -13,7 +13,7 @@
     - @questions.each_with_index do |q, i|
       .control-group.question_input
         .controls= text_field_tag('topic[questions][]', q, id: "question_#{i}", class: "input-xlarge")
-  = f.button :submit, class: 'btn-primary'
+  = f.button :submit, class: 'btn btn-primary'
 
 - content_for :script do
   coffee:

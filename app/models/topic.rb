@@ -16,5 +16,7 @@ class Topic
 
   belongs_to :editor, class_name: "User", inverse_of: :editable_topic
 
+  has_many :interviews
+
   before_validation { questions.reject! {|i| i.blank?} }
 end
