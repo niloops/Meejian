@@ -10,9 +10,16 @@ article.interview {
   padding: 1em 0;
 }
 
+form.new_interview, form.edit_interview {
+  textarea {width: 60%;}
+}
+
 #recommend_interviews {
   li {
     margin: 1em 0;
+    .ref_products {
+      margin-left: 10em;
+    }
   }
 }
 
@@ -22,3 +29,4 @@ article.interview {
     margin: 1em 1em 1em 0;
   }
 }
+

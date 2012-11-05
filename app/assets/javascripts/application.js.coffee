@@ -16,5 +16,7 @@
 #= require jquery.placeholder
 #= require bootstrap 
 #= require underscore
+#= require bootstrap-wysihtml5
+#= require bootstrap-wysihtml5.zh-CN
 #= require meejian
 #= require_tree .

@@ -5,6 +5,17 @@ h2 参与访谈
 
 = simple_form_for [@topic, @interview] do |f|
   = f.simple_fields_for :answers do |answer_fields|
-    = answer_fields.input :answer, as: :text, label: answer_fields.object.question, input_html: {rows: 10}
+    = answer_fields.input :answer, as: :text, label: answer_fields.object.question, 
+    input_html: {rows: 10, class: 'wysihtml5'}
     = answer_fields.input :question, as: :hidden
   = f.button :submit, class: 'btn btn-primary'
+
+- content_for :script do
+  coffee:
+    $ ->
+      $('.wysihtml5').each (i, e) ->
+        $(e).wysihtml5
+          "font-styles": false,
+          "emphasis": false,
+          "lists": false,
+          locale: "zh-CN"

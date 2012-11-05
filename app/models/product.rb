@@ -15,7 +15,7 @@ class Product
   validates :title, presence: true, uniqueness: true
   validates :shop, presence: true
   validates :photo, presence: true
-  validates :price, presence: true, numericality: { greater_than: 0.01 }
+  validates :price, presence: true, numericality: { greater_than: -0.01 }
 
   belongs_to :creator, class_name: "User", inverse_of: :creation
 end
