@@ -10,3 +10,13 @@
     .btn {margin: 0 .5em;}
   }
 }
+
+hgroup.topic_title {
+  > * { display: inline-block; }
+  h4 {
+    color: $taglineColor;
+    margin-left: 1em;
+    border-left: 1px solid $splitColor;
+    padding-left: 1em;
+  }
+}

@@ -1,3 +1,7 @@
 - provide :nav_tab, 'home'
 - content_for :header do
-  h1 Hi, #{current_user.name}, welcome to #{brand}
+  h1 最新访谈
+
+ul#recommend_interviews
+  = render partial: "interviews/recommended_interview", collection: @interviews
+

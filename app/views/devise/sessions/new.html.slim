@@ -5,6 +5,8 @@
 
 - provide :custom_notification?, true
 
+= render "products/news"
+
 section#login_form
   = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
     legend 登入#{brand}

@@ -12,6 +12,7 @@ $headerBackgroundColor: #f7f7f7;
 $taglineColor: darken($headerBackgroundColor, 30%);
 $baseFontColor: #333;
 $baseLightColor: lighten($baseFontColor, 30%);
+$splitColor: $taglineColor;
 
 @import "bootstrap";
 @import "font-awesome";

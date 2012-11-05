@@ -16,8 +16,13 @@
 }
 
 #user_collects {
+  @include clearfix;
   li {
     float: left;
     a {margin-right: 10px;}
   }
+}
+
+#user_interviews {
+  margin: 2em 0;
 }

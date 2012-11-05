@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @collects = @user.creations
+    @interviews = @user.interviews
   end
 
   def edit

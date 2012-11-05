@@ -19,3 +19,13 @@
   width: 20%;
   margin-top: 1.5em;
 }
+
+#products_wall {
+  float: left;
+  width: 65%;
+  margin: 2em 0;
+  li {
+    float: left;
+    margin: 0 1em 1em;
+  }
+}

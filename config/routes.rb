@@ -14,7 +14,11 @@ Meejian::Application.routes.draw do
   root to: 'home#index'
 
   resources :topics do
-    resources :interviews, except: [:index]
+    resources :interviews, except: [:index] do
+      member do
+        post 'recommend_toggle'
+      end
+    end
   end
 
   get '/inviteds', to: 'site#inviteds'

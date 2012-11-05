@@ -1,16 +1,10 @@
-- content_for :header do
-  h1 全部主题
+- provide :nav_tab, 'topics'
 
-table.table.table-striped.table-hover.table-bordered
-  tr
-    th 标题
-    th 副标题
-    th 描述
-  - @topics.each do |topic|
-    tr
-      td= link_to topic.title, topic
-      td= topic.subtitle
-      td= topic.description.truncate(30)
+- content_for :header do
+  h1 主题浏览
+
+= render @topics
+
 
 
 

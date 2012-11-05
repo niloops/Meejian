@@ -1,0 +1,7 @@
+article.interview
+  header
+    = render interview.topic
+  section
+    ul= render interview.valid_answers.take(1)
+    = link_to "查看详细", topic_interview_path(interview.topic, interview)
+    

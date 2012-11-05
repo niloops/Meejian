@@ -1,5 +1,17 @@
+- provide :nav_tab, 'topics'
+
 - content_for :header do
   = render partial: "topics/head", locals: {details: true}
 
 h2 推荐访谈  
 
+ul#recommend_interviews
+  = render partial: "interviews/recommended_interview", collection: @recommended_interviews
+
+h2 还有#{@not_recommended_interviews.count}段访谈
+
+ul#not_recommend_interviews
+  - @not_recommended_interviews.each do |i|
+    li
+      = link_to topic_interview_path(@topic, i) do
+        = user_avatar_tag(i.author, :medium)

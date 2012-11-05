@@ -1,0 +1,24 @@
+@import 'base';
+
+.interview_question {
+  color: $baseFontColor;
+}
+
+article.interview {
+  border-bottom: 1px solid $splitColor;
+  margin: 1em 0;
+  padding: 1em 0;
+}
+
+#recommend_interviews {
+  li {
+    margin: 1em 0;
+  }
+}
+
+#not_recommend_interviews {
+  li {
+    float: left;
+    margin: 1em 1em 1em 0;
+  }
+}

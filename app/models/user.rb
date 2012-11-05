@@ -37,4 +37,8 @@ class User
   has_many :creations, class_name: "Product", inverse_of: :creator
   has_many :editable_topics, class_name: "Topic", inverse_of: :editor
   has_many :posts, class_name: "Post", inverse_of: :author
+
+  def interviews
+    posts.where('_type' => 'Interview')
+  end
 end

@@ -2,7 +2,7 @@ nav#main_nav
   ul.nav.pull-right
     = nav_tab 'home' do
       = link_to '主页', root_path
-    = nav_tab 'topics_all' do
+    = nav_tab 'topics' do
       = link_to '主题浏览', topics_path
     = nav_tab 'current_user', class: 'dropdown' do
       = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do

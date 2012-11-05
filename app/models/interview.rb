@@ -12,6 +12,9 @@ class Interview < Post
   validates_uniqueness_of :author_id, scope: :topic_id,
   message: "您不能提交对同一个主题的多次访谈"
 
+  scope :recommended, where(recommend: true)
+  scope :not_recommended, where(recommend: false)
+
   def valid_answers
     answers.reject { |a| a.answer.blank? }
   end

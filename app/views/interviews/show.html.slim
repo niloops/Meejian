@@ -1,17 +1,20 @@
 - content_for :header do
-  = render partial: "topics/head", locals: { details: false }
+  = render partial: "topics/head", locals: { details: flash[:details] }
 
 = render partial: "users/head", locals: {user: @author}
 
-- if current_user == @author
-  .controls 
-    = link_to "编辑", edit_topic_interview_path(@topic, @interview)
-    | |
-    = link_to "删除", topic_interview_path(@topic, @interview), method: :delete, confirm: "您真的要删除吗?"
+.controls 
+  = link_to "编辑", edit_topic_interview_path(@topic, @interview)
+  | |
+  = link_to "删除", topic_interview_path(@topic, @interview), method: :delete, confirm: "您真的要删除吗?"
+  | |
+  = link_to recommend_toggle_topic_interview_path(@topic, @interview), method: :post do
+    = @interview.recommend? ? "取消推荐" : "推荐"
 
 ul#topic_answers
-  - @interview.valid_answers.each do |a|
-    li
-      h3= a.question
-      p= a.answer
+  = render @interview.valid_answers
+
+.controls
+  = link_to "我也要参与", new_topic_interview_path(@topic), class: "btn btn-primary"
+
     
