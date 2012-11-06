@@ -25,6 +25,9 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
+  ## Admin role
+  field :admin,  type: Boolean, default: false
+
   ## User info
   field :job, type: String, default: ""
   field :interests, type: String, default: ""

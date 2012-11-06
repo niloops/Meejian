@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'carrierwave-mongoid'
 gem 'carrierwave-upyun'
 gem 'devise'
+gem 'cancan'
 gem 'capistrano'
 gem 'rvm-capistrano'
 

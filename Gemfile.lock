@@ -40,6 +40,7 @@ GEM
     bootstrap-wysihtml5-rails (0.3.1.8)
       railties (>= 3.0)
     builder (3.0.3)
+    cancan (1.6.8)
     capistrano (2.13.4)
       highline
       net-scp (>= 1.0.0)
@@ -272,6 +273,7 @@ DEPENDENCIES
   backbone-on-rails
   bootstrap-sass
   bootstrap-wysihtml5-rails
+  cancan
   capistrano
   carrierwave
   carrierwave-mongoid
