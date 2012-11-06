@@ -6,4 +6,10 @@ module ProductsHelper
       image_tag product.photo_url(version), options
     end
   end
+
+  def edit_product_control(product)
+    if can? :update, product
+      edit_control edit_product_path(product)
+    end
+  end
 end

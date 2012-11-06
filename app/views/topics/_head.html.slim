@@ -2,11 +2,11 @@ hgroup#topic_header
   h1= link_to @topic.title, @topic
   - if details
     .controls 
-      = link_to "参与", new_topic_interview_path(@topic), class: "btn btn-primary"
-      | |
-      = link_to "编辑", edit_topic_path(@topic)
-      | |
-      = link_to "删除", @topic, method: :delete, confirm: "真的要删除吗?"
+      = answer_control @topic
+      - if can? :update, @topic
+        = edit_control edit_topic_path(@topic)
+      - if can? :destroy, @topic
+        = destroy_control @topic
   h2= @topic.subtitle
   - if details
     p=  @topic.description 

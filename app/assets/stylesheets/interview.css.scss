@@ -30,3 +30,8 @@ form.new_interview, form.edit_interview {
   }
 }
 
+.interview_controls {
+  > a {
+    margin-right: 1em;
+  }
+}

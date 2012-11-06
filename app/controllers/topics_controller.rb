@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class TopicsController < ApplicationController
-  before_filter :authenticate_user!
+  load_and_authorize_resource
 
   def new
     @topic = Topic.new

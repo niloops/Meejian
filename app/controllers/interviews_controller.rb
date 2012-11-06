@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 class InterviewsController < ApplicationController
   before_filter :setup_topic
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, only: [:new, :create]
+  load_and_authorize_resource
 
   def new
     @interview = Interview.where(topic: @topic, author: current_user).first

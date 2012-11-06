@@ -2,10 +2,18 @@
 
 #user_details {
   margin: 2em 0;
+  @include clearfix;
+
+  >a {
+    float: left;
+    display: block;
+    width: 25%;
+  }
 
   dl {
-    display: inline-block;
-    width: 30%;
+    float: left;
+    display: block;
+    width: 25%;
     dt {width: 100px;}
   }
 

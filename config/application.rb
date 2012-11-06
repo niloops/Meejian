@@ -57,8 +57,5 @@ module Meejian
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :fabrication
     end
-
-    #Add linux|darwin group to bundler
-    Bundler.require RUBY_PLATFORM.match(/(linux|darwin)/)[0].to_sym
   end
 end

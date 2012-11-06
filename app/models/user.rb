@@ -13,7 +13,7 @@ class User
   validates_presence_of :encrypted_password
   validates :name, presence: true, length: {minimum: 2, maximum: 10}
 
-  attr_protected :encrypted_password
+  attr_protected :encrypted_password, :admin
 
   ## Rememberable
   field :remember_created_at, type: Time

@@ -31,4 +31,17 @@ module ApplicationHelper
     options[:class] = 'active' if content_for(:nav_tab) == tab
     content_tag(:li, options) {yield}
   end
+
+  def edit_control(path)
+    link_to path, class: 'btn btn-info' do
+      content_tag(:i, '', class: 'icon-pencil') + " 编辑"
+    end
+  end
+
+  def destroy_control(path)
+    link_to path, class: 'btn btn-danger',
+    method: :delete, confirm: "真的要删除吗?" do
+      content_tag(:i, '', class: 'icon-trash') + " 删除"
+    end
+  end
 end

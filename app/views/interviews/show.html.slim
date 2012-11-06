@@ -3,18 +3,18 @@
 
 = render partial: "users/head", locals: {user: @author}
 
-.controls 
-  = link_to "编辑", edit_topic_interview_path(@topic, @interview)
-  | |
-  = link_to "删除", topic_interview_path(@topic, @interview), method: :delete, confirm: "您真的要删除吗?"
-  | |
-  = link_to recommend_toggle_topic_interview_path(@topic, @interview), method: :post do
-    = @interview.recommend? ? "取消推荐" : "推荐"
+.interview_controls 
+  - if can? :update, @interview
+    = edit_control edit_topic_interview_path(@topic, @interview)
+  - if can? :destroy, @interview
+    = destroy_control topic_interview_path(@topic, @interview)
+  - if can? :recommend_toggle, @interview
+    = recommend_control @interview
 
 ul#topic_answers
   = render @interview.valid_answers
 
-.controls
-  = link_to "我也要参与", new_topic_interview_path(@topic), class: "btn btn-primary"
+.interview_controls
+  = answer_control @topic, "我也要参与"
 
     

@@ -1,5 +1,6 @@
 header#user_details
-  = user_avatar_tag user, :big
+  = link_to user, title: user.name do
+    = user_avatar_tag user, :big
   dl.dl-horizontal
     dt 名字:
     dd= user.name

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 class ProductsController < ApplicationController
-  # TODO authenticate except show
-  before_filter :authenticate_user!
-  before_filter :authenticate_author, only: [:edit, :update]
+  load_and_authorize_resource
 
   def new
     @product = Product.new
@@ -34,12 +32,5 @@ class ProductsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  private
-
-  def authenticate_author
-    @product = Product.find params[:id]
-    redirect_to(root_path) unless @product.creator == current_user
   end
 end
