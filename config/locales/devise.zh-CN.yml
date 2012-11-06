@@ -12,7 +12,7 @@ zh-CN:
   devise:
     failure:
       already_authenticated: '您已经登录.'
-      unauthenticated: '继续操作前请注册或者登录.'
+      unauthenticated: '请注册或者登录.'
       unconfirmed: '继续操作前请先激活您的帐号.'
       locked: '您的帐号已被锁定.'
       invalid: '邮箱或密码错误'
