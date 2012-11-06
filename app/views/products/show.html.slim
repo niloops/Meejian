@@ -2,12 +2,10 @@
   hgroup#product_header
     h1= @product.title
     small.price #{@product.price}元
-  .product_controls
-    = link_to @product.shop, class: 'btn btn-success' do
-      i.icon-shopping-cart
-      |  购买
+    span.header_controls
+      = purchase_control @product
+      = edit_product_control @product
     
-article
+article#product_single
   section= product_photo_tag @product, :huge
-  footer.product_controls
-    = edit_product_control @product
+    

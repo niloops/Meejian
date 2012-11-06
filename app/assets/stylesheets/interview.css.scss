@@ -1,7 +1,12 @@
 .interview_question {
-  color: $baseFontColor;
+  color: lighten($baseFontColor, 30%);
   background: $headerBackgroundColor;
   padding: 8px 0;
+  font-size: 1.3em;
+}
+
+.interview_pair {
+  p {margin: 1.5em 0;}
 }
 
 article.interview {
@@ -11,7 +16,19 @@ article.interview {
 }
 
 form.new_interview, form.edit_interview {
-  textarea {width: 60%;}
+  textarea {width: 99%;}
+  label {
+    @extend .interview_question;
+    margin-bottom: 1em;
+  }
+
+  .wysihtml5-toolbar {
+    li {margin-right: 1em;}
+  }
+
+  .control-group {
+    margin: 2em 0;
+  }
 }
 
 .interview_controls {
@@ -39,8 +56,3 @@ form.new_interview, form.edit_interview {
   }
 }
 
-#topic_answers {
-  li {
-    margin: 1.5em 0;
-  }
-}

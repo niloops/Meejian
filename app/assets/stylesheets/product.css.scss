@@ -12,12 +12,6 @@
   }
 }
 
-.product_controls {
-  float: right;
-  width: 20%;
-  margin-top: 1.5em;
-}
-
 #products_wall {
   float: left;
   width: 65%;
@@ -30,4 +24,8 @@
 
 .ref_product {
   margin: 1em 2em 1em 0;
+}
+
+#product_single {
+  text-align: center;
 }

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 module ProductsHelper
   def product_photo_tag(product, version = nil, options = {})
     link = options.delete :link
@@ -11,6 +12,12 @@ module ProductsHelper
   def edit_product_control(product)
     if can? :update, product
       edit_control edit_product_path(product)
+    end
+  end
+
+  def purchase_control(product)
+    link_to product.shop, class: 'btn btn-success' do
+      content_tag(:i, '', class: 'icon-shopping-cart') + " 购买"
     end
   end
 end
