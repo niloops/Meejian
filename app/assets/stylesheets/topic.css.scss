@@ -1,17 +1,14 @@
-@import "base";
-
 #topic_header {
   h2 {
     color: $taglineColor;
+    .controls {
+      margin-left: 1em;
+      .btn {margin: 0 .5em;}
+    }
   }
 
   p {
     color: $baseLightColor;
-  }
-
-  .controls {
-    float: right;
-    .btn {margin: 0 .5em;}
   }
 }
 

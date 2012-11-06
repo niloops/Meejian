@@ -1,9 +1,7 @@
-@import 'base';
-
 .interview_question {
   color: $baseFontColor;
   background: $headerBackgroundColor;
-  padding: 3px;
+  padding: 8px 0;
 }
 
 article.interview {
@@ -14,6 +12,12 @@ article.interview {
 
 form.new_interview, form.edit_interview {
   textarea {width: 60%;}
+}
+
+.interview_controls {
+  > a {
+    margin-right: 1em;
+  }
 }
 
 #recommend_interviews {
@@ -35,8 +39,8 @@ form.new_interview, form.edit_interview {
   }
 }
 
-.interview_controls {
-  > a {
-    margin-right: 1em;
+#topic_answers {
+  li {
+    margin: 1.5em 0;
   }
 }

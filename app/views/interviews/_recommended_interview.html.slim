@@ -2,4 +2,6 @@ li
   = link_to topic_interview_path(recommended_interview.topic, recommended_interview) do
     = user_avatar_tag(recommended_interview.author, :medium)
   span.ref_products
-    = render partial: "products/ref_product", collection: ref_products_for_interview(recommended_interview)
+    - ref_products_for_interview(recommended_interview).each do |product|
+      = product_photo_tag product, :medium, class: "ref_product", 
+      link: topic_interview_path(recommended_interview.topic, recommended_interview)
