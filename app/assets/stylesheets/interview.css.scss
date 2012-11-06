@@ -43,8 +43,41 @@ form.new_interview, form.edit_interview {
 
   li {
     margin: 1em 0;
-    .ref_products {
-      margin-left: 10em;
+
+    article {
+      @include clearfix;
+      background: $headerBackgroundColor;
+      padding: 5px;
+
+      header {
+        float: left;
+        width: 34%;
+        > a {
+          float: left;
+        }
+        .user_summary {
+          h4 {
+            font-size: $baseFontSize;
+            margin: .3em 0;
+            color: $baseFontColor;
+          }
+          p {
+            margin: 0;
+            color: $baseLightColor;
+          }
+          float: left;
+          width: 160px;
+          margin: 0 15px;
+        }
+      }
+      
+      section {
+        float: right;
+        width: 66%;
+        > a {
+          margin-right: .2em;
+        }
+      }
     }
   }
 }
@@ -55,4 +88,3 @@ form.new_interview, form.edit_interview {
     margin: .5em .5em .5em 0;
   }
 }
-
