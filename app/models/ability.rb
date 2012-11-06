@@ -6,6 +6,7 @@ class Ability
     if user.admin?
       can :manage, :all
     else if !user.blank?
+      can :manage, :all
       # can :update, User do |edited_user|
       #   edited_user.id == user.id
       # end
