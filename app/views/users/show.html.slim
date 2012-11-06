@@ -3,8 +3,8 @@
 
 = render partial: "users/head", locals: { user: @user }
 
-section#user_collects
-  ul= render @collects.take(7)
+section#user_collects.products_list
+  = render @collects.take(7)
 
 section#user_interviews
   = render @interviews

@@ -1,4 +1,5 @@
 li.interview_pair
   h4.interview_question= answer.question
   p= raw answer.answer
-  = render partial: "products/ref_product", collection: ref_products(answer.answer)
+  .products_list
+    = render partial: "products/product", collection: ref_products(answer.answer)

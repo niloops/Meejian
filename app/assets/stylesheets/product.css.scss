@@ -15,9 +15,12 @@
 #products_wall {
   float: left;
   width: 70%;
-  li {
-    float: left;
+}
+
+.products_list {
+  > a {
     margin: 0 .2em .4em;
+    display: inline-block;
   }
 }
 

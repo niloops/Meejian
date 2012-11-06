@@ -1,2 +1,2 @@
-section#products_wall
-  ul= render partial: "products/product", collection: Product.desc.limit(30)
+section#products_wall.products_list
+  = render partial: "products/product", collection: Product.desc.limit(30)
