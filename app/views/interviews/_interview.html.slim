@@ -3,5 +3,5 @@ article.interview
     = render interview.topic
   section
     ul= render interview.valid_answers.take(1)
-    = link_to "查看详细", topic_interview_path(interview.topic, interview)
+    = link_to "查看详细", topic_interview_path(interview.topic, interview), class: "btn btn-info btn-mini"
     

@@ -2,6 +2,7 @@
 - content_for :header do
   h1 最新访谈
 
-ul#recommend_interviews
-  = render partial: "interviews/recommended_interview", collection: @interviews
+section#recommend_interviews
+  ul
+    = render partial: "interviews/recommended_interview", collection: @interviews
 

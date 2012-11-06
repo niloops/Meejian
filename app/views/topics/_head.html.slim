@@ -1,12 +1,11 @@
 hgroup#topic_header
   h1= link_to @topic.title, @topic
-  - if details
-    .controls 
-      = answer_control @topic
-      - if can? :update, @topic
-        = edit_control edit_topic_path(@topic)
-      - if can? :destroy, @topic
-        = destroy_control @topic
+  .controls 
+    = answer_control @topic
+    - if can? :update, @topic
+      = edit_control edit_topic_path(@topic)
+    - if can? :destroy, @topic
+      = destroy_control @topic
   h2= @topic.subtitle
   - if details
     p=  @topic.description 

@@ -4,11 +4,7 @@
 = render partial: "users/head", locals: { user: @user }
 
 section#user_collects
-  h2 #{@collects.count}个产品
   ul= render @collects.take(7)
 
 section#user_interviews
-  h2 #{@interviews.count}段访谈
   = render @interviews
-    
-  

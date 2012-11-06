@@ -1,8 +1,12 @@
 @import "base";
 
 #topic_header {
-  h2, p {
+  h2 {
     color: $taglineColor;
+  }
+
+  p {
+    color: $baseLightColor;
   }
 
   .controls {
@@ -13,10 +17,16 @@
 
 hgroup.topic_title {
   > * { display: inline-block; }
+
   h4 {
     color: $taglineColor;
     margin-left: 1em;
     border-left: 1px solid $splitColor;
     padding-left: 1em;
+  }
+
+  figure {
+    display: inline-block;
+    margin: 0 1.5em ;
   }
 }

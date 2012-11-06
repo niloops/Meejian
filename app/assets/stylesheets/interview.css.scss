@@ -2,6 +2,8 @@
 
 .interview_question {
   color: $baseFontColor;
+  background: $headerBackgroundColor;
+  padding: 3px;
 }
 
 article.interview {
@@ -15,6 +17,9 @@ form.new_interview, form.edit_interview {
 }
 
 #recommend_interviews {
+  padding-bottom: 1em;
+  border-bottom: 8px solid $splitColorBold;
+
   li {
     margin: 1em 0;
     .ref_products {
@@ -26,7 +31,7 @@ form.new_interview, form.edit_interview {
 #not_recommend_interviews {
   li {
     float: left;
-    margin: 1em 1em 1em 0;
+    margin: .5em .5em .5em 0;
   }
 }
 
