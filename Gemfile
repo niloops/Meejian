@@ -35,7 +35,6 @@ group :development, :test do
   gem 'mongoid-rspec'
   gem 'fabrication'
   gem 'ffaker'
-  gem 'capybara'
   gem 'jasminerice'
   gem 'guard-spork'
   gem 'guard-rspec'

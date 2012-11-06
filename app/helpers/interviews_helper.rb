@@ -3,7 +3,7 @@ module InterviewsHelper
     regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]-]+)"
     product_ids = []
     answer.scan(regexp) { |pid| product_ids << pid }
-    Product.find product_ids
+    Product.find product_ids.uniq
   end
 
   def ref_products_for_interview(interview)
