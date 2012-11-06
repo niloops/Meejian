@@ -47,11 +47,11 @@ form.new_interview, form.edit_interview {
     article {
       @include clearfix;
       background: $headerBackgroundColor;
-      padding: 5px;
+      padding: 10px;
 
       header {
         float: left;
-        width: 34%;
+        width: 31%;
         > a {
           float: left;
         }
@@ -66,14 +66,14 @@ form.new_interview, form.edit_interview {
             color: $baseLightColor;
           }
           float: left;
-          width: 160px;
-          margin: 0 15px;
+          width: 140px;
+          margin: 0 10px;
         }
       }
       
       section {
         float: right;
-        width: 66%;
+        width: 69%;
       }
     }
   }

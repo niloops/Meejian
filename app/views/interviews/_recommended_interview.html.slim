@@ -5,7 +5,7 @@ li
         = user_avatar_tag(recommended_interview.author, :medium)
       .user_summary
         h4= recommended_interview.author.name
-        p= recommended_interview.author.description.truncate(46)
+        p= recommended_interview.author.description.truncate(40)
     section.products_list
       - ref_products_for_interview(recommended_interview).each do |product|
         = product_photo_tag product, :medium, 
