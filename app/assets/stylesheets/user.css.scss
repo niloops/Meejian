@@ -1,7 +1,6 @@
 @import 'base';
 
 #user_details {
-  margin: 2em 0;
   @include clearfix;
 
   >a {
@@ -14,20 +13,37 @@
     float: left;
     display: block;
     width: 25%;
-    dt {width: 100px;}
+    font-size: 1.1em;
+    margin-top: 1.2em;
+    
+    dt, dd {margin-bottom: .5em;}
+
+    dt {
+      font-weight: normal;
+      color: $baseLightColor;
+      width: 40px;
+    }
+    dd {
+      margin-left: 50px;
+    }
   }
 
   blockquote {
     float: right;
     width: 40%;
+    margin-top: 1.2em;
+    color: $baseLightColor;
+    p {font-size: 1.4em;}
   }
 }
 
 #user_collects {
   @include clearfix;
+
   li {
+    margin-top: 1em;
     float: left;
-    a {margin-right: 10px;}
+    a {margin-right: 1em;}
   }
 }
 

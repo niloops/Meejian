@@ -1,6 +1,6 @@
 // Customize default variables 
 $baseFontFamily: "Hiragino Sans GB", "Microsoft YaHei", Helvetica, sans-serif;
-$baseFontSize: 13px;
+$baseFontSize: 14px;
 $baseLineHeight: 22px;
 $linkColor: #019CCE;
 $headingsColor: $linkColor;
@@ -24,7 +24,6 @@ ul, ol {
 }
 
 a {
-  font-weight: bold;
   &:focus {outline: none;}
 }
 
@@ -32,13 +31,13 @@ input {
   &:focus {outline: none !important;} 
 }
 
-h1 {
-  font-size: 2.5em;
-}
-
+h1 {font-size: 32px;}
 h2 {
-  font-size: 1.5em;
+  color: $baseFontColor;
+  font-size: 26px;
 }
+h3 {font-size: 24px;}
+h4 {font-size: 18px;}
 
 form {
   legend {
