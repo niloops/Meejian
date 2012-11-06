@@ -43,8 +43,8 @@ group :development, :test do
   gem 'guard-livereload'
   gem 'database_cleaner'
   gem 'thin'
-  gem 'rb-inotify', group: :linux
-  gem 'libnotify', group: :linux
-  gem 'rb-fsevent', group: :darwin
-  gem 'growl', group: :darwin
+  gem 'rb-inotify'
+  gem 'libnotify'
+  gem 'rb-fsevent'
+  gem 'growl'
 end
