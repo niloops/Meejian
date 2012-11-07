@@ -1,5 +1,5 @@
 - content_for :header do
-  = render partial: "topics/head", locals: { details: flash[:details] }
+  = render partial: "topics/head", locals: { details: params[:topic_details] }
 
 = render partial: "users/head", locals: {user: @author}
 

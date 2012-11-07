@@ -40,7 +40,7 @@ class TopicsController < ApplicationController
     @recommended_interviews = @topic.interviews.recommended
     @not_recommended_interviews = @topic.interviews.not_recommended
     if @topic.interviews.count == 1
-      redirect_to topic_interview_path(@topic, @topic.interviews.first), flash: { details: true }
+      redirect_to topic_interview_path(@topic, @topic.interviews.first, topic_details: true)
     end
   end
 
