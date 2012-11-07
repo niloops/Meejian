@@ -1,14 +1,14 @@
 #product_header {
-  float: left;
-  width: 75%;
-
   h1 {
     display: inline-block;
     margin-right: 1em;
   }
-  small {
-    color: $taglineColor;
-    font-size: 1.2em;
+
+  p {
+    .price {
+      color: $taglineColor;
+      font-size: 1.2em;
+    }
   }
 }
 
