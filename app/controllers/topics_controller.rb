@@ -21,6 +21,7 @@ class TopicsController < ApplicationController
   def edit
     @topic = Topic.find(params[:id])
     @questions = @topic.questions
+    @questions = [""] if @questions.blank?
     render 'new'
   end
 
