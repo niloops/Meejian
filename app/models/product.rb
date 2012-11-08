@@ -6,7 +6,7 @@ class Product
   field :title, type: String
   field :shop, type: String
   field :price, type: Float
-  field :description, type: String
+  field :description, type: String, default: ""
   mount_uploader :photo, PhotosUploader
 
   slug :title
