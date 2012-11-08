@@ -1,7 +1,14 @@
-article.interview
+article class=(with_user ? 'interview with_user' : 'interview without_user')
   header
-    = render interview.topic
+    = link_to interview.author do
+      = user_avatar_tag(interview.author, :medium)
   section
+    p.user_name
+      = link_to interview.author.name, interview.author, class: "user_name"
+      | 于
+      = time_ago_tag interview.created_at
+      | 参与了这个访谈:
+    = render interview.topic
     ul= render interview.valid_answers.take(1)
-    = link_to "查看详细", topic_interview_path(interview.topic, interview), class: "btn btn-info btn-mini"
-    
+    = link_to "查看详细", topic_interview_path(interview.topic, interview), 
+    class: "interview_link"

@@ -3,7 +3,7 @@ header#user_details
     = user_avatar_tag user, :big
   dl.dl-horizontal
     dt 名字:
-    dd= user.name
+    dd= link_to user.name, user
     dt 职业: 
     dd= user.job
     dt 来自: 

@@ -44,4 +44,8 @@ module ApplicationHelper
       content_tag(:i, '', class: 'icon-trash') + " 删除"
     end
   end
+
+  def time_ago_tag(time)
+    time_tag time, time_ago_in_words(time)+"前"
+  end
 end

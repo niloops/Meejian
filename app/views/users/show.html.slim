@@ -7,4 +7,5 @@ section#user_collects.products_list
   = render @collects.take(7)
 
 section#user_interviews
-  = render @interviews
+  = render partial: 'interviews/interview', collection: @interviews, 
+  locals: {with_user: false}

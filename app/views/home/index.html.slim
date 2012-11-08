@@ -2,7 +2,6 @@
 - content_for :header do
   h1 最新访谈
 
-section#recommend_interviews
-  ul
-    = render partial: "interviews/recommended_interview", collection: @interviews
-
+section#home_interviews
+  = render partial: 'interviews/interview', collection: @interviews, 
+  locals: {with_user: true}

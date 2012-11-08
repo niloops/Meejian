@@ -9,10 +9,68 @@
   p {margin: 1.5em 0;}
 }
 
+.interview_controls {
+  > a {
+    margin-right: 1em;
+  }
+}
+
+.interview_time {
+  color: $baseLightColor;
+  font-size: $tinyFontSize;
+  margin-bottom: 1em;
+}
+
 article.interview {
+  @include clearfix;
   border-bottom: 1px solid $splitColor;
   padding-bottom: 1em;
-  margin-bottom: 1em;
+  $headerWidth: 17%;
+
+  &.with_user {
+    margin-bottom: 2em;
+
+    > header {
+      float: left;
+      width: $headerWidth;
+    }
+
+    > section {
+      float: left;
+      width: 100%-$headerWidth;
+
+      p.user_name {
+        font-size: $tinyFontSize;
+        color: $baseLightColor;
+        a {
+          color: $baseLightColor;
+          &:hover {color: $linkColor;}
+        }
+        margin: 0;
+      }
+    }
+  }
+
+  &.without_user {
+    margin-bottom: 1em;
+
+    > header {
+      display: none;
+    }
+
+    > section {
+      p.user_name {
+        display: none;
+      }
+    }
+  }
+
+  a.interview_link {
+    background: $linkColor;
+    color: white;
+    padding: 2px;
+    font-size: $tinyFontSize;
+  }
 }
 
 form.new_interview, form.edit_interview {
@@ -28,12 +86,6 @@ form.new_interview, form.edit_interview {
 
   .control-group {
     margin: 2em 0;
-  }
-}
-
-.interview_controls {
-  > a {
-    margin-right: 1em;
   }
 }
 
@@ -70,7 +122,7 @@ form.new_interview, form.edit_interview {
           margin: 0 10px;
         }
       }
-      
+
       section {
         float: right;
         width: 69%;
