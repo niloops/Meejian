@@ -14,6 +14,7 @@ class Topic
   validates :title, presence: true, uniqueness: true
   validates :subtitle, presence: true
 
+  belongs_to :category
   belongs_to :editor, class_name: "User", inverse_of: :editable_topic
 
   has_many :interviews

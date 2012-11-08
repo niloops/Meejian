@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @collects = @user.creations
-    @interviews = @user.interviews
+    @collects = @user.creations.desc(:created_at)
+    @interviews = @user.interviews.desc(:created_at)
   end
 
   def edit

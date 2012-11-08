@@ -1,0 +1,16 @@
+- content_for :header do
+  h1 分类列表
+
+table.table.table-striped.table-hover.table-bordered
+  tr
+    th 名称
+    th 修改
+    th 删除
+  - @categories.each do |c|
+    tr
+      td= c.name
+      td= edit_control edit_category_path(c)
+      td= destroy_control c
+
+= link_to "新建分类", new_category_path, class: 'btn btn-primary'
+

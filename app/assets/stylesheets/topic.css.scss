@@ -28,3 +28,13 @@ hgroup.topic_title {
     margin: 0 1.5em ;
   }
 }
+
+.category {
+  border-bottom: 1px solid $splitColor;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+
+  .topic_title {
+    h3 {margin: 0;}
+  }
+}

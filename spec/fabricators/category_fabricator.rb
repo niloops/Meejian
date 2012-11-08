@@ -1,0 +1,2 @@
+Fabricator(:category) do
+end

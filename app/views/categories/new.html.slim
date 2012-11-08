@@ -1,0 +1,7 @@
+- content_for :header do
+  h1 创建分类
+
+= simple_form_for @category do |f|
+  = f.input :name
+  = f.button :submit, class: 'btn btn-primary'
+

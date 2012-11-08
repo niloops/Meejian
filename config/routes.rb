@@ -1,4 +1,5 @@
 Meejian::Application.routes.draw do
+  root to: 'home#index'
 
   devise_for :users, skip: [:sessions]
   as :user do
@@ -11,8 +12,6 @@ Meejian::Application.routes.draw do
 
   resources :products
 
-  root to: 'home#index'
-
   resources :topics do
     resources :interviews, except: [:index] do
       member do
@@ -20,6 +19,8 @@ Meejian::Application.routes.draw do
       end
     end
   end
+
+  resources :categories
 
   get '/inviteds', to: 'site#inviteds'
 

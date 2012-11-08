@@ -52,6 +52,6 @@ class TopicsController < ApplicationController
   end
 
   def index
-    @topics = Topic.desc(:created_at)
+    @categories = Category.all
   end
 end
