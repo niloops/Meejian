@@ -15,6 +15,10 @@ class Interview < Post
   scope :recommended, where(recommend: true)
   scope :not_recommended, where(recommend: false)
 
+  def self.find_by_topic_and_author(topic, author)
+    where(topic: topic, author: author).first
+  end
+
   def valid_answers
     answers.reject { |a| a.answer.blank? }
   end

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 module InterviewsHelper
   def ref_products(answer)
-    regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]\|~`<>-]+)"
-    slugs = []
-    answer.scan(regexp) { |slug| slugs << slug }
-    products = Product.find slugs.uniq
-    slugs.map do |slug|
-      products.find {|p| p.slugs == slug}
+    regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]]+)"
+    ids = []
+    answer.scan(regexp) { |md| ids << md[0] }
+    products = Product.find ids.uniq
+    ids.map do |id|
+      products.find {|p| p.id.to_s == id}
     end.compact
   end
 

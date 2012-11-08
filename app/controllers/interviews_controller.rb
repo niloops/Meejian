@@ -5,7 +5,7 @@ class InterviewsController < ApplicationController
   load_and_authorize_resource
 
   def new
-    @interview = Interview.where(topic: @topic, author: current_user).first
+    @interview = Interview.find_by_topic_and_author(@topic, current_user)
     if @interview
       flash[:info] = "您已经参与过#{@topic.title}, 请编辑您的回答"
       redirect_to edit_topic_interview_path(@topic, @interview)

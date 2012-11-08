@@ -3,14 +3,6 @@
 
 = render partial: "users/head", locals: {user: @author}
 
-.interview_controls 
-  - if can? :update, @interview
-    = edit_control edit_topic_interview_path(@topic, @interview)
-  - if can? :destroy, @interview
-    = destroy_control topic_interview_path(@topic, @interview)
-  - if can? :recommend_toggle, @interview
-    = recommend_control @interview
-
 ul#topic_answers
   = render @interview.valid_answers
 
@@ -19,3 +11,12 @@ ul#topic_answers
 
 .interview_answer_control
   = answer_control @topic
+
+.interview_controls 
+  - if can? :update, @interview
+    = edit_control edit_topic_interview_path(@topic, @interview)
+  - if can? :destroy, @interview
+    = destroy_control topic_interview_path(@topic, @interview)
+  - if can? :recommend_toggle, @interview
+    = recommend_control @interview
+

@@ -10,5 +10,7 @@ hgroup#topic_header
     p=  @topic.description 
   aside.topic_category
     = link_to @topic.category.name, topics_path if @topic.category
-  
-= answer_control @topic
+
+/FIXME
+- unless @interview and @interview.new_record?
+  = answer_control @topic
