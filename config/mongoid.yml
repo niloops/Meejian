@@ -60,6 +60,8 @@ test:
         - localhost:27017
       options:
         consistency: :strong
+  options:
+    raise_not_found_error: false
 production:
   sessions:
     default:
@@ -69,3 +71,6 @@ production:
         - localhost:27018
       options:
         consistency: :strong
+  options:
+    raise_not_found_error: false
+    
