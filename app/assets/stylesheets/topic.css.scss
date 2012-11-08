@@ -1,4 +1,6 @@
 #topic_header {
+  position: relative;
+
   h2 {
     color: $taglineColor;
     .controls {
@@ -10,6 +12,19 @@
 
   p {
     color: $baseLightColor;
+  }
+
+  .topic_category {
+    position: absolute;
+    top: .4em;
+    right: 0;
+    a {
+      color: darken($headerBackgroundColor, 5%);
+      &:hover {
+        color: darken($headerBackgroundColor, 10%);
+      }
+    }
+    font-size: 5em;
   }
 }
 

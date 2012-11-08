@@ -11,3 +11,5 @@ hgroup#topic_header
           = destroy_control @topic
   - if details
     p=  @topic.description 
+  aside.topic_category
+    = link_to @topic.category.name, topics_path if @topic.category

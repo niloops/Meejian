@@ -26,6 +26,7 @@ ul, ol {
 
 a {
   &:focus {outline: none;}
+  &:hover {text-decoration: none;}
 }
 
 input {
