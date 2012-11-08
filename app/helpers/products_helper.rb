@@ -17,7 +17,7 @@ module ProductsHelper
 
   def purchase_control(product)
     link_to product.shop, class: 'btn btn-success' do
-      content_tag(:i, '', class: 'icon-shopping-cart') + " 购买"
+      content_tag(:i, '', class: 'icon-plane') + "访问来源"
     end
   end
 end

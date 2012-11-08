@@ -1,4 +1,4 @@
-// Customize default variables 
+// Customize default variables
 $baseFontFamily: "Hiragino Sans GB", "Microsoft YaHei", Helvetica, sans-serif;
 $baseFontSize: 14px;
 $baseLineHeight: 22px;
@@ -6,7 +6,6 @@ $linkColor: #019CCE;
 $headingsColor: $linkColor;
 $headingsFontWeight: normal;
 $btnPrimaryBackground: lighten($linkColor, 10%);
-$btnSuccessBackground: #689F32;
 
 // Project specified variables
 $headerBackgroundColor: #eee;
@@ -22,8 +21,8 @@ $tinyFontSize: 12px;
 @import "compass/css3";
 
 ul, ol {
-  list-style: none; 
-  margin: 0; 
+  list-style: none;
+  margin: 0;
 }
 
 a {
@@ -32,7 +31,7 @@ a {
 }
 
 input {
-  &:focus {outline: none !important;} 
+  &:focus {outline: none !important;}
 }
 
 h1 {font-size: 32px;}
@@ -58,4 +57,28 @@ form {
 
 .add-on {
   margin-right: -1px;
+}
+
+.btn-success {
+  width: 8em;
+  margin: 10px 10px 12px;
+  padding: 9px 12px 6px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+
+  i {
+    padding-right: 1em;
+    border-right: 1px solid white;
+    margin-right: 1em;
+  }
+
+  background-color: #689F32;
+  background-image: linear-gradient(#81C341, #689F32);
+  background-repeat: repeat-x;
+  border: 1px solid #689F32;
+  border-radius: 2px;
+  box-shadow: 1px 1px #9BCF68 inset, 0 2px 2px #4E7826;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 500ms ease 0s;
 }
