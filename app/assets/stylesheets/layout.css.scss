@@ -9,6 +9,7 @@
   }
 
   #content_header {
+    .container {position: relative;}
     background: $headerBackgroundColor;
     padding: 2em 0;
   }

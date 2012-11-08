@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 module TopicsHelper
-  def answer_control(topic, word = "参与")
-    link_to new_topic_interview_path(@topic), class: 'btn btn-primary' do
-      content_tag(:i, '', class: 'icon-comment') + " #{word}"
+  def answer_control(topic)
+    link_to new_topic_interview_path(@topic),
+    class: 'answer_control btn btn-success' do
+      content_tag(:i, '', class: 'icon-group icon-large') + "参与访谈"
     end
   end
 end

@@ -19,13 +19,17 @@
     top: .4em;
     right: 0;
     a {
-      color: darken($headerBackgroundColor, 5%);
-      &:hover {
-        color: darken($headerBackgroundColor, 10%);
-      }
+      color: darken($headerBackgroundColor, 10%);
+      &:hover {color: darken($headerBackgroundColor, 15%);}
     }
     font-size: 5em;
   }
+}
+
+#topic_header + .answer_control {
+  position: absolute;
+  left: 41.5%;
+  bottom: -4em;
 }
 
 hgroup.topic_title {
@@ -57,4 +61,28 @@ hgroup.topic_title {
   .topic_title {
     h3 {margin: 0;}
   }
+}
+
+.answer_control {
+  width: 8em;
+  margin: 10px 10px 12px;
+  padding: 9px 12px 6px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+
+  i {
+    padding-right: 1em;
+    border-right: 1px solid white;
+    margin-right: 1em;
+  }
+
+  background-color: #689F32;
+  background-image: linear-gradient(#81C341, #689F32);
+  background-repeat: repeat-x;
+  border: 1px solid #689F32;
+  border-radius: 2px;
+  box-shadow: 1px 1px #9BCF68 inset, 0 2px 2px #4E7826;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 500ms ease 0s;
 }

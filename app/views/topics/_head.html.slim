@@ -2,14 +2,13 @@ hgroup#topic_header
   h1= link_to @topic.title, @topic
   h2 
     = @topic.subtitle
-    - if details
+    - if can? :manage, @topic
       span.header_controls 
-        = answer_control @topic
-        - if can? :update, @topic
-          = edit_control edit_topic_path(@topic)
-        - if can? :destroy, @topic
-          = destroy_control @topic
+        = edit_control edit_topic_path(@topic)
+        = destroy_control @topic
   - if details
     p=  @topic.description 
   aside.topic_category
     = link_to @topic.category.name, topics_path if @topic.category
+  
+= answer_control @topic
