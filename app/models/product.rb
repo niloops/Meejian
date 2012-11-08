@@ -6,9 +6,8 @@ class Product
   field :title, type: String
   field :shop, type: String
   field :price, type: Float
+  field :description, type: String
   mount_uploader :photo, PhotosUploader
-
-  attr_accessible :title, :price, :shop, :photo
 
   slug :title
 
@@ -16,6 +15,7 @@ class Product
   validates :shop, presence: true
   validates :photo, presence: true
   validates :price, presence: true, numericality: { greater_than: -0.01 }
+  validates :description, length: { maximum: 1024 }
 
   belongs_to :creator, class_name: "User", inverse_of: :creation
 end

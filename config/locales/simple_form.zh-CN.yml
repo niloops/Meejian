@@ -18,6 +18,7 @@
         shop: '购买链接'
         price: '价格'
         photo: '图片'
+        description: '描述'
       topic:
         title: '标题'
         subtitle: '副标题'

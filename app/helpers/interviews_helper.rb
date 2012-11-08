@@ -2,9 +2,12 @@
 module InterviewsHelper
   def ref_products(answer)
     regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]-]+)"
-    product_ids = []
-    answer.scan(regexp) { |pid| product_ids << pid }
-    Product.find product_ids.uniq
+    slugs = []
+    answer.scan(regexp) { |slug| slugs << slug }
+    products = Product.find slugs.uniq
+    slugs.map do |slug|
+      products.find {|p| p.slugs == slug}
+    end.compact
   end
 
   def ref_products_for_interview(interview)

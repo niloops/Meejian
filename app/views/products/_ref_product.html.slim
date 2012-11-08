@@ -1,0 +1,5 @@
+li
+  = product_photo_tag ref_product, :medium
+  .product_summary
+    h4= link_to ref_product.title, ref_product
+    p= ref_product.description.truncate(80)

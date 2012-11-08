@@ -8,5 +8,10 @@
         = edit_product_control @product
     
 article#product_single
-  section= product_photo_tag @product, :huge
-    
+  section
+    = product_photo_tag @product, :huge
+    - if @product.description
+      .product_description
+        = link_to @product.creator do
+          = user_avatar_tag @product.creator, :small, class: 'avatar_tiny'
+        p= @product.description
