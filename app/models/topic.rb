@@ -11,13 +11,14 @@ class Topic
 
   slug :title
 
-  validates :title, presence: true, uniqueness: true
-  validates :subtitle, presence: true
-
   belongs_to :category
   belongs_to :editor, class_name: "User", inverse_of: :editable_topic
 
   has_many :interviews
+
+  validates :title, presence: true, uniqueness: true
+  validates :subtitle, presence: true
+  validates :category, presence: true
 
   before_validation { questions.reject! {|i| i.blank?} }
 end
