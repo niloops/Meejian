@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 module InterviewsHelper
   def ref_products(answer)
-    regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]-]+)"
+    regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]\|~`<>-]+)"
     slugs = []
     answer.scan(regexp) { |slug| slugs << slug }
     products = Product.find slugs.uniq
