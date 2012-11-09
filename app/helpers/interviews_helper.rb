@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 module InterviewsHelper
   def ref_products(answer)
-    regexp = Regexp.new "http://#{request.env['HTTP_HOST']}/products/([[:alnum:]]+)"
+    domain = ActionDispatch::Http::URL.extract_domain request.env['HTTP_HOST']
+    regexp = Regexp.new "#{domain}/products/([[:alnum:]]+)"
     ids = []
     answer.scan(regexp) { |md| ids << md[0] }
     products = Product.find ids.uniq
