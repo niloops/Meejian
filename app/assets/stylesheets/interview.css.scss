@@ -85,6 +85,10 @@ form.new_interview, form.edit_interview {
     margin-bottom: 1em;
   }
 
+  .wysihtml5-toolbar {
+    li {margin-right: 1em;}
+  }
+
   .control-group {
     margin: 2em 0;
   }
