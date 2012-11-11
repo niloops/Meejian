@@ -4,13 +4,19 @@
 table.table.table-striped.table-hover.table-bordered
   tr
     th 名称
+    th 主题数量
     th 修改
     th 删除
   - @categories.each do |c|
     tr
       td= c.name
+      td= c.topics.count
       td= edit_control edit_category_path(c)
-      td= destroy_control c
+      td
+        - if c.topics.count <= 0
+          = destroy_control c
+        - else
+          | 不能删除还有主题的分类
 
 = link_to "新建分类", new_category_path, class: 'btn btn-primary'
 
