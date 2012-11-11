@@ -1,0 +1,5 @@
+- if can? :manage, @topic
+  span.header_controls 
+    = edit_control edit_topic_path(@topic)
+    - if @topic.interviews.blank?
+      = destroy_control @topic

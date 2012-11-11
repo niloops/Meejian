@@ -14,7 +14,7 @@ class Topic
   belongs_to :category
   belongs_to :editor, class_name: "User", inverse_of: :editable_topic
 
-  has_many :interviews
+  has_many :interviews, dependent: :restrict
 
   validates :title, presence: true, uniqueness: true
   validates :subtitle, presence: true

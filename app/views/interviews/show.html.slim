@@ -10,7 +10,7 @@ ul#topic_answers
   = time_ago_tag @interview.created_at
 
 .interview_answer_control
-  = answer_control @topic
+  = answer_control @topic, @can_create_interview
 
 .interview_controls 
   - if can? :update, @interview

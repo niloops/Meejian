@@ -2,15 +2,9 @@ hgroup#topic_header
   h1= link_to @topic.title, @topic
   h2 
     = @topic.subtitle
-    - if can? :manage, @topic
-      span.header_controls 
-        = edit_control edit_topic_path(@topic)
-        = destroy_control @topic
+    = render 'topics/controls'
   - if details
     p=  @topic.description 
   aside.topic_category
     = link_to @topic.category.name, topics_path if @topic.category
-
-/FIXME
-- unless @interview and @interview.new_record?
-  = answer_control @topic
+= answer_control @topic, @can_create_interview

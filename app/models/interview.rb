@@ -15,8 +15,10 @@ class Interview < Post
   scope :recommended, where(recommend: true).desc(:created_at)
   scope :not_recommended, where(recommend: false).desc(:created_at)
 
-  def self.find_by_topic_and_author(topic, author)
-    where(topic: topic, author: author).first
+  class << self
+    def find_by_topic_and_author(topic, author)
+      where(topic: topic, author: author).first
+    end
   end
 
   def valid_answers

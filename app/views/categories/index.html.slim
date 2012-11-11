@@ -13,7 +13,7 @@ table.table.table-striped.table-hover.table-bordered
       td= c.topics.count
       td= edit_control edit_category_path(c)
       td
-        - if c.topics.count <= 0
+        - if c.topics.blank?
           = destroy_control c
         - else
           | 不能删除还有主题的分类
