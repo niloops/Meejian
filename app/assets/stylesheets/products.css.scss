@@ -1,5 +1,5 @@
 .products_list {
-  > a {
+  li {
     margin: 0 .2em;
     display: inline-block;
   }
@@ -55,7 +55,8 @@
 #products_wall {
   float: left;
   width: 70%;
-  > a {margin-bottom: .4em;}
+  @extend .products_list;
+  li { margin-bottom: .4em; }
 }
 
 

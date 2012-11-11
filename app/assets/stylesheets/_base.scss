@@ -15,6 +15,7 @@ $baseLightColor: lighten($baseFontColor, 30%);
 $splitColor: $taglineColor;
 $splitColorBold: $headerBackgroundColor;
 $tinyFontSize: 12px;
+$imageMediumWidth: 120px;
 
 @import "bootstrap";
 @import "font-awesome";

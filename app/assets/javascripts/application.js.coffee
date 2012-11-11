@@ -13,10 +13,10 @@
 #= require modernizr_respond
 #= require jquery
 #= require jquery_ujs
-#= require jquery.placeholder
 #= require bootstrap 
 #= require underscore
 #= require bootstrap-wysihtml5
 #= require bootstrap-wysihtml5.zh-CN
+#= require jquery.placeholder
 #= require meejian
 #= require_tree .

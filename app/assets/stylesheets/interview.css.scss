@@ -98,7 +98,7 @@ form.new_interview, form.edit_interview {
   padding-bottom: 1em;
   border-bottom: 8px solid $splitColorBold;
 
-  li {
+  > ul > li {
     margin: 1em 0;
 
     article {

@@ -13,7 +13,7 @@
     width: 25%;
     font-size: 1.1em;
     margin-top: 1.2em;
-    
+
     dt, dd {margin-bottom: .5em;}
 
     dt {
@@ -36,12 +36,41 @@
 }
 
 #user_collects {
-  @include clearfix;
+  ul {
+    @include clearfix;
 
-  li {
-    margin-top: 1em;
-    float: left;
-    a {margin-right: .2em;}
+    li {
+      float: left;
+      margin: 0 10px;
+    }
+  }
+
+  &.carousel {
+    .carousel-inner {
+      width: 90%;
+      left: 5%;
+    }
+
+    .carousel-control {
+      top: 0;
+      width: 4%;
+      height: $imageMediumWidth;
+      line-height: $imageMediumWidth;
+      border: 0;
+      margin: 0;
+      font-size: 2em;
+      font-weight: 600;
+      @include border-radius(0);
+
+      &.left {
+        left: 0;
+        right: auto;
+      }
+      &.right {
+        left: auto;
+        right: 0;
+      }
+    }
   }
 }
 
