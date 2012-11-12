@@ -3,15 +3,16 @@
 
 = render partial: "users/head", locals: { user: @user }
 
-section#user_collects.carousel.slide
-  .carousel-inner
-    - @collects.each_slice(6).each_with_index do |row_products, index|
-      ul class=["item", (index == 0) ? "active" : ""]
-        = render row_products
-  = link_to '#user_collects', class: 'carousel-control left', 'data-slide' => 'prev' do
-    i.icon-chevron-left
-  = link_to '#user_collects', class: 'carousel-control right', 'data-slide' => 'next' do
-    i.icon-chevron-right
+- unless @collects.blank?
+  section#user_collects.carousel.slide
+    .carousel-inner
+      - @collects.each_slice(6).each_with_index do |row_products, index|
+        ul class=["item", (index == 0) ? "active" : ""]
+          = render row_products
+    = link_to '#user_collects', class: 'carousel-control left', 'data-slide' => 'prev' do
+      i.icon-chevron-left
+    = link_to '#user_collects', class: 'carousel-control right', 'data-slide' => 'next' do
+      i.icon-chevron-right
 
 section#user_interviews
   = render partial: 'interviews/interview', collection: @interviews, 
