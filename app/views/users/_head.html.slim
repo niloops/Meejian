@@ -2,8 +2,9 @@ header#user_details
   = link_to user, title: user.name do
     = user_avatar_tag user, :big
   dl.dl-horizontal
-    dt 名字:
-    dd= link_to user.name, user
+    - unless controller.controller_name == "users"
+      dt 名字:
+      dd= link_to user.name, user
     dt 职业: 
     dd= user.job
     dt 来自: 
