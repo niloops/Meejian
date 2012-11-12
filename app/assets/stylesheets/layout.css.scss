@@ -32,7 +32,14 @@
     color: darken($headerBackgroundColor, 25%);
   }
   hgroup.slogan {
+    position: relative;
     float: right;
+
+    .logo {
+      position: absolute;
+      top: -60px;
+      left: -80px;
+    }
   }
 }
 
