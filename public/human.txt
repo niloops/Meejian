@@ -3,7 +3,7 @@
 
 /* TEAM */
   Founder: lilu
-  Site: 
+  Mail: lilu.life@gmail.com
   Weibo: coocooba
   Location: Beijing, China
 
