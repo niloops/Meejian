@@ -78,7 +78,7 @@ article.interview {
   }
 }
 
-form.new_interview, form.edit_interview {
+form.edit_interview {
   textarea {width: 99%;}
   label {
     @extend .interview_question;

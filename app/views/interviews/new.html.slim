@@ -1,13 +1,12 @@
 - content_for :header do
   = render partial: "topics/head", locals: { details: false }
 
-section
-  = simple_form_for [@topic, @interview] do |f|
-    = f.simple_fields_for :answers do |answer_fields|
-      = answer_fields.input :answer, as: :text, label: answer_fields.object.question, 
-      input_html: {rows: 10, class: 'wysihtml5'}
-      = answer_fields.input :question, as: :hidden
-    = f.button :submit, class: 'btn btn-success'
+= simple_form_for [@topic, @interview], html: {class: "edit_interview"} do |f|
+  = f.simple_fields_for :answers do |answer_fields|
+    = answer_fields.input :answer, as: :text, label: answer_fields.object.question, 
+    input_html: {rows: 10, class: 'wysihtml5'}
+    = answer_fields.input :question, as: :hidden
+  = f.button :submit, class: 'btn btn-success'
 
 - content_for :script do
   coffee:
@@ -16,3 +15,8 @@ section
         $(e).wysihtml5
           "font-styles": false,
           locale: "zh-CN"
+            
+      $('form.edit_interview').sisyphus 
+        timeout: 5
+        
+        
