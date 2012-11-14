@@ -8,6 +8,6 @@ li
         p= recommended_interview.author.description.truncate(40)
     section.products_list
       ul
-        - ref_products_for_interview(recommended_interview).each do |product|
+        - recommended_interview.ref_products(request.env['HTTP_HOST']).take(5).each do |product|
           li= product_photo_tag product, :medium, 
             link: topic_interview_path(recommended_interview.topic, recommended_interview)

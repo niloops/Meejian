@@ -1,6 +1,6 @@
 Fabricator(:user) do
-  email "lilu.life@gmail.com"
-  name  "lilu"
+  email { Faker::Internet.email }
+  name  { Faker::Name.name.truncate(10) }
   password "123456"
 end
 
