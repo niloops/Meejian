@@ -36,4 +36,18 @@ describe Interview do
 
     specify {@interview.ref_products(@host).should == @products}
   end
+
+  context "strip br tags at the answer end" do
+    before do
+      multi_br_end = "hello brs! <br> <br><br>"
+      @interview = Fabricate.build(:interview)
+      @interview.answers << Fabricate.build(:answer, answer: multi_br_end)
+      @interview.save!
+      @answer = @interview.answers.last
+    end
+
+    subject {@answer}
+    its(:answer) {should == "hello brs! <br>"}
+  end
+
 end
