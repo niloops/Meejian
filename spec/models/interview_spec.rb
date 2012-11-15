@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Interview do
+  before do
+    @interview = Fabricate.build(:interview)
+  end
+
   context "validates answers" do
     before do
       @interview = Fabricate.build(:interview, answers: [])
@@ -23,13 +27,12 @@ describe Interview do
         "http://#{@host}/products/#{p.id}"
       end.join('-')
 
-      @interview = Fabricate.build(:interview,
-                             answers: [Answer.new(question: "whatever",
-                                              answer: answer_with_products)])
+      @interview.answers << Answer.new(question: "whatever",
+                                        answer: answer_with_products)
     end
 
     specify do
-      answer = @interview.answers[0]
+      answer = @interview.answers.last
       answer.should have(3).ref_products(@host)
       answer.ref_products(@host).should == @products
     end
@@ -40,7 +43,6 @@ describe Interview do
   context "strip br tags at the answer end" do
     before do
       multi_br_end = "hello brs! <br> <br><br>"
-      @interview = Fabricate.build(:interview)
       @interview.answers << Fabricate.build(:answer, answer: multi_br_end)
       @interview.save!
       @answer = @interview.answers.last
@@ -48,6 +50,29 @@ describe Interview do
 
     subject {@answer}
     its(:answer) {should == "hello brs! <br>"}
+  end
+
+  context "liked by users" do
+    before do
+      @user = Fabricate(:user)
+      @user.like! @interview
+    end
+
+    subject {@interview}
+
+    it {should be_liked_by(@user)}
+    its(:liked_users) {should include(@user)}
+
+    it "should exist in user's like_posts" do
+      @user.like_posts.should include(@interview)
+    end
+
+    it "should only be liked once" do
+      3.times {@user.like! @interview}
+      @user.like_posts.count.should == 1
+      @interview.liked_users.count.should == 1
+      @interview.liked_count.should == 1
+    end
   end
 
 end

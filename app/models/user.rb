@@ -40,10 +40,16 @@ class User
   has_many :creations, class_name: "Product", inverse_of: :creator
   has_many :editable_topics, class_name: "Topic", inverse_of: :editor
   has_many :posts, class_name: "Post", inverse_of: :author
+  has_and_belongs_to_many :like_posts, class_name: "Post", inverse_of: :liked_user
 
   default_scope desc(:created_at)
 
   def interviews
     posts.where('_type' => 'Interview')
+  end
+
+  def like!(post)
+    like_posts << post && save
+    post.update_attributes(liked_count: post.liked_users.count)
   end
 end

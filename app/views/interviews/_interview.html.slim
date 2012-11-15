@@ -12,3 +12,6 @@ article class=(with_user ? 'interview with_user' : 'interview without_user')
     ul= render interview.valid_answers.take(1)
     = link_to "查看详细", topic_interview_path(interview.topic, interview), 
     class: "interview_link"
+    span.liked_count
+      i.icon-legal
+      = interview.liked_count

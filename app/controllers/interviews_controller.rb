@@ -56,6 +56,11 @@ class InterviewsController < ApplicationController
     redirect_to @topic
   end
 
+  def like
+    @interview = Interview.find(params[:id])
+    current_user.like! @interview
+  end
+
   def recommend_toggle
     @interview = Interview.find(params[:id])
     @interview.recommend = !@interview.recommend

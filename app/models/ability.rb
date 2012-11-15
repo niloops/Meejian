@@ -16,6 +16,7 @@ class Ability
         interview.author == user
       end
       can :create, Interview
+      can :like, Interview
       basic_read_only
     end
   end

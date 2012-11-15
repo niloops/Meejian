@@ -13,6 +13,8 @@ ul#topic_answers
   = answer_control @topic, @can_create_interview
 
 .interview_controls 
+  - if can? :like, @interview
+    = like_control @interview
   - if can? :update, @interview
     = edit_control edit_topic_interview_path(@topic, @interview)
   - if can? :destroy, @interview

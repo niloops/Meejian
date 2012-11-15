@@ -16,6 +16,7 @@ Meejian::Application.routes.draw do
     resources :interviews, except: [:index] do
       member do
         post 'recommend_toggle'
+        post 'like'
       end
     end
   end
