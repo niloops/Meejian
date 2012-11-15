@@ -5,11 +5,14 @@ header#user_details
     - unless controller.controller_name == "users"
       dt 名字:
       dd= link_to user.name, user
-    dt 职业: 
-    dd= user.job
-    dt 来自: 
-    dd= user.location
-    dt 爱好:
-    dd= user.interests
+    - unless user.job.blank?
+      dt 职业: 
+      dd= user.job
+    - unless user.location.blank?
+      dt 来自: 
+      dd= user.location
+    - unless user.interests.blank?
+      dt 爱好:
+      dd= user.interests
   blockquote
     p= user.description
