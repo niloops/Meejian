@@ -12,8 +12,9 @@ class Interview < Post
   validates_uniqueness_of :author_id, scope: :topic_id,
   message: "您不能提交对同一个主题的多次访谈"
 
-  scope :recommended, where(recommend: true).desc(:created_at)
-  scope :not_recommended, where(recommend: false).desc(:created_at)
+  scope :recommended, where(recommend: true)
+  scope :not_recommended, where(recommend: false)
+  default_scope desc(:created_at)
 
   class << self
     def find_by_topic_and_author(topic, author)
