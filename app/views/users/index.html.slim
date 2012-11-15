@@ -1,0 +1,5 @@
+- content_for :header do
+  h1 最新用户
+
+h2 #{brand}现有#{User.count}位用户
+ul#users_list= render @users

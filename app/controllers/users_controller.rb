@@ -19,4 +19,8 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  def index
+    @users = User.limit(100)
+  end
 end

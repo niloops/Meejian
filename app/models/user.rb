@@ -41,6 +41,8 @@ class User
   has_many :editable_topics, class_name: "Topic", inverse_of: :editor
   has_many :posts, class_name: "Post", inverse_of: :author
 
+  default_scope desc(:created_at)
+
   def interviews
     posts.where('_type' => 'Interview')
   end
