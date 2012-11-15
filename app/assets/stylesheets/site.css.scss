@@ -1,0 +1,26 @@
+hgroup.jobs {
+  h2 {
+    color: $taglineColor;
+  }
+
+  ul, p {
+    color: $baseLightColor;
+  }
+
+  p {
+    margin-top: 1em;
+  }
+}
+
+section.jobs {
+  ol {
+    list-style: decimal;
+    li {
+      margin-left: 1.5em;
+    }
+  }
+
+  article {
+    border-bottom: 1px solid $splitColor;
+  }
+}

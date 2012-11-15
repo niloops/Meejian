@@ -24,6 +24,8 @@ Meejian::Application.routes.draw do
 
   get '/inviteds', to: 'site#inviteds'
 
+  get '/jobs', to: 'site#jobs'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
