@@ -1,6 +1,6 @@
 li
   = link_to user, title: user.name do
     = user_avatar_tag(user, :medium)
-    h4= user.name.truncate(8)
+    h4= user.name.truncate(7)
     - if can? :manage, :all
       p= user.email
