@@ -59,6 +59,8 @@ class InterviewsController < ApplicationController
   def like
     @interview = Interview.find(params[:id])
     current_user.like! @interview
+    flash[:success] = "您已经顶了这篇访谈"
+    redirect_to topic_interview_path(@topic, @interview)
   end
 
   def recommend_toggle
