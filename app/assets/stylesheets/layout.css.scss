@@ -5,7 +5,15 @@
 
 #page_header {
   #main_nav {
-    img { margin: 0 2em;}
+    img {
+      margin: 0 2em;
+    }
+
+    //ie8 bug: img(max-width=100%) need its container has width set
+    .ie8 & .dropdown-toggle {
+      width: 240px;
+      text-align: right;
+    }
   }
 
   #content_header {
