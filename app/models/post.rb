@@ -9,6 +9,8 @@ class Post
   belongs_to :author, class_name: "User", inverse_of: :post
   has_and_belongs_to_many :liked_users, class_name: "User", inverse_of: :like_post
 
+  paginates_per 10
+
   def liked_by?(user)
     liked_users.find user
   end

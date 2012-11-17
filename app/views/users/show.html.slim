@@ -17,3 +17,4 @@
 section#user_interviews
   = render partial: 'interviews/interview', collection: @interviews, 
   locals: {with_user: false}
+  = paginate @interviews

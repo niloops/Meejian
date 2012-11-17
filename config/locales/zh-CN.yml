@@ -13,3 +13,10 @@ zh-CN:
   errors:
     messages:
       extension_white_list_error: '上传文件名称格式不正确'
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."

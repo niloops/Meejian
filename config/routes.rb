@@ -1,5 +1,6 @@
 Meejian::Application.routes.draw do
   root to: 'home#index'
+  get '/page/:page', to: 'home#index'
 
   devise_for :users, skip: [:sessions]
   as :user do
@@ -8,7 +9,9 @@ Meejian::Application.routes.draw do
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
-  resources :users, only: [:show, :edit, :update, :index]
+  resources :users, only: [:show, :edit, :update, :index] do
+    get 'page/:page', action: :show, on: :member
+  end
   resources :products
   resources :categories
   resources :topics do

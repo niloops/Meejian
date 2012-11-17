@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @collects = @user.creations.desc(:created_at)
-    @interviews = @user.interviews.desc(:created_at)
+    @interviews = @user.interviews.desc(:created_at).page params[:page]
   end
 
   def edit
