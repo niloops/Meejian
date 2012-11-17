@@ -49,7 +49,7 @@ class User
   end
 
   def like!(post)
-    like_posts << post && save
+    like_posts << post
     post.update_attributes(liked_count: post.liked_users.count)
   end
 end

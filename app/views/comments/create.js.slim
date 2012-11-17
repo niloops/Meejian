@@ -1,0 +1,4 @@
+- unless @comment.errors[:content].blank?
+  | $('#comment_content').val('').attr('placeholder', '评论不能为空, 写点什么吧').placeholder()
+- else
+  | $("#{j raw(render(@comment))}").hide().appendTo('#comments').slideDown()

@@ -1,0 +1,14 @@
+li id="comment_#{comment.id}"
+  article.comment
+    header
+      = link_to comment.author do
+        = user_avatar_tag comment.author, :small
+        = comment.author.name
+    section
+      p= comment.content
+      = time_ago_tag comment.created_at
+      - if can? :destroy, comment
+        = link_to topic_interview_comment_path(@topic, @interview, comment),
+        method: :delete, remote: true,
+        title: "删除此评论", confirm: "真的要删除吗?", class: "comment_destroy" do
+          i.icon-trash

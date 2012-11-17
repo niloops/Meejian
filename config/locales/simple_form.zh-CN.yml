@@ -28,6 +28,8 @@
         category: '分类'
       category:
         name: '分类名称'
+      comment:
+        content: '内容'
     placeholders:
       user:
         email: '请输入您的邮箱地址'

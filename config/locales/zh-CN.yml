@@ -6,6 +6,7 @@ zh-CN:
       product: '产品'
       interview: '访谈'
       category: '分类'
+      comment: '评论'
     attributes:
       post:
         author: '作者'

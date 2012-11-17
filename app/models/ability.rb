@@ -17,6 +17,10 @@ class Ability
       end
       can :create, Interview
       can :like, Interview
+      can :create, Comment
+      can :destroy, Comment do |comment|
+        comment.author == user
+      end
       basic_read_only
     end
   end

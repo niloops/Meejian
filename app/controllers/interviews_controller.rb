@@ -61,7 +61,6 @@ class InterviewsController < ApplicationController
     current_user.like! @interview
     respond_to do |format|
       format.html do
-        flash[:success] = "您已经顶了这篇访谈"
         redirect_to topic_interview_path(@topic, @interview)
       end
       format.js

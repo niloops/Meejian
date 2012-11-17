@@ -1,0 +1,26 @@
+article.comment {
+  @include clearfix;
+  border-top: 1px dashed $splitColor;
+  padding: 2em 0;
+
+  > header {
+    float: left;
+    width: 12%;
+    margin-right: 3%;
+
+    img {
+      display: block;
+      margin-bottom: 1em;
+    }
+  }
+
+  > section {
+    float: left;
+    width: 80%;
+
+    .comment_destroy {
+      color: $baseLightColor;
+      margin-left: 1em;
+    }
+  }
+}

@@ -52,6 +52,11 @@ form {
   }
 }
 
+time {
+  color: $baseLightColor;
+  font-size: $tinyFontSize;
+}
+
 .btn-mini {
   text-shadow: none;
 }

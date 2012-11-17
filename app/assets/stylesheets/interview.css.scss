@@ -28,9 +28,24 @@
 }
 
 .interview_time {
-  color: $baseLightColor;
-  font-size: $tinyFontSize;
   margin-bottom: 1em;
+}
+
+.interview_comments {
+  h4 {
+    margin: 2em 0 1em;
+    i {margin-right: .5em;}
+  }
+
+  form {
+    #comment_content {
+      padding: 0;
+      width: 100%;
+    }
+    input[type='submit'] {
+      margin: 0;
+    }
+  }
 }
 
 article.interview {
@@ -84,7 +99,7 @@ article.interview {
     font-size: $tinyFontSize;
   }
 
-  .liked_count {
+  .liked_count, .comments_count {
     font-size: $tinyFontSize;
     margin-left: 2em;
     color: $baseLightColor;

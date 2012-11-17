@@ -15,3 +15,6 @@ article class=(with_user ? 'interview with_user' : 'interview without_user')
     span.liked_count
       i.icon-legal
       = interview.liked_count
+    span.comments_count
+      i.icon-comments
+      = interview.comments.count

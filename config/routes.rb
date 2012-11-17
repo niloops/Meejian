@@ -9,22 +9,19 @@ Meejian::Application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update, :index]
-
   resources :products
-
+  resources :categories
   resources :topics do
     resources :interviews, except: [:index] do
       member do
         post 'recommend_toggle'
         post 'like'
       end
+      resources :comments, only: [:create, :destroy]
     end
   end
 
-  resources :categories
-
   get '/inviteds', to: 'site#inviteds'
-
   get '/jobs', to: 'site#jobs'
 
   # The priority is based upon order of creation:

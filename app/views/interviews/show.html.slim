@@ -1,24 +1,32 @@
 - content_for :header do
-  = render partial: "topics/head", locals: { details: params[:topic_details] }
+  = render partial: "topics/head", locals: {details: params[:topic_details]}
 
 = render partial: "users/head", locals: {user: @author}
 
-ul#topic_answers
-  = render @interview.valid_answers
+section
+  ul
+    = render @interview.valid_answers
+  .interview_time= time_ago_tag @interview.created_at
+  .interview_answer_control= answer_control @topic, @can_create_interview
+  .interview_controls 
+    - if can? :like, @interview
+      = like_control @interview
+    - if can? :update, @interview
+      = edit_control edit_topic_interview_path(@topic, @interview)
+    - if can? :destroy, @interview
+      = destroy_control topic_interview_path(@topic, @interview)
+    - if can? :recommend_toggle, @interview
+      = recommend_control @interview
 
-.interview_time
-  = time_ago_tag @interview.created_at
-
-.interview_answer_control
-  = answer_control @topic, @can_create_interview
-
-.interview_controls 
-  - if can? :like, @interview
-    = like_control @interview
-  - if can? :update, @interview
-    = edit_control edit_topic_interview_path(@topic, @interview)
-  - if can? :destroy, @interview
-    = destroy_control topic_interview_path(@topic, @interview)
-  - if can? :recommend_toggle, @interview
-    = recommend_control @interview
+footer.interview_comments
+  h4
+    i.icon-comments
+    | 评论
+  ul#comments
+    = render @interview.comments
+  - if can? :create, Comment
+    = simple_form_for [@topic, @interview, Comment.new], remote: true do |f|
+      = f.input :content, as: :text, label: false, input_html: {rows: 5}
+      = f.button :submit, class: 'btn btn-success pull-right'
+    
 
