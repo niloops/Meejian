@@ -2,7 +2,9 @@
   = render partial: "topics/head", locals: { details: false }
 
 = simple_form_for [@topic, @interview], html: {class: "edit_interview"} do |f|
-  legend 请回答下面的问题参与访谈(可以略过不想回答的问题)  
+  legend 
+    | 请回答下面的问题参与访谈
+    small 可以略过不想回答的问题
   = f.simple_fields_for :answers do |answer_fields|
     = answer_fields.input :answer, as: :text, label: answer_fields.object.question, 
     input_html: {rows: 10, class: 'wysihtml5'}

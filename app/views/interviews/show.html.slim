@@ -19,14 +19,11 @@ section
       = recommend_control @interview
 
 footer.interview_comments
-  h4
-    i.icon-comments
-    | 评论
   ul#comments
     = render @interview.comments
   - if can? :create, Comment
     = simple_form_for [@topic, @interview, Comment.new], remote: true do |f|
-      = f.input :content, as: :text, label: false, input_html: {rows: 5}
+      = f.input :content, as: :text, label: false, input_html: {rows: 5, placeholder: "请在这里发表评论"}
       = f.button :submit, class: 'btn btn-success pull-right'
     
 

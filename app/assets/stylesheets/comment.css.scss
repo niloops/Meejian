@@ -1,12 +1,11 @@
 article.comment {
   @include clearfix;
-  border-top: 1px dashed $splitColor;
-  padding: 2em 0;
+  border-top: 1px solid $splitColorBold;
+  padding: 1em 0;
 
   > header {
     float: left;
-    width: 12%;
-    margin-right: 3%;
+    width: 8%;
 
     img {
       display: block;
@@ -16,11 +15,19 @@ article.comment {
 
   > section {
     float: left;
-    width: 80%;
+    width: 85%;
 
-    .comment_destroy {
-      color: $baseLightColor;
-      margin-left: 1em;
+    .comment_control {
+      time {
+        margin-left: 1em;
+      }
+
+      .comment_destroy {
+        color: $baseLightColor;
+        margin-left: 1em;
+      }
     }
+
+
   }
 }

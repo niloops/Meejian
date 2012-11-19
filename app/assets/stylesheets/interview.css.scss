@@ -10,15 +10,32 @@
 }
 
 .interview_controls {
+  @include clearfix;
+
   text-align: right;
   > a {
     margin-right: 1em;
   }
 
   #like_control {
+    @extend .btn;
+    @extend .btn_default;
     @extend .pull-left;
+    
     i {
-      margin-right: 1em;
+      padding-right: .8em;
+      border-right: 1px solid $splitColor;
+      margin-right: .8em;
+    }
+
+    b {
+      font-weight: normal;
+    }
+
+    &.disabled {
+      background: transparent;
+      border: none;
+      padding-left: 0;
     }
   }
 }
@@ -32,15 +49,9 @@
 }
 
 .interview_comments {
-  h4 {
-    margin: 2em 0 1em;
-    i {margin-right: .5em;}
-  }
-
   form {
     #comment_content {
-      padding: 0;
-      width: 100%;
+      width: 99%;
     }
     input[type='submit'] {
       margin: 0;
@@ -108,6 +119,10 @@ article.interview {
 }
 
 form.edit_interview {
+  legend {
+    small {margin-left: 1em;}
+  }
+
   textarea {width: 99%;}
   label {
     @extend .interview_question;
