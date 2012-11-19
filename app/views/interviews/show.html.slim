@@ -25,5 +25,3 @@ footer.interview_comments
     = simple_form_for [@topic, @interview, Comment.new], remote: true do |f|
       = f.input :content, as: :text, label: false, input_html: {rows: 5, placeholder: "请在这里发表评论"}
       = f.button :submit, class: 'btn btn-success pull-right'
-    
-

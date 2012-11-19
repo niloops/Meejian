@@ -146,6 +146,7 @@ form.edit_interview {
 
   ul {
     li {
+      @include clearfix;
       background: $headerBackgroundColor;
       margin-bottom: 1em;
 
@@ -157,8 +158,6 @@ form.edit_interview {
       }
 
       > a {
-        @include clearfix;
-
         img {
           float: left;
           margin-right: 1em;
