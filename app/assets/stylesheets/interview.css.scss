@@ -21,6 +21,8 @@
     @extend .btn;
     @extend .btn_default;
     @extend .pull-left;
+
+    font-size: $tinyFontSize;
     
     i {
       padding-right: .8em;
