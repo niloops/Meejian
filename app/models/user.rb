@@ -44,8 +44,6 @@ class User
   has_many :posts, class_name: "Post", inverse_of: :author
   has_and_belongs_to_many :like_posts, class_name: "Post", inverse_of: :liked_user
 
-  default_scope desc(:created_at)
-
   paginates_per 12
 
   def interviews
