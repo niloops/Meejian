@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @collects = @user.creations.desc(:created_at)
     @interviews = @user.interviews.desc(:created_at).page params[:page]
+    @user.karma_add(1)
   end
 
   def edit
@@ -21,6 +22,6 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.limit(100)
+    @users = User.desc(:karma).page params[:page]
   end
 end

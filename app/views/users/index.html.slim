@@ -1,5 +1,11 @@
-- content_for :header do
-  h1 最新用户
+- provide :nav_tab, 'users'
 
-h2 #{brand}现有#{User.count}位用户
+- content_for :header do
+  hgroup#users_header
+    h1 热门用户
+    p #{brand}一直在寻找那些有知识有品位的普通人，通过访谈的形式来分享他们的个性与生活。我们相信，只要有发现美的愿望，每个人都是专家。
+
+
 ul#users_list= render @users
+
+= paginate @users

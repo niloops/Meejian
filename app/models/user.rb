@@ -33,8 +33,10 @@ class User
   field :interests, type: String, default: ""
   field :location, type: String, default: ""
   field :description, type: String, default: ""
-
   mount_uploader :avatar, PhotosUploader
+
+  ## User Karma
+  field :karma, type: Integer, default: 0
 
   ## Relations
   has_many :creations, class_name: "Product", inverse_of: :creator
@@ -44,6 +46,8 @@ class User
 
   default_scope desc(:created_at)
 
+  paginates_per 12
+
   def interviews
     posts.where('_type' => 'Interview')
   end
@@ -51,5 +55,9 @@ class User
   def like!(post)
     like_posts << post
     post.update_attributes(liked_count: post.liked_users.count)
+  end
+
+  def karma_add(num)
+    update_attribute(:karma, karma+num)
   end
 end

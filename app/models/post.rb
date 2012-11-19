@@ -11,7 +11,15 @@ class Post
 
   paginates_per 10
 
+  after_update :add_author_karma
+
   def liked_by?(user)
     liked_users.find user
+  end
+
+  private
+
+  def add_author_karma
+    author.karma_add(10) if liked_count_changed?
   end
 end
