@@ -145,43 +145,32 @@ form.edit_interview {
   border-bottom: 8px solid $splitColorBold;
 
   ul {
-    @include clearfix;
     li {
-      @include clearfix;
-      float: left;
       background: $headerBackgroundColor;
-      padding: 10px;
-      width: 30%;
-      margin: 0 10px 10px 0;
+      margin-bottom: 1em;
 
       &:hover {
         background: darken($headerBackgroundColor, 80%);
         > a {
-          .user_summary {
-            h4, p {color: white;}
-          }
+          h4, p {color: white;}
         }
       }
 
       > a {
+        @include clearfix;
+
         img {
           float: left;
+          margin-right: 1em;
         }
 
-        .user_summary {
-          float: left;
-          width: 50%;
-          margin-left: 5%;
-
-          h4 {
-            font-size: $baseFontSize;
-            margin: .3em 0;
-            color: $baseFontColor;
-          }
-          p {
-            margin: 0;
-            color: $baseLightColor;
-          }
+        h4 {
+          font-size: $baseFontSize;
+          color: $baseFontColor;
+        }
+        p {
+          padding-right: 1em;
+          color: $baseLightColor;
         }
       }
     }

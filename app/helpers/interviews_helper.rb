@@ -2,7 +2,7 @@
 module InterviewsHelper
   def recommend_control(interview)
     link_to recommend_toggle_topic_interview_path(interview.topic, interview),
-    method: :post, class: 'btn btn-warning' do
+    method: :post, class: 'pull-right' do
       interview.recommend? ? "取消推荐" : "推荐"
     end
   end
