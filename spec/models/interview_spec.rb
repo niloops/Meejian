@@ -36,8 +36,6 @@ describe Interview do
       answer.should have(3).ref_products(@host)
       answer.ref_products(@host).should == @products
     end
-
-    specify {@interview.ref_products(@host).should == @products}
   end
 
   context "strip br tags at the answer end" do

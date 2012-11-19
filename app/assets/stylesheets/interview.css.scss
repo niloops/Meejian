@@ -23,7 +23,7 @@
     @extend .pull-left;
 
     font-size: $tinyFontSize;
-    
+
     i {
       padding-right: .8em;
       border-right: 1px solid $splitColor;
@@ -141,24 +141,38 @@ form.edit_interview {
 }
 
 #recommend_interviews {
-  padding-bottom: 1em;
+  padding-bottom: 2em;
   border-bottom: 8px solid $splitColorBold;
 
-  > ul > li {
-    margin: 1em 0;
-
-    article {
+  ul {
+    @include clearfix;
+    li {
       @include clearfix;
+      float: left;
       background: $headerBackgroundColor;
       padding: 10px;
+      width: 30%;
+      border-right: 10px solid white;
 
-      header {
-        float: left;
-        width: 31%;
+      &:hover {
+        background: darken($headerBackgroundColor, 80%);
         > a {
+          .user_summary {
+            h4, p {color: white;}
+          }
+        }
+      }
+
+      > a {
+        img {
           float: left;
         }
+
         .user_summary {
+          float: left;
+          width: 50%;
+          margin-left: 5%;
+
           h4 {
             font-size: $baseFontSize;
             margin: .3em 0;
@@ -168,15 +182,7 @@ form.edit_interview {
             margin: 0;
             color: $baseLightColor;
           }
-          float: left;
-          width: 140px;
-          margin: 0 10px;
         }
-      }
-
-      section {
-        float: right;
-        width: 69%;
       }
     }
   }

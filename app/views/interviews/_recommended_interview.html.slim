@@ -1,13 +1,6 @@
 li
-  article
-    header
-      = link_to topic_interview_path(recommended_interview.topic, recommended_interview) do
-        = user_avatar_tag(recommended_interview.author, :medium)
-      .user_summary
-        h4= recommended_interview.author.name
-        p= recommended_interview.author.description.truncate(40)
-    section.products_list
-      ul
-        - recommended_interview.ref_products(request.env['HTTP_HOST']).take(5).each do |product|
-          li= product_photo_tag product, :medium, 
-            link: topic_interview_path(recommended_interview.topic, recommended_interview)
+  = link_to topic_interview_path(recommended_interview.topic, recommended_interview) do
+    = user_avatar_tag(recommended_interview.author, :medium)
+    .user_summary
+      h4= recommended_interview.author.name
+      p= recommended_interview.author.description.truncate(40)

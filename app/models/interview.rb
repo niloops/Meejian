@@ -25,11 +25,4 @@ class Interview < Post
   def valid_answers
     answers.reject { |a| a.answer.blank? }
   end
-
-  def ref_products(host)
-    answers.reduce([]) do |products, answer|
-      products.concat answer.ref_products(host)
-    end
-  end
-
 end
