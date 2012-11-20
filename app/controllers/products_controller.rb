@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    render layout: !request.xhr?
   end
 
   def create
@@ -13,7 +14,7 @@ class ProductsController < ApplicationController
       flash[:success] = "产品#{@product.title}创建成功"
       redirect_to product_path(@product)
     else
-      render 'new'
+      render 'new', layout: !request.xhr?
     end
   end
 

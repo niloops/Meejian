@@ -121,22 +121,35 @@ article.interview {
 }
 
 form.edit_interview {
-  legend {
+  h3 {
     small {margin-left: 1em;}
   }
 
-  textarea {width: 99%;}
-  label {
-    @extend .interview_question;
-    margin-bottom: 1em;
-  }
+  .edit_answer {
+    position: relative;
 
-  .wysihtml5-toolbar {
-    li {margin-right: 1em;}
-  }
+    .product_control {
+      position: absolute;
+      top: 4em;
+      right: 0;
+    }
 
-  .control-group {
-    margin: 2em 0;
+    .control-group {
+      margin: 2em 0;
+    }
+
+    label {
+      @extend .interview_question;
+      margin-bottom: 1em;
+    }
+
+    textarea {
+      width: 99%;
+    }
+
+    .wysihtml5-toolbar {
+      li {margin-right: 1em;}
+    }
   }
 }
 

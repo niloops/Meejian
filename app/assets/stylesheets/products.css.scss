@@ -85,3 +85,16 @@
     }
   }
 }
+
+#new_product_modal {
+  margin-top: -400px;
+
+  .modal-body {
+    max-height: 600px;
+  }
+}
+
+form.edit_product {
+  textarea, input[type='url'] {width: 90%;}
+}
+

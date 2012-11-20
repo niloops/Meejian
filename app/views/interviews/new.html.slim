@@ -2,22 +2,25 @@
   = render partial: "topics/head", locals: { details: false }
 
 = simple_form_for [@topic, @interview], html: {class: "edit_interview"} do |f|
-  legend 
+  h3
     | 请回答下面的问题参与访谈
     small 可以略过不想回答的问题
   = f.simple_fields_for :answers do |answer_fields|
-    = answer_fields.input :answer, as: :text, label: answer_fields.object.question, 
-    input_html: {rows: 10, class: 'wysihtml5'}
-    = answer_fields.input :question, as: :hidden
+    .edit_answer
+      = link_to "添加产品", new_product_path,
+      class: 'btn btn-default product_control',
+      'data-toggle' => "modal", 'data-target' => "#new_product_modal"
+      = answer_fields.input :answer, as: :text, label: answer_fields.object.question,
+      input_html: {rows: 10, class: 'wysihtml5'}
+      = answer_fields.input :question, as: :hidden
   = f.button :submit, class: 'btn btn-success'
+
+#new_product_modal.modal.hide.fade tabindex="-1"
+  .modal-header
+    = button_tag 'x', type: 'button', class: 'close', 'data-dismiss' => 'modal'
+    h3 建立关联产品
+  .modal-body
 
 - content_for :script do
   coffee:
-    $ ->
-      $('.wysihtml5').each (i, e) ->
-        $(e).wysihtml5
-          "font-styles": false,
-          locale: "zh-CN"
-            
-      $('form.edit_interview').sisyphus 
-        timeout: 5
+    $ Meejian.Interview.edit

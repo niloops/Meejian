@@ -2,9 +2,11 @@
   hgroup#product_header
     h1= @product.title
     p
-      span.price #{@product.price}元
+      - if @product.price
+        span.price #{@product.price}元
       span.header_controls
-        = purchase_control @product
+        - unless @product.shop.blank?
+          = purchase_control @product
         = edit_product_control @product
     
 article#product_single

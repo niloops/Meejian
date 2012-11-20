@@ -15,7 +15,7 @@
         description: '自我描述'
       product:
         title: '名称'
-        shop: '购买链接'
+        shop: '来源网址'
         price: '价格'
         photo: '图片'
         description: '描述'

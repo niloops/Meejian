@@ -1,5 +1,5 @@
 li.interview_pair
   h4.interview_question= answer.question
-  p= raw answer.answer
+  p= raw sanitize(answer.answer)
   ul.ref_products
     = render partial: "products/ref_product", collection: answer.ref_products(request.env['HTTP_HOST'])

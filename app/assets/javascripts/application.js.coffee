@@ -20,4 +20,5 @@
 #= require sisyphus
 #= require jquery.placeholder
 #= require meejian
+#= require interview
 #= require_tree .
