@@ -1,21 +1,16 @@
 # -*- coding: utf-8 -*-
 class ProductsController < ApplicationController
   load_and_authorize_resource
+  layout :get_layout
 
   def new
     @product = Product.new
-    render layout: !request.xhr?
   end
 
   def create
     @product = Product.new(params[:product])
     @product.creator = current_user
-    if @product.save
-      flash[:success] = "产品#{@product.title}创建成功"
-      redirect_to product_path(@product)
-    else
-      render 'new', layout: !request.xhr?
-    end
+    render 'new' unless @product.save
   end
 
   def show
@@ -33,5 +28,11 @@ class ProductsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  private
+
+  def get_layout
+    request.xhr? ? nil : 'application'
   end
 end

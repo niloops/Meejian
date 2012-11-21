@@ -29,6 +29,7 @@ group :assets do
   gem 'bootstrap-sass'
   gem 'handlebars_assets'
   gem 'font-awesome-sass-rails'
+  gem "jquery-fileupload-rails"
 end
 
 group :development, :test do

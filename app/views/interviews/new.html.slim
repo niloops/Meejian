@@ -9,7 +9,8 @@
     .edit_answer
       = link_to "添加产品", new_product_path,
       class: 'btn btn-default product_control',
-      'data-toggle' => "modal", 'data-target' => "#new_product_modal"
+      'data-target' => "#new_product_modal",
+      'data-action' => "#product_insert"
       = answer_fields.input :answer, as: :text, label: answer_fields.object.question,
       input_html: {rows: 10, class: 'wysihtml5'}
       = answer_fields.input :question, as: :hidden
@@ -23,4 +24,4 @@
 
 - content_for :script do
   coffee:
-    $ Meejian.Interview.edit
+    $ Meejian.Interviews.edit

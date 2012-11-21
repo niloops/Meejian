@@ -57,6 +57,11 @@ time {
   font-size: $tinyFontSize;
 }
 
+dt {
+  font-weight: normal;
+  color: $baseLightColor;
+}
+
 .btn-mini {
   text-shadow: none;
 }

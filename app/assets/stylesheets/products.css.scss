@@ -90,7 +90,7 @@
   margin-top: -400px;
 
   .modal-body {
-    max-height: 600px;
+    max-height: 580px;
   }
 }
 
@@ -98,3 +98,7 @@ form.edit_product {
   textarea, input[type='url'] {width: 90%;}
 }
 
+#product_info {
+  dt { width: 80px; }
+  dd { margin-left: 100px; }
+}

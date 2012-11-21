@@ -19,6 +19,7 @@
 #= require bootstrap-wysihtml5.zh-CN
 #= require sisyphus
 #= require jquery.placeholder
+#= require jquery-fileupload/basic
 #= require meejian
-#= require interview
+#= require interviews
 #= require_tree .
