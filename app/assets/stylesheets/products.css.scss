@@ -45,9 +45,12 @@
   }
 
   p {
+    margin: 0;
+
     .price {
       color: $taglineColor;
       font-size: 1.2em;
+      margin-right: 1em;
     }
   }
 }
@@ -90,12 +93,16 @@
   margin-top: -400px;
 
   .modal-body {
-    max-height: 580px;
+    max-height: 600px;
   }
 }
 
 form.edit_product {
   textarea, input[type='url'] {width: 90%;}
+
+  .progress {
+    margin-top: 1em;
+  }
 }
 
 #product_info {
