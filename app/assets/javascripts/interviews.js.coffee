@@ -21,6 +21,7 @@ Meejian.Interviews =
 
       $(target).on 'hide', ->
         $modal_body.empty()
+        $(this).off 'click'
 
       editor = $(this).next().find('textarea').data("wysihtml5").editor
       action_target = $(this).attr('data-action')
