@@ -12,14 +12,16 @@ class Answer
   after_update :recommend_interview
 
   def ref_products(host)
+    return @ref_products if @ref_products
     domain = ActionDispatch::Http::URL.extract_domain host
     regexp = Regexp.new "#{domain}/products/([[:alnum:]]+)"
     ids = []
     answer.scan(regexp) { |md| ids << md[0] }
     products = Product.find ids.uniq
-    ids.map do |id|
+    @ref_products = ids.map do |id|
       products.find {|p| p.id.to_s == id}
     end.compact
+    @ref_products
   end
 
   private

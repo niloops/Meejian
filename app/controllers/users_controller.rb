@@ -3,8 +3,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @collects = @user.creations.desc(:created_at)
     @interviews = @user.interviews.desc(:created_at).page params[:page]
+    @collects = @interviews.reduce [] do |products, interview|
+      interview.valid_answers.each do |answer|
+        products.concat answer.ref_products(request.env['HTTP_HOST'])
+      end
+      products
+    end.uniq
     @user.karma_add(1)
   end
 
