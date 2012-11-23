@@ -90,7 +90,7 @@
 }
 
 #new_product_modal {
-  margin-top: -400px;
+  margin-top: -300px;
 
   .modal-body {
     max-height: 600px;
@@ -98,14 +98,45 @@
 }
 
 form.edit_product {
+  @extend .form-horizontal;
+
+  &.form-horizontal {
+    label.control-label {
+      width: 80px;
+    }
+    .controls {
+      margin-left: 100px;
+    }
+  }
   textarea, input[type='url'] {width: 90%;}
 
   .progress {
-    margin-top: 1em;
+    margin-top: 20px;
+  }
+
+  .submit {
+    input[type='submit'] {
+      @extend .btn;
+      @extend .btn-success;
+      @extend .pull-right;
+    }
+    @include clearfix;
+    margin-right: 30px;
   }
 }
 
 #product_info {
   dt { width: 80px; }
   dd { margin-left: 100px; }
+
+  #product_insert {
+    @extend .btn;
+    @extend .btn-success;
+    @extend .pull-right;
+  }
+
+  .product_photo {
+    text-align: center;
+    margin-top: 10px;
+  }
 }

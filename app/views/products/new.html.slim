@@ -6,9 +6,11 @@ section
     = f.input :title
     - unless @product.new_record?
       = product_photo_tag @product, :medium 
-    = f.input :photo, as: :file, required: false
+    = f.input :photo, as: :file
     = f.input :photo_cache, as: :hidden
     = f.input :price
     = f.input :shop, as: :url
-    = f.input :description, as: :text, input_html: {rows: 6}
-    = f.button :submit, class: 'btn btn-primary'
+    = f.input :description, as: :text, input_html: {rows: 3}
+    .submit
+      = f.button :submit
+

@@ -23,6 +23,9 @@ Meejian.Interviews =
         $modal_body.empty()
         $(this).off 'click'
 
+      $(target).on 'click', '.close', ->
+        $(target).modal('hide')
+
       editor = $(this).next().find('textarea').data("wysihtml5").editor
       action_target = $(this).attr('data-action')
       $(target).on 'click', action_target, (e) ->
@@ -32,6 +35,9 @@ Meejian.Interviews =
           "<a href=\"#{$(this).attr('href')}\" target=\"_blank\"
           title=\"#{$(this).attr('title')}\">#{$(this).attr('title')}</a>"
         $(target).modal('hide')
+
+    
+    $(".product_control:first").click()
 
   product_form_remote: ->
     $("form#new_product").fileupload

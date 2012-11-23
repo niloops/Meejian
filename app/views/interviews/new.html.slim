@@ -7,7 +7,7 @@
     small 可以略过不想回答的问题
   = f.simple_fields_for :answers do |answer_fields|
     .edit_answer
-      = link_to "添加产品", new_product_path,
+      = link_to "插入关联产品", new_product_path,
       class: 'btn btn-default product_control',
       'data-target' => "#new_product_modal",
       'data-action' => "#product_insert"
@@ -19,7 +19,7 @@
 #new_product_modal.modal.hide.fade tabindex="-1"
   .modal-header
     = button_tag 'x', type: 'button', class: 'close', 'data-dismiss' => 'modal'
-    h3 建立关联产品
+    h4 建立关联产品
   .modal-body
 
 - content_for :script do

@@ -1,10 +1,10 @@
 section
   #product_info
-    h4= @product.title
-    = product_photo_tag @product, :medium
+    .product_photo
+      = product_photo_tag @product, :medium
     dl.dl-horizontal
-      dt #{brand}地址
-      dd= link_to product_url(@product), product_url(@product)
+      dt 名称
+      dd= @product.title
       - if @product.price
         dt 价格
         dd= @product.price
@@ -12,5 +12,5 @@ section
         dt 来源网址
         dd= @product.shop
     blockquote= @product.description
-    = link_to "插入产品链接", product_url(@product), title: @product.title, 
-    id: "product_insert", class: "btn btn-primary"
+    = link_to "完成", product_url(@product), title: @product.title, 
+    id: "product_insert"
