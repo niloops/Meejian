@@ -36,9 +36,6 @@ Meejian.Interviews =
           title=\"#{$(this).attr('title')}\">#{$(this).attr('title')}</a>"
         $(target).modal('hide')
 
-    
-    $(".product_control:first").click()
-
   product_form_remote: ->
     $("form#new_product").fileupload
       fileInput: null
