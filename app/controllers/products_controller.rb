@@ -30,6 +30,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    flash[:success] = "您对#{@product.title}删除成功"
+    @product.destroy
+    redirect_to root_path
+  end
+
   private
 
   def get_layout

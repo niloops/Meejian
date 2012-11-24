@@ -15,6 +15,12 @@ module ProductsHelper
     end
   end
 
+  def destroy_product_control(product)
+    if can? :destroy, product
+      destroy_control product
+    end
+  end
+
   def purchase_control(product)
     link_to product.shop, class: 'btn btn-success' do
       content_tag(:i, '', class: 'icon-plane') + "访问来源"
