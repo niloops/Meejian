@@ -3,6 +3,7 @@ Meejian.Interviews =
     $('.wysihtml5').each (i, e) ->
       $(e).wysihtml5
         "font-styles": false,
+        "image": false,
         locale: "zh-CN"
 
     $('form.edit_interview').sisyphus
