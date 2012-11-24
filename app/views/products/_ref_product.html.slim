@@ -1,5 +1,5 @@
 li
   = product_photo_tag ref_product, :medium
   .product_summary
-    h4= link_to ref_product.title.truncate(28), ref_product
+    h4= link_to ref_product.title.truncate(28), ref_product, target: "_blank"
     p= ref_product.description.truncate(50)
