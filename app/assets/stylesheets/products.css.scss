@@ -101,13 +101,11 @@ form.edit_product {
   @extend .form-horizontal;
 
   &.form-horizontal {
-    label.control-label {
-      width: 80px;
-    }
-    .controls {
-      margin-left: 100px;
-    }
+    label.control-label { width: 80px; }
+    .controls { margin-left: 100px; }
+    > a > img { margin: 0 0 1em 100px; }
   }
+
   textarea, input[type='url'] {width: 90%;}
 
   .progress {

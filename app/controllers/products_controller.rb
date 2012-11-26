@@ -34,7 +34,11 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     flash[:success] = "您对#{@product.title}删除成功"
     @product.destroy
-    redirect_to root_path
+    redirect_to products_path
+  end
+
+  def index
+    @products = Product.desc(:created_at).page params[:page]
   end
 
   private

@@ -5,7 +5,7 @@ section
   = simple_form_for @product, html: {class: "edit_product"}  do |f|
     = f.input :title
     - unless @product.new_record?
-      = product_photo_tag @product, :medium 
+      = product_photo_tag @product, :medium
     = f.input :photo, as: :file
     = f.input :photo_cache, as: :hidden
     = f.input :price

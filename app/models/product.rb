@@ -14,4 +14,6 @@ class Product
   validates :description, length: { maximum: 1024 }
 
   belongs_to :creator, class_name: "User", inverse_of: :creation
+
+  default_scope desc(:created_at)
 end

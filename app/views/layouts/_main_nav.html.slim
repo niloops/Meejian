@@ -19,4 +19,6 @@ nav#main_nav
           li= link_to '+创建主题', new_topic_path
         - if can? :manage, Category
           li= link_to '+管理分类', categories_path
+        - if can? :manage, Product
+          li= link_to '+管理产品', products_path
         li= link_to '登出', destroy_user_session_path, method: :delete
