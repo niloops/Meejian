@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @interviews = @user.interviews.desc(:created_at).page params[:page]
     @collects = @interviews.reduce [] do |products, interview|
       interview.valid_answers.each do |answer|
-        products.concat answer.ref_products(request.env['HTTP_HOST'])
+        products.concat answer.ref_products
       end
       products
     end.uniq

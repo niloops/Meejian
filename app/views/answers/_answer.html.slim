@@ -4,4 +4,4 @@ li.interview_pair
     tags: %w(b i u a img br ul ol li), 
     attributes: %w(id class src alt href title target rel))
   ul.ref_products
-    = render partial: "products/ref_product", collection: answer.ref_products(request.env['HTTP_HOST'])
+    = render partial: "products/ref_product", collection: answer.ref_products

@@ -7,13 +7,6 @@ class PhotosUploader < CarrierWave::Uploader::Base
   include Sprockets::Helpers::RailsHelper
   include Sprockets::Helpers::IsolatedHelper
 
-  # Choose what kind of storage to use for this uploader:
-  storage :upyun
-  # storage :fog
-
-  self.upyun_bucket = "meejian-photos"
-  self.upyun_bucket_domain = "meejian-photos.b0.upaiyun.com"
-
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

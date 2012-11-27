@@ -18,7 +18,7 @@ describe Interview do
 
   context "references products in the answer" do
     before do
-      @host = "localhost:3000"
+      @host = Settings.host
 
       @products = []
       3.times {@products << Fabricate(:product)}
@@ -33,8 +33,8 @@ describe Interview do
 
     specify do
       answer = @interview.answers.last
-      answer.should have(3).ref_products(@host)
-      answer.ref_products(@host).should == @products
+      answer.should have(3).ref_products
+      answer.ref_products.should == @products
     end
   end
 
