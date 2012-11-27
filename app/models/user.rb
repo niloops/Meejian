@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :omniauthable,
   :rememberable, :trackable, :validatable
 
   field :email,              type: String, default: ""
@@ -14,6 +14,9 @@ class User
   validates :name, presence: true, length: {minimum: 2, maximum: 10}
 
   attr_protected :encrypted_password, :admin
+
+  ## Omniauthable
+  embeds_many :auths
 
   ## Rememberable
   field :remember_created_at, type: Time
@@ -45,6 +48,25 @@ class User
   has_and_belongs_to_many :like_posts, class_name: "Post", inverse_of: :liked_user
 
   paginates_per 12
+
+  class << self
+    def create_with_omniauth(omniauth)
+      auth = Auth.new(provider: omniauth[:provider], uid: omniauth[:uid])
+      # return nil unless auth && auth.valid?
+      # create do |user|
+      #   user.authentications << auth
+      # end
+    end
+
+    def find_by_omniauth(omniauth)
+      where("auths.provider" => omniauth[:provider])
+        .and("auths.uid" => omniauth[:uid]).first
+    end
+
+    def find_or_create_with_omniauth(omniauth)
+      find_by_omniauth(omniauth) || create_with_omniauth(omniauth)
+    end
+  end
 
   def interviews
     posts.where('_type' => 'Interview')

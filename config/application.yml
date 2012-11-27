@@ -1,12 +1,26 @@
 defaults: &defaults
   host: "meejian.com"
+  upyun:
+    username: "leslielilu"
+    password: "g4l4pg2sh13sm"
+    photo_bucket: "meejian-photos"
+    photo_bucket_domain: "meejian-photos.b0.upaiyun.com"
+  weibo:
+    consumer_key: ""
+    consumer_secret: ""
 
 development:
   <<: *defaults
   host: "localhost:3000"
+  weibo:
+    consumer_key: "1876331179"
+    consumer_secret: "556d6942342beb92719dc24e3e513e05"
 
 test:
   <<: *defaults
 
 production:
   <<: *defaults
+  weibo:
+    consumer_key: "4071292036"
+    consumer_secret: "28e54d0002ff5129dbd5748853204b07"

@@ -2,7 +2,9 @@ Meejian::Application.routes.draw do
   root to: 'home#index'
   get '/page/:page', to: 'home#index'
 
-  devise_for :users, skip: [:sessions]
+  devise_for :users, skip: [:sessions],
+  controllers:  {omniauth_callbacks: "omniauth_callbacks"}
+
   as :user do
     get 'login' => 'devise/sessions#new', as: :new_user_session
     post 'login' => 'devise/sessions#create', as: :user_session

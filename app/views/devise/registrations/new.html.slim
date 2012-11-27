@@ -8,5 +8,5 @@ h2 注册
   = f.input :password_confirmation, required: true 
   = f.button :submit, "注册"
 
-
+= link_to "微博登陆", user_omniauth_authorize_path(:weibo)
 
