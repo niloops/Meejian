@@ -47,7 +47,7 @@ class PhotosUploader < CarrierWave::Uploader::Base
   def filename
     if super.present?
       @name ||= Digest::MD5.hexdigest(File.dirname(current_path))
-      "#{@name}.#{file.extension.downcase}"
+      "#{@name}#{File.extname(original_filename).downcase}"
     end
   end
 end

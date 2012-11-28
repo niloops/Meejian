@@ -14,6 +14,7 @@ Meejian::Application.routes.draw do
   resources :users, only: [:show, :edit, :update, :index] do
     get 'page/:page', action: :show, on: :member
     get 'page/:page', action: :index, on: :collection
+    resources :auths, only: [:index, :destroy]
   end
   resources :products
   resources :categories

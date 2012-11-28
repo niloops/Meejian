@@ -1,0 +1,13 @@
+- content_for :header do
+  h1 微博绑定
+
+ul
+  li
+    - if @auths[:weibo]
+      | 已绑定新浪微博 
+      = link_to "@"+@auths[:weibo].name, @auths[:weibo].url
+      | 的帐号
+      = link_to "x取消绑定", user_auth_path(current_user, @auths[:weibo]), method: :delete, 
+      confirm: "真的要取消绑定吗?"
+    - else
+      = link_to "新浪微博绑定", user_omniauth_authorize_path(:weibo), class: "btn btn-warning"

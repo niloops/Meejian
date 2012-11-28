@@ -50,22 +50,20 @@ class User
   paginates_per 12
 
   class << self
-    def create_with_omniauth(omniauth)
-      auth = Auth.new(provider: omniauth[:provider], uid: omniauth[:uid])
-      # return nil unless auth && auth.valid?
-      # create do |user|
-      #   user.authentications << auth
-      # end
+
+    def find_by_omniauth(data)
+      where("auths.provider" => data[:provider])
+        .and("auths.uid" => data[:uid]).first
     end
 
-    def find_by_omniauth(omniauth)
-      where("auths.provider" => omniauth[:provider])
-        .and("auths.uid" => omniauth[:uid]).first
+    def new_with_session(params, session)
+      super.tap do |user|
+        if data = session["devise.omniauth"]
+          user.merge_from_omniauth! data
+        end
+      end
     end
 
-    def find_or_create_with_omniauth(omniauth)
-      find_by_omniauth(omniauth) || create_with_omniauth(omniauth)
-    end
   end
 
   def interviews
@@ -79,5 +77,19 @@ class User
 
   def karma_add(num)
     update_attribute(:karma, karma+num)
+  end
+
+  def merge_from_omniauth!(data)
+    auths << Auth.from_omniauth(data)
+    self.name = data[:info][:name]
+    self.location = data[:info][:location]
+    self.description = data[:info][:description]
+
+    provider = data[:provider].to_sym
+    send provider, data if respond_to? provider
+  end
+
+  def weibo(data)
+    self.remote_avatar_url = data[:extra][:raw_info][:avatar_large] + ".jpg"
   end
 end
