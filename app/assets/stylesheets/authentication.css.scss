@@ -1,0 +1,16 @@
+.signin_controls {
+  @extend .header_controls;
+  @extend .pull-right;
+  margin-top: 20px;
+}
+
+.signin_omniauth {
+  @extend .btn;
+  img {
+    margin-right: .5em;
+    vertical-align: -3px;
+  }
+}
+
+.new_user {
+}

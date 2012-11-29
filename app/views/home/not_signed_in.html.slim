@@ -1,0 +1,13 @@
+- content_for :header do
+  hgroup.slogan
+    h1= brand 
+    h2= slogan
+    span.signin_controls
+      = link_to "登录", new_user_session_path, class: "btn"
+      = link_to "注册", new_user_registration_path, class: "btn btn-primary"
+
+section#home_topics
+  - @topics.each do |topic|
+    = render partial: "topics/topic", locals: {topic: topic}
+    ul.recommend_interviews
+      = render partial: "interviews/recommended_interview", collection: topic.interviews.recommended

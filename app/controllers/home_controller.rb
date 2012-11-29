@@ -1,6 +1,11 @@
 class HomeController < ApplicationController
   def index
-    redirect_to new_user_session_path unless user_signed_in?
-    @interviews = Interview.page params[:page]
+    if user_signed_in?
+      @interviews = Interview.page params[:page]
+      render 'signed_in'
+    else
+      @topics = Topic.recommended
+      render 'not_signed_in'
+    end
   end
 end

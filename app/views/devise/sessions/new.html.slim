@@ -1,28 +1,20 @@
 - content_for :header do
-  hgroup#login_header.slogan
-    h1= brand 
-    h2= slogan
+  h1 登录#{brand}
 
-- provide :custom_notification?, true
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.input :email, label:false, wrapper: :append do
+    span.add-on
+      i.icon-envelope
+    = f.input_field :email, placeholder: "请输入您的邮箱地址", autofocus: true
+  = f.input :password, label:false, wrapper: :append do
+    span.add-on
+      i.icon-key
+    = f.input_field :password, placeholder: "请输入您的密码"
+  - if devise_mapping.rememberable?
+    = f.input :remember_me, as: :boolean, label: false, inline_label: true
+  = f.button :submit, "登录", class: "btn btn-primary"
+  = link_to "注册", new_registration_path(resource_name), class: 'btn btn-link'
 
-= render "products/news"
-
-section#login_form
-  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
-    legend 登入#{brand}
-    = f.input :email, label:false, wrapper: :append do
-      span.add-on
-        i.icon-envelope
-      = f.input_field :email, placeholder: "请输入您的邮箱地址", autofocus: true
-    = f.input :password, label:false, wrapper: :append do
-      span.add-on
-        i.icon-key
-      = f.input_field :password, placeholder: "请输入您的密码"
-    - if devise_mapping.rememberable?
-      = f.input :remember_me, as: :boolean, label: false, inline_label: true
-    = notification
-    = f.button :submit, "登陆", class: "btn btn-primary"
-    = link_to "注册", new_registration_path(resource_name), class: 'btn btn-link'
-    
-    
-  
+= link_to user_omniauth_authorize_path(:weibo), class: 'signin_omniauth' do
+  = image_tag "weibo.png"
+  | 用微博帐号登录

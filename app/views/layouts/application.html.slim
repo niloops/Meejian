@@ -16,7 +16,7 @@ doctype html
   body
     = render 'layouts/header'
     .container
-      = notification unless content_for?(:custom_notification?)
+      = notification 
       section#content
         = yield
     = render 'layouts/footer'

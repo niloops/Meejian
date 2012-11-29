@@ -55,14 +55,6 @@
   }
 }
 
-#products_wall {
-  float: left;
-  width: 70%;
-  @extend .products_list;
-  li { margin-bottom: .4em; }
-}
-
-
 #product_single {
   text-align: center;
 

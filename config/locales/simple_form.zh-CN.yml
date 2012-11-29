@@ -26,6 +26,7 @@
         interactive: '用户互动'
         questions: '问题列表'
         category: '分类'
+        recommend: '推荐'
       category:
         name: '分类名称'
       comment:

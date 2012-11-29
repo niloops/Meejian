@@ -153,39 +153,39 @@ form.edit_interview {
   }
 }
 
-#recommend_interviews {
-  padding-bottom: 2em;
-  border-bottom: 8px solid $splitColorBold;
+ul.recommend_interviews {
+  li {
+    @include clearfix;
+    background: $headerBackgroundColor;
+    margin-bottom: 1em;
 
-  ul {
-    li {
-      @include clearfix;
-      background: $headerBackgroundColor;
-      margin-bottom: 1em;
+    &:hover {
+      background: darken($headerBackgroundColor, 80%);
+      > a {
+        h4, p {color: white;}
+      }
+    }
 
-      &:hover {
-        background: darken($headerBackgroundColor, 80%);
-        > a {
-          h4, p {color: white;}
-        }
+    > a {
+      img {
+        float: left;
+        margin-right: 1em;
       }
 
-      > a {
-        img {
-          float: left;
-          margin-right: 1em;
-        }
-
-        h4 {
-          color: $baseFontColor;
-        }
-        p {
-          padding-right: 1em;
-          color: $baseLightColor;
-        }
+      h4 {
+        color: $baseFontColor;
+      }
+      p {
+        padding-right: 1em;
+        color: $baseLightColor;
       }
     }
   }
+}
+
+#recommend_interviews {
+  padding-bottom: 2em;
+  border-bottom: 8px solid $splitColorBold;
 }
 
 #not_recommend_interviews {

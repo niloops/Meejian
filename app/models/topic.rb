@@ -8,6 +8,7 @@ class Topic
   field :description, type: String, default: ""
   field :questions, type: Array, default: []
   field :interactive, type: Boolean, default: true
+  field :recommend, type: Boolean, default: false
 
   slug :title
 
@@ -21,4 +22,7 @@ class Topic
   validates :category, presence: true
 
   before_validation { questions.reject! {|i| i.blank?} }
+
+  default_scope desc(:created_at)
+  scope :recommended, where(recommend: true)
 end
