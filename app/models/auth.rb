@@ -3,6 +3,8 @@ class Auth
   field :provider, type: String
   field :uid, type: String
   field :name, type: String
+  field :access_token, type: String
+  field :expires_at, type: Time
   embedded_in :user
 
   validates :provider, presence: true
@@ -11,7 +13,11 @@ class Auth
 
   class << self
     def from_omniauth(data)
-      new provider: data[:provider], uid: data[:uid], name: data[:info][:name]
+      new provider: data[:provider],
+      uid: data[:uid],
+      name: data[:info][:name],
+      access_token: data[:credentials][:token],
+      expires_at: data[:credentials][:expires_at]
     end
   end
 

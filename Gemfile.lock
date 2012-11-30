@@ -299,6 +299,11 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.1)
       rack (>= 1.0)
+    weibo_2 (0.1.1)
+      hashie (~> 1.2.0)
+      json (~> 1.7.3)
+      oauth2 (~> 0.8.0)
+      rest-client (~> 1.6.7)
 
 PLATFORMS
   ruby
@@ -347,3 +352,4 @@ DEPENDENCIES
   slim-rails
   thin
   uglifier
+  weibo_2
