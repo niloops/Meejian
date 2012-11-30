@@ -4,9 +4,11 @@
   = render partial: "topics/head", locals: {details: true}
 
 section#recommend_interviews
-  h2 推荐访谈  
+  h2 推荐访谈
   ul.recommend_interviews
-    = render partial: "interviews/recommended_interview", collection: @recommended_interviews
+    = render partial: "interviews/recommended_interview",
+    collection: @recommended_interviews,
+    locals: {question_length: 40, answer_length: 180}
 
 section#not_recommend_interviews
   ul

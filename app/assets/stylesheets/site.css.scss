@@ -24,3 +24,34 @@ section.jobs {
     border-bottom: 1px solid $splitColor;
   }
 }
+
+#home_signin {
+  background: $headerBackgroundColor;
+  padding: 1em;
+
+  p {
+    color: $taglineColor;
+    font-size: 1.2em;
+    vertical-align: middle;
+  }
+
+  .signin_controls {
+    text-align: right;
+     > a {
+       margin: 0 .5em;
+     }
+  }
+}
+
+#home_topics {
+  ul.recommend_interviews {
+    @include clearfix;
+    margin-bottom: 2em;
+
+    li {
+      float: left;
+      width: 48%;
+      margin: 0 .5em .5em 0;
+    }
+  }
+}

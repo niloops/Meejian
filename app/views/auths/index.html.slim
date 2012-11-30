@@ -5,9 +5,11 @@ ul
   li
     - if @auths[:weibo]
       | 已绑定新浪微博 
-      = link_to "@"+@auths[:weibo].name, @auths[:weibo].url
+      = link_to "@"+@auths[:weibo].name, @auths[:weibo].url, class: "btn btn-link"
       | 的帐号
       = link_to "x取消绑定", user_auth_path(current_user, @auths[:weibo]), method: :delete, 
-      confirm: "真的要取消绑定吗?"
+      confirm: "真的要取消绑定吗?", class: "btn btn-link"
     - else
-      = link_to "新浪微博绑定", user_omniauth_authorize_path(:weibo), class: "btn btn-warning"
+      = link_to user_omniauth_authorize_path(:weibo), class: 'signin_omniauth' do
+        = image_tag "weibo.png"
+        | 新浪微博绑定

@@ -1,7 +1,7 @@
 class Auth
   include Mongoid::Document
   field :provider, type: String
-  field :uid, type: String
+  field :uid, type: Integer
   field :name, type: String
   field :access_token, type: String
   field :expires_at, type: Time

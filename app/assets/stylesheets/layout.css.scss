@@ -77,3 +77,8 @@ hgroup.slogan {
     padding-left: 1em;
   }
 }
+
+hgroup.guest_slogan {
+  @extend hgroup.slogan;
+  text-align: center;
+}

@@ -1,9 +1,3 @@
-.signin_controls {
-  @extend .header_controls;
-  @extend .pull-right;
-  margin-top: 20px;
-}
-
 .signin_omniauth {
   @extend .btn;
   img {
@@ -12,5 +6,32 @@
   }
 }
 
-.new_user {
+#signin {
+  @include clearfix;
+  padding: 2.5em 0;
+
+  form#new_user {
+    @extend .pull-left;
+    width: 40%;
+
+    .control-group {
+      margin: 2em 0;
+    }
+
+  }
+
+  blockquote.signin {
+    @extend .pull-right;
+    font-size: 3em;
+    line-height: 1.5em;
+    color: $taglineColor;
+    width: 50%;
+    margin: 2em 0;
+  }
+
+  .open_auths {
+    margin: 2em 0;
+    border-top: 1px solid $splitColor;
+    padding-top: 2em;
+  }
 }
