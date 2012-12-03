@@ -8,9 +8,8 @@ header
   #home_carousel.carousel.slide
     .carousel-inner
       - @topics.each_with_index do |topic, index|
-        div class=["item", (index == 0) ? "active" : ""]
-          = link_to topic, title: topic.title do
-            = image_tag topic.photo_url(:huge), alt: topic.title
+        = link_to topic, title: topic.title, class: ["item", (index == 0) ? "active" : ""] do
+          = image_tag topic.photo_url(:huge), alt: topic.title
           .carousel-caption
             h4= topic.title
             p= topic.description
