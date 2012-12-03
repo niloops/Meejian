@@ -23,5 +23,5 @@ section#home_topics
     = render partial: "topics/topic", locals: {topic: topic}
     ul.recommend_interviews
       = render partial: "interviews/recommended_interview",
-      collection: topic.interviews.recommended.take(4),
+      collection: take_recommends(topic),
       locals: {question_length: 16, answer_length: 60}

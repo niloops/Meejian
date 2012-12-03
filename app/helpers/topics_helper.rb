@@ -7,4 +7,9 @@ module TopicsHelper
       content_tag(:i, '', class: 'icon-fire icon-large') + "参与访谈"
     end
   end
+
+  def take_recommends(topic)
+    recommends = topic.interviews.recommended.take(4)
+    recommends.take(2) if recommends.count < 4
+  end
 end
