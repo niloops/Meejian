@@ -16,10 +16,14 @@ $splitColor: $taglineColor;
 $splitColorBold: $headerBackgroundColor;
 $tinyFontSize: 12px;
 $imageMediumWidth: 120px;
+$masonryMargin: 10px;
 
 @import "bootstrap";
 @import "font-awesome";
 @import "compass/css3";
+
+$containerWidth: $gridColumns * ($gridColumnWidth + $gridGutterWidth) - $gridGutterWidth;
+
 
 ul, ol {
   list-style: none;

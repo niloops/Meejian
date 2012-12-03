@@ -5,6 +5,8 @@
   = f.input :title
   = f.input :subtitle
   = f.input :description, as: :text, input_html: {rows: 10}
+  = f.input :photo, as: :file
+  = f.input :photo_cache, as: :hidden
   = f.association :category, collection: Category.all
   = f.input :interactive, as: :boolean, inline_label: "用户可以参与"
   = f.input :recommend, as: :boolean, inline_label: "是否推荐"

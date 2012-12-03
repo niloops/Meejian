@@ -25,33 +25,23 @@ section.jobs {
   }
 }
 
-#home_signin {
-  background: $headerBackgroundColor;
-  padding: 1em;
-
-  p {
-    color: $taglineColor;
-    font-size: 1.2em;
-    vertical-align: middle;
-  }
-
-  .signin_controls {
-    text-align: right;
-     > a {
-       margin: 0 .5em;
-     }
-  }
-}
-
 #home_topics {
   ul.recommend_interviews {
     @include clearfix;
-    margin-bottom: 2em;
+    margin: 1em 0;
 
     li {
       float: left;
-      width: 48%;
-      margin: 0 .5em .5em 0;
+      width: ($containerWidth - $masonryMargin)/2;
+      margin-bottom: $masonryMargin;
+      &:nth-child(odd) { margin-right: $masonryMargin; }
     }
+  }
+}
+
+#home_carousel {
+  img {
+    width: $containerWidth;
+    height: 400px;
   }
 }

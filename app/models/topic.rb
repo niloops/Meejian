@@ -9,6 +9,7 @@ class Topic
   field :questions, type: Array, default: []
   field :interactive, type: Boolean, default: true
   field :recommend, type: Boolean, default: false
+  mount_uploader :photo, PhotosUploader
 
   slug :title
 

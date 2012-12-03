@@ -6,20 +6,26 @@ nav#main_nav
       = link_to '主题浏览', topics_path
     = nav_tab 'users' do
       = link_to '热门用户', users_path
-    = nav_tab 'current_user', class: 'dropdown' do
-      = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do
-        = user_avatar_tag current_user, :small, class: 'avatar_tiny'
-        = current_user.name
-        i.icon-caret-down
-      ul.dropdown-menu
-        li= link_to '我的个人页', user_path(current_user)
-        li= link_to '编辑个人信息', edit_user_path(current_user)
-        li= link_to '修改帐号密码', edit_user_registration_path
-        li= link_to '微博绑定', user_auths_path(current_user)
-        - if can? :create, Topic
-          li= link_to '+创建主题', new_topic_path
-        - if can? :manage, Category
-          li= link_to '+管理分类', categories_path
-        - if can? :manage, Product
-          li= link_to '+管理产品', products_path
-        li= link_to '登出', destroy_user_session_path, method: :delete
+    - if user_signed_in?
+      = nav_tab 'current_user', class: 'dropdown' do
+        = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do
+          = user_avatar_tag current_user, :small, class: 'avatar_tiny'
+          = current_user.name
+          i.icon-caret-down
+        ul.dropdown-menu
+          li= link_to '我的个人页', user_path(current_user)
+          li= link_to '编辑个人信息', edit_user_path(current_user)
+          li= link_to '修改帐号密码', edit_user_registration_path
+          li= link_to '微博绑定', user_auths_path(current_user)
+          - if can? :create, Topic
+            li= link_to '+创建主题', new_topic_path
+          - if can? :manage, Category
+            li= link_to '+管理分类', categories_path
+          - if can? :manage, Product
+            li= link_to '+管理产品', products_path
+          li= link_to '登出', destroy_user_session_path, method: :delete
+    - else 
+      li
+        .signin_controls
+          = link_to "登录", new_user_session_path, class: "btn btn-mini"
+          = link_to "注册", new_user_registration_path, class: "btn btn-primary btn-mini"

@@ -1,12 +1,11 @@
 header#page_header
-  - if user_signed_in?
-    .navbar.navbar-static-top.navbar-inverse
-      .navbar-inner
-        .container
-          = link_to brand, root_path, class: "brand"
-          = render 'layouts/search_form'
-          = render 'layouts/main_nav'
-      
+  .navbar.navbar-static-top.navbar-inverse
+    .navbar-inner
+      .container
+        = link_to brand, root_path, class: "brand"
+        = render 'layouts/search_form'
+        = render 'layouts/main_nav'
+    
   - if content_for? :header
     section#content_header
       .container= yield :header

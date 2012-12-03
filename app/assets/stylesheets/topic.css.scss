@@ -1,7 +1,20 @@
 #topic_header {
   position: relative;
 
+  img {
+    float: left;
+    margin-right: 2em;
+    margin-top: 8px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
   h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    line-height: 1.7em;
     color: $taglineColor;
     .controls {
       vertical-align: 3px;
@@ -29,11 +42,24 @@
 #topic_header + .answer_control {
   position: absolute;
   left: 41.5%;
-  bottom: -4em;
+  bottom: -3em;
 }
 
 hgroup.topic_title {
-  > * { display: inline-block; }
+  padding-top: 1em;
+  
+  > * { 
+    display: inline-block; 
+   }
+
+  img {
+    width: 40px;
+    height: 40px;
+    vertical-align: -3px;
+    margin-right: 1em;
+  }
+
+  h3 {margin: 0;}
 
   h4 {
     color: $taglineColor;

@@ -1,4 +1,5 @@
 hgroup#topic_header
+  = image_tag @topic.photo_url(:small)
   h1= link_to @topic.title, @topic
   h2 
     = @topic.subtitle

@@ -9,6 +9,15 @@
       margin: 0 2em;
     }
 
+    .signin_controls {
+      margin-left: 4em;
+      a {
+        margin-right: 1em;
+        margin-top: 7px;
+        width: 30px;
+      }
+    }
+
     //ie8 bug: img(max-width=100%) need its container has width set
     .ie8 & .dropdown-toggle {
       width: 240px;
@@ -19,7 +28,7 @@
   #content_header {
     .container {position: relative;}
     background: $headerBackgroundColor;
-    padding: 2em 0;
+    padding: 1em 0;
   }
 }
 
@@ -67,7 +76,7 @@ hgroup.slogan {
     display: inline-block;
   }
 
-  h2 {
+  h2, p {
     $fontColor: $taglineColor;
     display: inline-block;
     color: $fontColor;

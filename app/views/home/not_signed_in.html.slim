@@ -1,13 +1,23 @@
+- provide :nav_tab, 'home'
 - content_for :header do
   hgroup.slogan
-    h1= brand
-    h2= slogan
+    h1 #{brand}
+    p 在这里，我们通过访谈的形式，倾听人们对于生活和消费的看法，我们相信，只要有爱，你也能成为可以帮助他人的专家
 
-header#home_signin
-  p 在#{brand}，我们通过访谈的形式，倾听人们对于生活和消费的看法，我们相信，只要有爱，你也能成为可以帮助他人的专家
-  .signin_controls
-    = link_to "登录", new_user_session_path, class: "btn"
-    = link_to "注册", new_user_registration_path, class: "btn btn-primary "
+header
+  #home_carousel.carousel.slide
+    .carousel-inner
+      - @topics.each_with_index do |topic, index|
+        div class=["item", (index == 0) ? "active" : ""]
+          = link_to topic, title: topic.title do
+            = image_tag topic.photo_url(:huge), alt: topic.title
+          .carousel-caption
+            h4= topic.title
+            p= topic.description
+    = link_to "#home_carousel", class: "carousel-control left", "data-slide" => "prev" do
+      raw &lsaquo;
+    = link_to "#home_carousel", class: "carousel-control right", "data-slide" => "next" do
+      raw &rsaquo;
 
 section#home_topics
   - @topics.each do |topic|

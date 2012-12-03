@@ -8,16 +8,14 @@
 
 #signin {
   @include clearfix;
-  padding: 2.5em 0;
 
   form#new_user {
     @extend .pull-left;
     width: 40%;
 
     .control-group {
-      margin: 2em 0;
+      margin: 1em 0;
     }
-
   }
 
   blockquote.signin {
@@ -26,7 +24,6 @@
     line-height: 1.5em;
     color: $taglineColor;
     width: 50%;
-    margin: 2em 0;
   }
 
   .open_auths {
