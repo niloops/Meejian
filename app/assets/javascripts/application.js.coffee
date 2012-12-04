@@ -22,5 +22,4 @@
 #= require jquery-fileupload/basic
 #= require meejian
 #= require interviews
-#= require home 
 #= require_tree .

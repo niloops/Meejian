@@ -45,3 +45,14 @@ section.jobs {
     height: 400px;
   }
 }
+
+#home_avatar_tip {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  a {
+    @extend .btn;
+    @extend .btn-danger;
+  }
+}

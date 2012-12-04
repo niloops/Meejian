@@ -3,14 +3,17 @@
 
 = simple_form_for(@user, html: { multipart: :true }) do |f| 
   = f.error_notification 
-  = f.input :name
-  = user_avatar_tag @user, :medium
-  = f.input :avatar, as: :file
-  = f.input :avatar_cache, as: :hidden
-  = f.input :job
-  = f.input :interests
-  = f.input :location
-  = f.input :description, as: :text, input_html: {rows: 5}
-  = f.button :submit, "提交修改" 
-
-= link_to "返回", :back
+  fieldset
+    = f.input :name
+    = f.input :job
+    = f.input :interests
+    = f.input :location
+  fieldset
+    .controls.avatar_preview
+      = user_avatar_tag @user, :big
+    = f.input :avatar, as: :file
+    = f.input :avatar_cache, as: :hidden
+  fieldset
+    = f.input :description, as: :text, input_html: {rows: 8}
+  .controls.submit
+    = f.button :submit, "提交修改" 

@@ -1,12 +1,12 @@
 - provide :nav_tab, 'home'
 - content_for :header do
   h1 最新访谈
+  - unless current_user.avatar?
+    #home_avatar_tip
+      = link_to edit_user_path(current_user) do
+        | 请补充您的头像
 
 section#home_interviews
   = render partial: 'interviews/interview', collection: @interviews, 
   locals: {with_user: true}
   = paginate @interviews
-  
-- content_for :script do
-  javascript:
-    //$(Meejian.Home.avatar_tip(#{current_user.avatar?}))

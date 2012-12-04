@@ -120,3 +120,24 @@
     color: $taglineColor;
   }
 }
+
+form.edit_user {
+  @include clearfix;
+  fieldset {
+    float: left;
+    width: 33%;
+    .avatar_preview { margin: 1em 0; }
+    textarea {width: 100%;}
+  }
+
+  .submit {
+    text-align: center;
+
+    input[type='submit'] {
+      @extend .btn;
+      @extend .btn-success;
+      width: 200px;
+      margin: 1em 0;
+    }
+  }
+}
