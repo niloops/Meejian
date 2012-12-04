@@ -1,6 +1,6 @@
 li
   = link_to topic_interview_path(recommended_interview.topic, recommended_interview) do
     = user_avatar_tag(recommended_interview.author, :medium)
-    - answer = recommended_interview.valid_answers.first
+    - answer = recommended_interview.recommend_answer
     h4= answer.question.truncate(question_length)
     p= strip_tags(answer.answer).truncate(answer_length)

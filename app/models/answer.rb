@@ -9,7 +9,7 @@ class Answer
 
   after_validation :strip_multi_br
 
-  after_update :recommend_interview
+  after_update :recommend_toggle
 
   def ref_products
     return @ref_products if @ref_products
@@ -29,7 +29,9 @@ class Answer
     answer.gsub!(/(<br>\s*)+$/, '<br>') if answer
   end
 
-  def recommend_interview
-    interview.update_attribute(:recommend, recommend) if recommend_changed?
+  def recommend_toggle
+    if recommend_changed?
+      interview.update_attribute(:recommend, recommend)
+    end
   end
 end

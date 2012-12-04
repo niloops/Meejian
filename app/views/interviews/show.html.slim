@@ -15,8 +15,6 @@ section
       = edit_control edit_topic_interview_path(@topic, @interview)
     - if can? :destroy, @interview
       = destroy_control topic_interview_path(@topic, @interview)
-    - if can? :recommend_toggle, @interview
-      = recommend_control @interview
 
 footer.interview_comments
   ul#comments

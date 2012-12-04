@@ -25,4 +25,8 @@ class Interview < Post
   def valid_answers
     answers.reject { |a| a.answer.blank? }
   end
+
+  def recommend_answer
+    answers.where(recommend: true).first or valid_answers.first
+  end
 end

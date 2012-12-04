@@ -21,10 +21,14 @@ Meejian::Application.routes.draw do
   resources :topics do
     resources :interviews, except: [:index] do
       member do
-        post 'recommend_toggle'
         post 'like'
       end
       resources :comments, only: [:create, :destroy]
+      resources :answers do
+        member do
+          post 'recommend_toggle'
+        end
+      end
     end
   end
 

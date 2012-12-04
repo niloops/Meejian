@@ -5,3 +5,5 @@ li.interview_pair
     attributes: %w(id class src alt href title target rel))
   ul.ref_products
     = render partial: "products/ref_product", collection: answer.ref_products
+  - if can? :recommend_toggle, answer
+    = recommend_control answer

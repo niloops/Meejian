@@ -67,14 +67,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  def recommend_toggle
-    @interview = Interview.find(params[:id])
-    @interview.recommend = !@interview.recommend
-    @interview.save
-    flash[:success] = @interview.recommend? ? "您推荐了此访谈" : "您取消了对此访谈的推荐"
-    redirect_to topic_interview_path(@topic, @interview)
-  end
-
   private
 
   def setup_topic

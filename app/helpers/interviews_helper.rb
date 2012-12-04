@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 module InterviewsHelper
-  def recommend_control(interview)
-    link_to recommend_toggle_topic_interview_path(interview.topic, interview),
-    method: :post, class: 'pull-right' do
-      interview.recommend? ? "取消推荐" : "推荐"
+  def recommend_control(answer)
+    link_to recommend_toggle_topic_interview_answer_path(answer.interview.topic,
+                                                    answer.interview, answer),
+    method: :post  do
+      answer.recommend? ? "取消推荐" : "推荐"
     end
   end
 
