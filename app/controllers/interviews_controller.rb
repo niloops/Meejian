@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 class InterviewsController < ApplicationController
   before_filter :setup_topic
-  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :authenticate_user!, only: [:new]
   load_and_authorize_resource
 
   def new
-    unless @can_create_interview
+    @interview = Interview.find_by_topic_and_author(@topic, current_user)
+    if @interview
       flash[:info] = "您已经参与过#{@topic.title}, 请编辑您的回答"
       redirect_to edit_topic_interview_path(@topic, @interview)
     else
-      @can_create_interview = false
       @interview = Interview.new
       setup_answers
     end
@@ -20,6 +20,7 @@ class InterviewsController < ApplicationController
       .merge(author: current_user, topic: @topic)
     if @interview.save
       flash[:success] = "您回答了对#{@topic.title}的访谈"
+      flash[:share] = current_user.auths?
       redirect_to topic_interview_path(@topic, @interview)
     else
       flash.now[:error] = @interview.errors.full_messages.first
@@ -67,11 +68,17 @@ class InterviewsController < ApplicationController
     end
   end
 
+  def share
+    @interview = Interview.find(params[:id])
+    current_user.auths.each {|auth| auth.share params[:share][:content] }
+    flash[:success] = "您分享了对#{@topic.title}的访谈"
+    redirect_to topic_interview_path(@topic, @interview)
+  end
+
   private
 
   def setup_topic
     @topic = Topic.find(params[:topic_id])
-    @can_create_interview = !Interview.find_by_topic_and_author(@topic, current_user)
   end
 
   def setup_answers

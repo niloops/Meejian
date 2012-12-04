@@ -26,7 +26,21 @@ class Auth
     send url_method if respond_to? url_method
   end
 
+  def share(content)
+    share_method = "#{provider}_share".to_sym
+    send share_method, content if respond_to? share_method
+  end
+
   def weibo_url
     "http://weibo.com/u/#{uid}"
+  end
+
+  def weibo_share(content)
+    client = WeiboOAuth2::Client.new
+    client.get_token_from_hash(access_token: access_token, expires_at: expires_at)
+    begin
+      client.statuses.update content
+    rescue OAuth2::Error
+    end
   end
 end

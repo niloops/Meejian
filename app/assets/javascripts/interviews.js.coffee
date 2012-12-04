@@ -62,3 +62,19 @@ Meejian.Interviews =
       $(this).fileupload 'add',
         fileInput: $("#product_photo")
         dataType: "html"
+
+  share: (show) ->
+    $share = $("#interview_share")
+
+    $("#share_cancel").click (e) ->
+      $share.modal("hide")
+      e.preventDefault()
+
+    $("#share_submit").click ->
+      $share.find("form").submit()
+
+    $("#share_control").click (e) ->
+      $share.modal()
+      e.preventDefault()
+
+    $share.modal() if show

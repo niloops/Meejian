@@ -1,5 +1,5 @@
 - content_for :header do
-  = render partial: "topics/head", locals: { details: false }
+  = render partial: "topics/head", locals: { details: false, answer_control: false }
 
 = simple_form_for [@topic, @interview], html: {class: "edit_interview"} do |f|
   h3
@@ -18,7 +18,8 @@
 
 #new_product_modal.modal.hide.fade tabindex="-1"
   .modal-header
-    = button_tag 'x', type: 'button', class: 'close', 'data-dismiss' => 'modal'
+    = button_tag type: 'button', class: 'close', 'data-dismiss' => 'modal' do
+      raw &times;
     h4 建立关联产品
   .modal-body
 

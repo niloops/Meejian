@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     if user.blank?
-      can :create, Interview
+      can :new, Interview
       basic_read_only
     elsif user.admin?
       can :manage, :all
@@ -17,6 +17,9 @@ class Ability
       end
       can :create, Interview
       can :like, Interview
+      can :share, Interview do |interview|
+        user.auths?
+      end
       can :create, Comment
       can :destroy, Comment do |comment|
         comment.author == user

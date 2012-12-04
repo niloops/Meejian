@@ -22,6 +22,7 @@ Meejian::Application.routes.draw do
     resources :interviews, except: [:index] do
       member do
         post 'like'
+        post 'share'
       end
       resources :comments, only: [:create, :destroy]
       resources :answers do

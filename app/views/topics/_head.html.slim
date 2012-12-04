@@ -8,4 +8,5 @@ hgroup#topic_header
     p=  @topic.description 
   aside.topic_category
     = link_to @topic.category.name, topics_path if @topic.category
-= answer_control @topic, @can_create_interview
+- if answer_control
+  = answer_control @topic

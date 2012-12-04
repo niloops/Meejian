@@ -37,7 +37,6 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    @can_create_interview = !Interview.find_by_topic_and_author(@topic, current_user)
     @recommended_interviews = @topic.interviews.recommended
     @not_recommended_interviews = @topic.interviews.not_recommended
     if @topic.interviews.count == 1
