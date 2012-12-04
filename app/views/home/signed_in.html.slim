@@ -7,3 +7,6 @@ section#home_interviews
   locals: {with_user: true}
   = paginate @interviews
   
+- content_for :script do
+  javascript:
+    //$(Meejian.Home.avatar_tip(#{current_user.avatar?}))

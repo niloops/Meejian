@@ -8,7 +8,8 @@ nav#main_nav
       = link_to '热门用户', users_path
     - if user_signed_in?
       = nav_tab 'current_user', class: 'dropdown' do
-        = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do
+        = link_to '#', class: 'dropdown-toggle', id: 'current_user_nav', 
+        'data-toggle' => 'dropdown' do
           = user_avatar_tag current_user, :small, class: 'avatar_tiny'
           = current_user.name
           i.icon-caret-down

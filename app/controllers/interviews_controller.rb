@@ -71,6 +71,7 @@ class InterviewsController < ApplicationController
   def share
     @interview = Interview.find(params[:id])
     current_user.auths.each {|auth| auth.share params[:share][:content] }
+    @interview.author.karma_add(20)
     flash[:success] = "您分享了对#{@topic.title}的访谈"
     redirect_to topic_interview_path(@topic, @interview)
   end

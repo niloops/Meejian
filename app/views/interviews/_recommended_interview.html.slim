@@ -3,4 +3,4 @@ li
     = user_avatar_tag(recommended_interview.author, :medium)
     - answer = recommended_interview.recommend_answer
     h4= answer.question.truncate(question_length)
-    p= strip_tags(answer.answer).truncate(answer_length)
+    p= strip_answer(answer.answer).truncate(answer_length)

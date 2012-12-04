@@ -17,9 +17,7 @@ class Ability
       end
       can :create, Interview
       can :like, Interview
-      can :share, Interview do |interview|
-        user.auths?
-      end
+      can :share, Interview
       can :create, Comment
       can :destroy, Comment do |comment|
         comment.author == user

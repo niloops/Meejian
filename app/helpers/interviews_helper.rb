@@ -31,7 +31,7 @@ module InterviewsHelper
   def share_control(interview)
     link_to "#", id: 'share_control' do
       content_tag(:i, '', class: 'icon-share-alt') + "分享"
-    end
+    end if current_user and current_user.auths?
   end
 
   def share_content(interview)
@@ -45,5 +45,9 @@ module InterviewsHelper
     content += answer.question + " "
     content += strip_tags(answer.answer).truncate(60) + " \n"
     content += topic_interview_url(interview.topic, interview)
+  end
+
+  def strip_answer(answer)
+    strip_tags(answer).gsub('&nbsp;', ' ')
   end
 end
