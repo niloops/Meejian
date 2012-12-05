@@ -13,8 +13,8 @@
 #= require modernizr_respond
 #= require jquery
 #= require jquery_ujs
-#= require bootstrap 
 #= require underscore
+#= require bootstrap
 #= require bootstrap-wysihtml5
 #= require bootstrap-wysihtml5.zh-CN
 #= require sisyphus

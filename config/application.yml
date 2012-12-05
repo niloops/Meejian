@@ -11,7 +11,7 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  host: "localhost:3000"
+  host: "127.0.0.1:3000"
   weibo:
     consumer_key: "1876331179"
     consumer_secret: "556d6942342beb92719dc24e3e513e05"

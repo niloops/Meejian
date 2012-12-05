@@ -30,9 +30,10 @@ group :assets do
   gem 'uglifier'
   gem 'compass-rails'
   gem 'bootstrap-sass'
-  gem 'handlebars_assets'
   gem 'font-awesome-sass-rails'
+  gem 'handlebars_assets'
   gem "jquery-fileupload-rails"
+  gem 'turbo-sprockets-rails3'
 end
 
 group :development, :test do
@@ -46,7 +47,8 @@ group :development, :test do
   gem 'guard-jasmine'
   gem 'guard-livereload'
   gem 'database_cleaner'
-  gem 'thin'
   gem 'rb-fsevent'
   gem 'growl'
+  gem 'thin'
+  gem 'quiet_assets'
 end
