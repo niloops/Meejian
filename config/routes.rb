@@ -35,6 +35,9 @@ Meejian::Application.routes.draw do
 
   get '/inviteds', to: 'site#inviteds'
   get '/jobs', to: 'site#jobs'
+  match "/404", :to => "site#not_found"
+  match "/403", :to => "site#forbidden"
+  match "/500", :to => "site#server_error"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

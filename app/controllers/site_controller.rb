@@ -5,4 +5,13 @@ class SiteController < ApplicationController
 
   def jobs
   end
+
+  def not_found
+  end
+
+  def forbidden
+  end
+
+  def server_error
+  end
 end

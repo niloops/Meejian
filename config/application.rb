@@ -37,6 +37,9 @@ module Meejian
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
+    # Configure exception handling via route
+    config.exceptions_app = self.routes
+
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
@@ -53,7 +56,6 @@ module Meejian
     config.generators do |g|
       g.assets false
       g.view_specs false
-
       g.test_framework      :rspec, fixture: true
       g.fixture_replacement :fabrication
     end
