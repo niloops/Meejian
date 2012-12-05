@@ -1,4 +1,8 @@
 class SiteController < ApplicationController
+  def search
+    redirect_to "https://www.google.com.hk/#hl=zh-CN&q=site:#{Settings.host}+#{params[:q]}"
+  end
+
   def inviteds
     @users = InvitedInfo.desc(:created_at)
   end

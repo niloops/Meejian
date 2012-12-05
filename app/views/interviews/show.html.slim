@@ -26,7 +26,7 @@ footer.interview_comments
       = f.input :content, as: :text, label: false, input_html: {rows: 5, placeholder: "请在这里发表评论"}
       = f.button :submit, class: 'btn btn-success pull-right'
 
-div id="interview_share" class="modal hide fade" data-id="#{@interview.id}"
+#interview_share.modal.hide.fade data-id="#{@interview.id}"
   .modal-header
     = button_tag type: 'button', class: 'close', 'data-dismiss' => 'modal' do
       raw &times;

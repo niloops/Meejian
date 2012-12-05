@@ -33,6 +33,7 @@ Meejian::Application.routes.draw do
     end
   end
 
+  get '/search', to: 'site#search', as: :search
   get '/inviteds', to: 'site#inviteds'
   get '/jobs', to: 'site#jobs'
   match "/404", :to => "site#not_found"

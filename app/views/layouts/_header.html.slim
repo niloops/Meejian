@@ -3,7 +3,8 @@ header#page_header
     .navbar-inner
       .container
         = link_to brand, root_path, class: "brand"
-        = render 'layouts/search_form'
+        = form_tag(search_path, method: 'get', class: "navbar-search pull-left") do
+          input.search-query type="text" name="q" placeholder="搜索" 
         = render 'layouts/main_nav'
     
   - if content_for? :header
