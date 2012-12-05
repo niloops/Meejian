@@ -65,11 +65,18 @@
 }
 
 #interview_share {
-  form {
-    margin: 0;
-    .control-group {margin: 0}
-    textarea {width: 97%;}
+  .modal-body {
+    form {
+      margin: 0;
+      .control-group {margin: 0}
+      textarea {width: 97%;}
+    }
+
+    p {
+      color: $baseLightColor;
+    }
   }
+
 }
 
 article.interview {

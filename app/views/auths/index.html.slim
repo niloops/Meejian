@@ -10,6 +10,4 @@ ul
       = link_to "x取消绑定", user_auth_path(current_user, @auths[:weibo]), method: :delete, 
       confirm: "真的要取消绑定吗?", class: "btn btn-link"
     - else
-      = link_to user_omniauth_authorize_path(:weibo), class: 'signin_omniauth' do
-        = image_tag "weibo.png"
-        | 新浪微博绑定
+      = weibo_binding

@@ -8,7 +8,14 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     elsif user_signed_in?
       current_user.auths << Auth.from_omniauth(auth_data)
       flash[:success] = "您与#{auth_data[:provider]}的绑定成功"
-      redirect_to user_auths_path(current_user)
+      if id = cookies['interview_shared'] and interview = Interview.find(id)
+        #Binding auth from Interviews#show, share the interview
+        flash[:share] = current_user.auths?
+        redirect_to topic_interview_path(interview.topic, interview)
+      else
+        #Binding auth from Auths#index
+        redirect_to user_auths_path(current_user)
+      end
     else
       session["devise.omniauth"] = auth_data
       redirect_to new_user_registration_path

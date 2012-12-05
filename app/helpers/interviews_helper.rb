@@ -30,8 +30,8 @@ module InterviewsHelper
 
   def share_control(interview)
     link_to "#", id: 'share_control' do
-      content_tag(:i, '', class: 'icon-share-alt') + "分享"
-    end if current_user and current_user.auths?
+      content_tag(:i, '', class: 'icon-share-alt') + "微博分享"
+    end
   end
 
   def share_content(interview)

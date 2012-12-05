@@ -77,4 +77,9 @@ Meejian.Interviews =
       $share.modal()
       e.preventDefault()
 
+    $.removeCookie('interview_shared', path: '/')
+    $(".signin_omniauth").click ->
+      $.cookie 'interview_shared', $share.attr('data-id'),
+        path: '/'
+
     $share.modal() if show

@@ -20,6 +20,7 @@
 #= require sisyphus
 #= require jquery.placeholder
 #= require jquery-fileupload/basic
+#= require jquery.cookie
 #= require meejian
 #= require interviews
 #= require_tree .
