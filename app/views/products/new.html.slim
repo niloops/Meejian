@@ -6,7 +6,7 @@ section
     = f.input :title
     - unless @product.new_record?
       = product_photo_tag @product, :medium
-    = f.input :photo, as: :file
+    = f.input :photo, as: :file, required: @product.new_record?
     = f.input :photo_cache, as: :hidden
     = f.input :price
     = f.input :shop, as: :url
