@@ -23,6 +23,7 @@ gem 'cancan'
 gem 'settingslogic'
 gem 'capistrano'
 gem 'rvm-capistrano'
+gem 'airbrake'
 
 group :assets do
   gem 'sass-rails'

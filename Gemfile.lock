@@ -29,6 +29,9 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.2)
+    airbrake (3.1.6)
+      builder
+      girl_friday
     arel (3.0.2)
     backbone-on-rails (0.9.2.3)
       eco
@@ -75,6 +78,7 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    connection_pool (0.9.2)
     daemons (1.1.9)
     database_cleaner (0.9.1)
     devise (2.1.2)
@@ -105,6 +109,9 @@ GEM
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
     fssm (0.2.9)
+    girl_friday (0.11.1)
+      connection_pool (~> 0.9.0)
+      rubinius-actor
     growl (1.0.3)
     guard (1.5.4)
       listen (>= 0.4.2)
@@ -257,6 +264,9 @@ GEM
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
       rspec-mocks (~> 2.12.0)
+    rubinius-actor (0.0.2)
+      rubinius-core-api
+    rubinius-core-api (0.0.1)
     rvm-capistrano (1.2.7)
       capistrano (>= 2.0.0)
     sass (3.2.3)
@@ -314,6 +324,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   backbone-on-rails
   bootstrap-sass
   bootstrap-wysihtml5-rails
