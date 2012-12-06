@@ -46,7 +46,7 @@ class InterviewsController < ApplicationController
   end
 
   def show
-    @interview = Interview.find(params[:id])
+    @interview = Interview.find(params[:id]) || not_found
     @author = @interview.author
   end
 

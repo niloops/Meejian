@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, except: [:show, :index]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) || not_found
     @interviews = @user.interviews.desc(:created_at).page params[:page]
     @collects = @interviews.reduce [] do |products, interview|
       interview.valid_answers.each do |answer|

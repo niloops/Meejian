@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to '/403', alert: exception.message
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end

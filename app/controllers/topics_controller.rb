@@ -36,7 +36,7 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:id]) || not_found
     @recommended_interviews = @topic.interviews.recommended
     @not_recommended_interviews = @topic.interviews.not_recommended
     if @topic.interviews.count == 1
