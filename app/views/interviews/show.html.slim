@@ -32,15 +32,18 @@ footer.interview_comments
       raw &times;
     h3 分享到微博
   .modal-body
-    - if current_user and current_user.auths?
+    - if any_binding?
       = simple_form_for :share, url: share_topic_interview_path(@topic, @interview) do |f|
         = f.input :content, as: :text, label: false, input_html: {rows: 5, value: share_content(@interview)}
     - else 
       p 进行微博分享需要先绑定您的微博帐号
       = weibo_binding
   .modal-footer
-    = link_to "取消", "#", class: "btn", id: "share_cancel"
-    = link_to "发布", "#", class: "btn btn-primary", id: "share_submit"
+    - if any_binding?
+      = link_to "取消", "#", class: "btn", id: "share_cancel"
+      = link_to "发布", "#", class: "btn btn-primary", id: "share_submit"
+    - else
+      = link_to "我知道了", "#", class: "btn", id: "share_cancel"
 
 - content_for :script do
   javascript:
