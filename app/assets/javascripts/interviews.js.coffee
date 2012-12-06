@@ -2,12 +2,13 @@ Meejian.Interviews =
   edit: ->
     $('.wysihtml5').each (i, e) ->
       $(e).wysihtml5
-        "font-styles": false,
-        "image": false,
+        "font-styles": false
+        "image": false
         locale: "zh-CN"
 
     $('form.edit_interview').sisyphus
       timeout: 5
+      excludeFields: $('input[name="authenticity_token"]')
 
     $(".product_control").click (e) ->
       e.preventDefault()
