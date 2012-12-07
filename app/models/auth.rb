@@ -22,13 +22,13 @@ class Auth
   end
 
   def url
-    url_method = "#{provider}_url".to_sym
-    send url_method if respond_to? url_method
+    method = "#{provider}_url".to_sym
+    send method if respond_to? method
   end
 
   def share(content)
-    share_method = "#{provider}_share".to_sym
-    send share_method, content if respond_to? share_method
+    method = "#{provider}_share".to_sym
+    send method, content if respond_to? method
   end
 
   def weibo_url

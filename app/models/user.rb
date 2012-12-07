@@ -15,9 +15,6 @@ class User
 
   attr_protected :encrypted_password, :admin
 
-  ## Omniauthable
-  embeds_many :auths
-
   ## Rememberable
   field :remember_created_at, type: Time
 
@@ -38,19 +35,10 @@ class User
   field :description, type: String, default: ""
   mount_uploader :avatar, PhotosUploader
 
-  ## User Karma
-  field :karma, type: Integer, default: 0
-
-  ## Relations
-  has_many :creations, class_name: "Product", inverse_of: :creator
-  has_many :editable_topics, class_name: "Topic", inverse_of: :editor
-  has_many :posts, class_name: "Post", inverse_of: :author
-  has_and_belongs_to_many :like_posts, class_name: "Post", inverse_of: :liked_user
-
-  paginates_per 12
+  ## Omniauthable
+  embeds_many :auths
 
   class << self
-
     def find_by_omniauth(data)
       where("auths.provider" => data[:provider])
         .and("auths.uid" => data[:uid]).first
@@ -63,20 +51,6 @@ class User
         end
       end
     end
-
-  end
-
-  def interviews
-    posts.where('_type' => 'Interview')
-  end
-
-  def like!(post)
-    like_posts << post
-    post.update_attributes(liked_count: post.liked_users.count)
-  end
-
-  def karma_add(num)
-    update_attribute(:karma, karma+num)
   end
 
   def merge_from_omniauth!(data)
@@ -92,4 +66,44 @@ class User
   def weibo(data)
     self.remote_avatar_url = data[:extra][:raw_info][:avatar_large] + ".jpg"
   end
+
+  ## Messageable
+  embeds_many :messages
+
+  def send_message(receivers, message)
+    message.senders << self
+    receivers.each do |receiver|
+      receiver.messages << message
+    end
+  end
+
+  ## Likeable
+  has_and_belongs_to_many :like_posts, class_name: "Post", inverse_of: :liked_user
+
+  def like!(post)
+    like_posts << post
+    post.update_attributes(liked_count: post.liked_users.count)
+  end
+
+  ## User Karma
+  field :karma, type: Integer, default: 0
+
+  def karma_add(num)
+    update_attribute(:karma, karma+num)
+  end
+
+  ## Posts
+  has_many :posts, class_name: "Post", inverse_of: :author
+  def interviews
+    posts.where('_type' => 'Interview')
+  end
+
+  ## Topics
+  has_many :editable_topics, class_name: "Topic", inverse_of: :editor
+
+  ## Products
+  has_many :creations, class_name: "Product", inverse_of: :creator
+
+  ## Paginates
+  paginates_per 12
 end

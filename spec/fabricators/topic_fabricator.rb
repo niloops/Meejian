@@ -1,5 +1,5 @@
 Fabricator(:topic) do
-  title "Title"
+  title { Faker::Lorem.word }
   subtitle "Subtitle"
   description "Description"
   category
