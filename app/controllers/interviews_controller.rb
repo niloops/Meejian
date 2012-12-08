@@ -49,7 +49,9 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params[:id]) || not_found
     @author = @interview.author
     #read related messages
-    CommentMessage.read_by_post(current_user, @interview)
+    if user_signed_in?
+      CommentMessage.read_by_post(current_user, @interview)
+    end
   end
 
   def destroy
