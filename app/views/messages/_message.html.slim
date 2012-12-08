@@ -1,0 +1,4 @@
+li
+  p class=(message.read? ? "read" : "unread")
+    = message_content message
+    = time_ago_tag message.created_at

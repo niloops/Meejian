@@ -22,6 +22,8 @@ class Ability
       can :destroy, Comment do |comment|
         comment.author == user
       end
+      can :readall, Message
+      can :read, Message
       basic_read_only
     end
   end

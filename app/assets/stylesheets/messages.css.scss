@@ -1,0 +1,14 @@
+#messages {
+  li {
+    margin: 1em 0;
+
+    p {
+      padding: 1em;
+      i {margin-right: 1em;}
+
+      &.unread {
+        background: $headerBackgroundColor;
+      }
+    }
+  }
+}

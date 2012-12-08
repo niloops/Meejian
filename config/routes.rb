@@ -16,8 +16,18 @@ Meejian::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection
     resources :auths, only: [:index, :destroy]
   end
+
+  resources :messages, only: [:index] do
+    get 'page/:page', action: :index, on: :collection
+    collection do
+      post 'readall'
+    end
+  end
+
   resources :products
+
   resources :categories
+
   resources :topics do
     resources :interviews, except: [:index] do
       member do

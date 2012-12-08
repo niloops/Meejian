@@ -1,0 +1,10 @@
+- content_for :header do
+  h1 
+    | 我的消息
+    - if @unread_count > 0
+      | (#{@unread_count}条未读)
+      = link_to "标记所有未读消息为已读", readall_messages_path, 
+      method: :post, class: "btn btn-warning pull-right"
+
+ul#messages= render partial: "message", collection: @messages
+= paginate @messages

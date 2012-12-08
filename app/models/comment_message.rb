@@ -3,7 +3,7 @@ class CommentMessage < Message
 
   class << self
     def find_by_post(user, post)
-      user.messages.by_type(:comment_message).where(post_id: post.id)
+      user.messages.unread.by_type(:comment_message).where(post_id: post.id)
     end
 
     def read_by_post(user, post)

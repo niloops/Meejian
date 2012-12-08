@@ -48,6 +48,8 @@ class InterviewsController < ApplicationController
   def show
     @interview = Interview.find(params[:id]) || not_found
     @author = @interview.author
+    #read related messages
+    CommentMessage.read_by_post(current_user, @interview)
   end
 
   def destroy

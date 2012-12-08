@@ -10,7 +10,7 @@ class Message
 
   default_scope desc(:created_at)
 
-  scope :unreads, where(read: false)
+  scope :unread, where(read: false)
 
   scope :by_type, ->(type) do
     type ? where(_type: type.to_s.camelize) : scoped

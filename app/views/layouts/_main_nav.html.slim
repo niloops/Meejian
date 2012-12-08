@@ -4,9 +4,13 @@ nav#main_nav
       = link_to '主页', root_path
     = nav_tab 'topics' do
       = link_to '主题浏览', topics_path
-    = nav_tab 'users' do
+    = nav_tab 'users', class: "hot_users" do
       = link_to '热门用户', users_path
     - if user_signed_in?
+      - if unread_messages_count > 0
+        li.messages_tip
+          = link_to unread_messages_count, messages_path,
+          title: "我有#{unread_messages_count}个未读消息"
       = nav_tab 'current_user', class: 'dropdown' do
         = link_to '#', class: 'dropdown-toggle', id: 'current_user_nav', 
         'data-toggle' => 'dropdown' do
@@ -14,7 +18,8 @@ nav#main_nav
           = current_user.name
           i.icon-caret-down
         ul.dropdown-menu
-          li= link_to '我的个人页', user_path(current_user)
+          li= link_to '我的个人页', current_user
+          li= link_to '我的消息', messages_path
           li= link_to '编辑个人信息', edit_user_path(current_user)
           li= link_to '修改帐号密码', edit_user_registration_path
           li= link_to '微博绑定', user_auths_path(current_user)
