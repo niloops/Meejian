@@ -38,4 +38,3 @@ pickle-email-*.html
 
 # Vagrant
 .vagrant
-Vagrantfile

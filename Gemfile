@@ -21,9 +21,8 @@ gem 'omniauth-weibo-oauth2'
 gem 'weibo_2'
 gem 'cancan'
 gem 'settingslogic'
-gem 'capistrano'
-gem 'rvm-capistrano'
 gem 'airbrake'
+gem 'unicorn'
 
 group :assets do
   gem 'sass-rails'
@@ -39,19 +38,25 @@ group :assets do
   gem 'therubyracer'
 end
 
-group :development, :test do
+group :development do
+  gem 'thin'
+  gem 'quiet_assets'
+
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+end
+
+group :test do
   gem 'rspec-rails'
   gem 'mongoid-rspec'
-  gem 'fabrication'
-  gem 'ffaker'
   gem 'jasminerice'
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'guard-jasmine'
   gem 'guard-livereload'
+  gem 'fabrication'
+  gem 'ffaker'
   gem 'database_cleaner'
   gem 'rb-fsevent'
   gem 'growl'
-  gem 'thin'
-  gem 'quiet_assets'
 end
