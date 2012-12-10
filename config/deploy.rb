@@ -20,6 +20,17 @@ set :default_run_options, {pty: true}
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
+  namespace :assets do
+    desc "Upload compiled assets to cdn"
+    task :upload_to_cdn, roles: :web do
+      run "cd #{latest_release}; bundle exec rake assets:upload_to_cdn RAILS_ENV=production"
+    end
+  end
+end
+
+after "deploy:assets:precompile", 'deploy:assets:upload_to_cdn'
+
+namespace :deploy do
   %w[start stop restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do

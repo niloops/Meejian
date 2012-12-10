@@ -25,7 +25,7 @@ Meejian::Application.configure do
 
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -48,6 +48,11 @@ Meejian::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w( bootstrap-wysihtml5/wysiwyg-color.css )
+
+  # Enable serving of images, stylesheets, and JavaScripts from an asset server
+  unless Settings.upyun.assets_bucket_domain.blank?
+    config.action_controller.asset_host = Settings.upyun.assets_bucket_domain
+  end
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

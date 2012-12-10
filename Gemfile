@@ -36,6 +36,7 @@ group :assets do
   gem 'turbo-sprockets-rails3'
   gem 'libv8'
   gem 'therubyracer'
+  gem 'ftp_sync'
 end
 
 group :development do

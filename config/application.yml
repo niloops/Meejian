@@ -5,6 +5,8 @@ defaults: &defaults
     password: "g4l4pg2sh13sm"
     photo_bucket: "meejian-photos"
     photo_bucket_domain: "meejian-photos.b0.upaiyun.com"
+    assets_bucket: "meejian-assets"
+    assets_bucket_domain: "meejian-assets.b0.upaiyun.com"
   weibo:
     consumer_key: ""
     consumer_secret: ""
