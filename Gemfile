@@ -34,7 +34,6 @@ group :assets do
   gem 'font-awesome-sass-rails'
   gem 'handlebars_assets'
   gem "jquery-fileupload-rails"
-  gem 'turbo-sprockets-rails3'
   gem 'libv8'
   gem 'therubyracer'
 end
