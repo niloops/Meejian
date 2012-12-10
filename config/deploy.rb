@@ -23,8 +23,8 @@ namespace :deploy do
   namespace :assets do
     desc "Precompile assets on local machine and upload them to the cdn server."
     task :precompile, roles: :web, except: {no_release: true} do
-      run_locally "bundle exec rake assets:clean"
       run_locally "bundle exec rake assets:precompile"
+      run_locally "bundle exec rake assets:clean_expired"
       run_locally "bundle exec rake assets:upload_to_cdn"
     end
   end
