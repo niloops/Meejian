@@ -49,11 +49,6 @@ Meejian::Application.configure do
   # config.assets.precompile += %w( search.js )
   config.assets.precompile += %w( bootstrap-wysihtml5/wysiwyg-color.css )
 
-  # Enable serving of images, stylesheets, and JavaScripts from an asset server
-  unless Settings.upyun.assets_bucket_domain.blank?
-    config.action_controller.asset_host = Settings.upyun.assets_bucket_domain
-  end
-
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
 

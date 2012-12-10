@@ -23,7 +23,6 @@ gem 'cancan'
 gem 'settingslogic'
 gem 'airbrake'
 gem 'unicorn'
-gem 'ftp_sync'
 
 group :assets do
   gem 'sass-rails'

@@ -19,16 +19,7 @@ set :default_run_options, {pty: true}
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
-namespace :deploy do
-  namespace :assets do
-    desc "Precompile assets on local machine and upload them to the cdn server."
-    task :precompile, roles: :web, except: {no_release: true} do
-      run_locally "bundle exec rake assets:precompile"
-      run_locally "bundle exec rake assets:clean_expired"
-      run_locally "bundle exec rake assets:upload_to_cdn"
-    end
-  end
-end
+after "deploy:assets:precompile", 'deploy:assets:clean_expired'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
