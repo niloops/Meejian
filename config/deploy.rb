@@ -27,12 +27,6 @@ namespace :deploy do
     end
   end
 
-  task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /opt/nginx/conf/sites-enabled/#{application}"
-    sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
-  end
-  after "deploy:setup", "deploy:setup_config"
-
   desc "Make sure local git is in sync with remote."
   task :check_revision, roles: :web do
     unless `git rev-parse HEAD` == `git rev-parse origin/master`
