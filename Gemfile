@@ -23,6 +23,7 @@ gem 'cancan'
 gem 'settingslogic'
 gem 'airbrake'
 gem 'unicorn'
+gem 'ftp_sync'
 
 group :assets do
   gem 'sass-rails'
@@ -36,7 +37,6 @@ group :assets do
   gem 'turbo-sprockets-rails3'
   gem 'libv8'
   gem 'therubyracer'
-  gem 'ftp_sync'
 end
 
 group :development do
