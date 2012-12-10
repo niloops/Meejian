@@ -21,14 +21,13 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
   namespace :assets do
-    desc "Upload compiled assets to cdn"
-    task :upload_to_cdn, roles: :web do
-      run "cd #{latest_release}; bundle exec rake assets:upload_to_cdn RAILS_ENV=production"
+    desc "Precompile assets on local machine and upload them to the cdn server."
+    task :precompile, roles: :web, except: {no_release: true} do
+      run_locally "bundle exec rake assets:precompile"
+      run_locally "bundle exec rake assets:upload_to_cdn RAILS_ENV=production"
     end
   end
 end
-
-after "deploy:assets:precompile", 'deploy:assets:upload_to_cdn'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
