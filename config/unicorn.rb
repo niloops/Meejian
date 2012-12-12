@@ -8,7 +8,7 @@
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
 # documentation.
 
-APP_DIR = "/var/meejian/current"
+APP_ROOT = "/var/meejian/current"
 
 # Use at least one worker per core if you're on a dedicated server,
 # more will usually help for _short_ waits on databases/caches.
@@ -23,7 +23,7 @@ worker_processes 8
 
 # Help ensure your application will always spawn in the symlinked
 # "current" directory that Capistrano sets up.
-working_directory APP_DIR # available in 0.94.0+
+working_directory APP_ROOT # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
@@ -34,13 +34,13 @@ listen 8080, :tcp_nopush => true
 timeout 30
 
 # feel free to point this anywhere accessible on the filesystem
-pid "#{APP_DIR}/tmp/pids/unicorn.pid"
+pid "#{APP_ROOT}/tmp/pids/unicorn.pid"
 
 # By default, the Unicorn logger will write to stderr.
 # Additionally, ome applications/frameworks log to stderr or stdout,
 # so prevent them from going to /dev/null when daemonized here:
-stderr_path "#{APP_DIR}/log/unicorn.stderr.log"
-stdout_path "#{APP_DIR}/log/unicorn.stdout.log"
+stderr_path "#{APP_ROOT}/log/unicorn.stderr.log"
+stdout_path "#{APP_ROOT}/log/unicorn.stdout.log"
 
 # combine Ruby 2.0.0dev or REE with "preload_app true" for memory savings
 # http://rubyenterpriseedition.com/faq.html#adapt_apps_for_cow
@@ -71,7 +71,7 @@ before_fork do |server, worker|
   # # thundering herd (especially in the "preload_app false" case)
   # # when doing a transparent upgrade.  The last worker spawned
   # # will then kill off the old master process with a SIGQUIT.
-  old_pid = "#{APP_DIR}/tmp/pids/unicorn.pid.oldbin"
+  old_pid = "#{APP_ROOT}/tmp/pids/unicorn.pid.oldbin"
   if old_pid != server.pid
     begin
       #sig = (worker.nr + 1) >= server.worker_processes ? :QUIT : :TTOU
