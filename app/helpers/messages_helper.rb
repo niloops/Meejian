@@ -10,7 +10,7 @@ module MessagesHelper
   end
 
   def comment_message(message)
-    content = content_tag(:i, '', class: 'icon-comment-alt')
+    content = image_tag message.post.topic.photo_url(:small)
     content += senders(message)
     if message.post.author == current_user
       content += "评论了我参与的访谈: "

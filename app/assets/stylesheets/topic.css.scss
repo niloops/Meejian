@@ -1,3 +1,8 @@
+.topic_image_small {
+  width: 40px;
+  height: 40px;
+}
+
 #topic_header {
   position: relative;
 
@@ -53,8 +58,7 @@ hgroup.topic_title {
    }
 
   img {
-    width: 40px;
-    height: 40px;
+    @extend .topic_img_small;
     vertical-align: -3px;
     margin-right: 1em;
   }

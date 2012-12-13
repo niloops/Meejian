@@ -1,13 +1,20 @@
+#messages_head {
+  small {padding-left: 1em;}
+}
+
 #messages {
   li {
     margin: 1em 0;
 
     p {
-      padding: 1em;
-      i {margin-right: 1em;}
+      padding-left: 8px;
+      @extend .alert;
+      @extend .alert-success;
+
+      img { @extend .topic_image_small; }
 
       &.unread {
-        background: $headerBackgroundColor;
+        @extend .alert-info;
       }
     }
   }

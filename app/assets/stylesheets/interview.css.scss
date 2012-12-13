@@ -176,6 +176,7 @@ ul.recommend_interviews {
     @include clearfix;
     background: $headerBackgroundColor;
     margin-bottom: 1em;
+    height: 120px;
 
     &:hover {
       background: darken($headerBackgroundColor, 80%);
