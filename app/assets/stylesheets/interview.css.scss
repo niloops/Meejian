@@ -1,6 +1,6 @@
 .interview_question {
   color: lighten($baseFontColor, 30%);
-  background: $headerBackgroundColor;
+  @include headerBackground;
   padding: 8px 0;
   font-size: 1.3em;
 }
