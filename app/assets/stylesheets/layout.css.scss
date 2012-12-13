@@ -46,7 +46,7 @@
 
   #content_header {
     .container {position: relative;}
-    background: $headerBackgroundColor;
+    @include headerBackground;
     padding: 1em 0;
   }
 }

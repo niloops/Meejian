@@ -174,7 +174,7 @@ form.edit_interview {
 ul.recommend_interviews {
   li {
     @include clearfix;
-    background: $headerBackgroundColor;
+    @include headerBackground;
     margin-bottom: 1em;
     height: 120px;
 

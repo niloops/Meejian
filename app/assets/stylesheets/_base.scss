@@ -8,7 +8,8 @@ $headingsFontWeight: normal;
 $btnPrimaryBackground: lighten($linkColor, 10%);
 
 // Project specified variables
-$headerBackgroundColor: #eee;
+$headerBackgroundColor: #f3f3f3;
+$headerBackgroundColorLight: #f9f9f9;
 $taglineColor: darken($headerBackgroundColor, 30%);
 $baseFontColor: #333;
 $baseLightColor: lighten($baseFontColor, 30%);
@@ -24,6 +25,12 @@ $masonryMargin: 10px;
 
 $containerWidth: $gridColumns * ($gridColumnWidth + $gridGutterWidth) - $gridGutterWidth;
 
+@mixin headerBackground {
+  background: $headerBackgroundColor;
+  @include background(
+    linear-gradient($headerBackgroundColor, $headerBackgroundColorLight)
+  );
+}
 
 ul, ol {
   list-style: none;
