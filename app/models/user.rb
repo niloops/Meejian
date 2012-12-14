@@ -58,13 +58,7 @@ class User
     self.name = data[:info][:name]
     self.location = data[:info][:location]
     self.description = data[:info][:description]
-
-    provider = data[:provider].to_sym
-    send provider, data if respond_to? provider
-  end
-
-  def weibo(data)
-    self.remote_avatar_url = data[:extra][:raw_info][:avatar_large] + ".jpg"
+    self.remote_avatar_url = data[:info][:image]
   end
 
   ## Messageable

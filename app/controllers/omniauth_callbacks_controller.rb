@@ -17,10 +17,19 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to user_auths_path(current_user)
       end
     else
-      session["devise.omniauth"] = auth_data
+      provider_parse = auth_data[:provider] + "_parse"
+      session["devise.omniauth"] = send provider_parse, auth_data
       redirect_to new_user_registration_path
     end
   end
 
   alias_method :weibo, :all
+
+  private
+
+  def weibo_parse(auth_data)
+    data = auth_data.except(:extra)
+    data[:info][:image] = auth_data[:extra][:raw_info][:avatar_large] + ".jpg"
+    data
+  end
 end
