@@ -83,7 +83,7 @@ class InterviewsController < ApplicationController
   private
 
   def setup_topic
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:topic_id]) || not_found
   end
 
   def setup_answers
