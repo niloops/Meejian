@@ -55,7 +55,7 @@ class User
 
   def merge_from_omniauth!(data)
     auths << Auth.from_omniauth(data)
-    self.name = data[:info][:name]
+    self.name ||= data[:info][:name]
     self.location = data[:info][:location]
     self.description = data[:info][:description]
     self.remote_avatar_url = data[:info][:image]
