@@ -163,7 +163,6 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.7.4)
-    libv8 (3.11.8.4)
     listen (0.6.0)
     lumberjack (1.0.2)
     mail (2.4.4)
@@ -360,7 +359,6 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   kaminari
-  libv8
   mongoid (~> 3.0.0)
   mongoid-rspec
   mongoid_slug

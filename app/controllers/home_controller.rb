@@ -5,7 +5,6 @@ class HomeController < ApplicationController
       render 'signed_in'
     else
       @topics = Topic.recommended
-      render 'not_signed_in'
     end
   end
 end
